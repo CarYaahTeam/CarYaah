@@ -1,7 +1,7 @@
 const {DataTypes}= require('sequelize');
-const db = require('../index.js')
 
-module.exports = db.define('booking', {
+
+const Booking =(sequelize)=> sequelize.define('booking', {
     // attributess
     id: {
         type: DataTypes.INTEGER,
@@ -39,3 +39,4 @@ module.exports = db.define('booking', {
         allowNull: false
       }
   });
+  module.exports= Booking;
