@@ -60,11 +60,6 @@ const Car=(sequelize)=> sequelize.define('car', {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      id_owner: {
-        type: DataTypes.INTEGER,
-        required : true,
-        allowNull: false
-      }
   });
 
   

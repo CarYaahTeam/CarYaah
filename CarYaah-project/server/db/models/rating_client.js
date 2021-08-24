@@ -1,5 +1,5 @@
 const {DataTypes}= require('sequelize');
-// const db = require('../index.js')
+
 
 const Rating_client =(sequelize)=> sequelize.define('rating_client', {
     // attributess
