@@ -29,6 +29,8 @@
     "nodemon": "^2.0.12",
     "rxjs": "~6.6.0",
     "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0",
+    "sqlite3": "^5.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
