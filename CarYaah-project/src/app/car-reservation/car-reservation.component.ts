@@ -13,10 +13,8 @@ export class CarReservationComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  insert(start : String , end  : String) {
-    const data = {start , end}
+  findAll(start_date_av : String , end_date_av  : String) {
+    const data = {start_date_av , end_date_av}
     this.rs.addReservation(data)
-
 }
-
 }
