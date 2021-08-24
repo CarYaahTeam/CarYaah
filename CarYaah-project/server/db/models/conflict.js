@@ -1,7 +1,7 @@
 const {DataTypes}= require('sequelize');
-const db = require('../index.js')
+// const db = require('../index.js')
 
-module.exports = db.define('conflict', {
+const Conflict =(sequelize)=> sequelize.define('conflict', {
     // attributess
     id: {
         type: DataTypes.INTEGER,
@@ -28,3 +28,5 @@ module.exports = db.define('conflict', {
         allowNull: false
       }
   });
+
+  module.exports=Conflict

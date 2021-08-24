@@ -1,7 +1,7 @@
 const {DataTypes}= require('sequelize');
-const db = require('../index.js')
 
-module.exports = db.define('car', {
+
+const Car=(sequelize)=> sequelize.define('car', {
     // attributess
     id: {
         type: DataTypes.INTEGER,
@@ -68,6 +68,6 @@ module.exports = db.define('car', {
   });
 
   
-
+module.exports=Car;
 
 
