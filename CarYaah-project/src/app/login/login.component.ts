@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,36 +8,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-
-  //  loginForm: FormGroup;
-
-  constructor(
-    // private authService: AuthenticationService,
-    private router: Router,
-    private formBuilder: FormBuilder
-
-  ) { }
+  successMessage: string = "";
+  loginForm!: FormGroup;
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    const loginForm = new FormGroup({
-      email: new FormControl(null, [
-        Validators.required,
-        Validators.email,
-        Validators.minLength(5)
-      ]),
-      password: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(8)
-      ])
-
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
+      password: ['', [Validators.required, Validators.pattern("[A-Za-z0-9@!_]{6,}")]]
     })
-
   }
-  onSubmit() {
-    // if(loginForm.invalid){
-    //   return;
-    // }
 
+  login() {
+    this.successMessage = "Successfully Loggined In..."
   }
 
 }
