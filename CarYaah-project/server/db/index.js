@@ -7,13 +7,13 @@ const {DataTypes}= require('sequelize');
 
 
 
-const database = process.env.DB_NAME;
-const user = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD;
+const database = "CarYaah";
+const user = "root";
+const password = "root";
 const host= 'localhost';
 
 
-module.exports = db = {};
+const db = {};
 
 
 initialize();
@@ -27,24 +27,34 @@ async function initialize() {
     const sequelize = new Sequelize(database, user, password, { dialect: 'mysql'});
 
     // init models and add them to the exported db object
-
-    // const Project = await sequelize.define('project', {
-    //     title: Sequelize.STRING,
-    //     description: Sequelize.TEXT
-    //   })
-
     
     db.Admin=require('./models/admin')(sequelize)
     db.Booking=require('./models/booking')(sequelize)
     db.Car=require('./models/car')(sequelize)
     db.Client=require('./models/client')(sequelize)
-    db.Conflict=require('./models/Conflict')(sequelize)
+    db.Conflict=require('./models/conflict')(sequelize)
     db.Owner=require('./models/owner')(sequelize)
     db.Rating_car=require('./models/rating_car')(sequelize)
     db.Rating_client=require('./models/rating_client')(sequelize)
     
+    db.Owner.hasMany(db.Car)
+    db.Car.belongsTo(db.Owner)
+    db.Client.hasMany(db.Booking)
+    db.Car.hasMany(db.Booking)
+    db.Rating_client.belongsTo(db.Client)
+    db.Rating_client.belongsTo(db.Owner)
+    db.Rating_car.belongsTo(db.Client)
+    db.Rating_car.belongsTo(db.Car)
+    db.Conflict.belongsTo(db.Client)
+    db.Conflict.belongsTo(db.Car)
     // sync all models with database
     await sequelize.sync();
 }
+// createReservation: function(params,callbacks){
+//     var queryStr= "INSERT into car(start_date_av,end_date_av) VALUES(?,?)";
+//     db.query(queryStr,params, function(err,results){
+//         callbacks(results)
+//     });
+// }
 
-
+module.exports =db
