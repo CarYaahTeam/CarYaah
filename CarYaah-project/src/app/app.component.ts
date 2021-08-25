@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CarYaah-project';
+  title = 'rou';
+  formattedaddress="";
+  options : any ={
+    // fields: ["address_component", "place_id"]
+    componentRestrictions: { country: 'UA' }
+  }
+  public handleAddressChange(address: any){
+    this.formattedaddress=address.formatted_address
+  }
 }
+
