@@ -4,7 +4,12 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
+  url: "http://localhost:3000"
+  
+=======
   url:"http://localhost:3000"
+>>>>>>> 1244705122970ab5ee19b8a0ea5e374b7eae8d63
 };
 
 /*

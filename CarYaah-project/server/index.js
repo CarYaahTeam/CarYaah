@@ -1,5 +1,20 @@
-const express = require('express');
+const express = require("express");
 const PORT = 3000;
+const sequelize = require("./db/index.js");
+// const client= require('./db/models/client')
+
+const app = express();
+
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send({ msg: "done" });
+});
+
+app.post("/owner", (req, res) => {
+  console.log("done");
+  res.send("success");
+});
 const sequelize = require('./db/index.js')
 const db = require('./db/index.js');
 // const client= require('./db/models/client')
