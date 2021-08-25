@@ -10,6 +10,7 @@ export class AddCar {
 
 
   add(dataCar : any) {
+    console.log("***data****",dataCar)
   return this.http.post('http://localhost:3000/owner',dataCar);
 }
 }
