@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-register',
@@ -8,24 +9,37 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
+  // data: object = {}
   successMessage: string = ""
 
   regForm!: FormGroup
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
     this.regForm = this.fb.group({
       name: ['', [Validators.required]],
-      mobileNumber: ['', [Validators.required, Validators.min(1000000000), Validators.max(9999999999)]],
+      address: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9_]{6}")]],
       email: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
-      password: ['', [Validators.required, Validators.pattern("[a-zA-z@_]{6,}")]]
+      password: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9_]{6,}")]]
     })
   }
 
   register() {
-    this.successMessage = "Successfully Registered..."
+    const url = "http://localhost:3000/register"
+    this.http.post(url, this.regForm.value).subscribe((data) => {
+      console.log(data);
+    })
+    // this.successMessage = "Successfully Registered..."
     // console.log(this.regForm)
+    //   if (this.regForm.invalid) {
+    //     return;
+    //   } else {
+    //     console.log(this.regForm.value);
+    //   }
   }
 
 }
