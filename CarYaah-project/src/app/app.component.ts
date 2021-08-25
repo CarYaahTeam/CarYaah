@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'rou';
   formattedaddress="";
   options : any ={
@@ -17,3 +18,13 @@ export class AppComponent {
   }
 }
 
+=======
+  title = 'myApp';
+  flag: boolean = true
+
+
+  apply(value: string) {
+    this.flag = value == "login" ? true : false;
+  }
+}
+>>>>>>> 6b3fc1dc25259c7a2505d35daff02795e93c0aeb
