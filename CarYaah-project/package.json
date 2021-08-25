@@ -25,13 +25,9 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
     "mysql2": "^2.3.0",
     "ngx-google-places-autocomplete": "^2.0.5",
-=======
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.3.0",
->>>>>>> 6b3fc1dc25259c7a2505d35daff02795e93c0aeb
     "nodemon": "^2.0.12",
     "rxjs": "~6.6.0",
     "sequelize": "^6.6.5",
