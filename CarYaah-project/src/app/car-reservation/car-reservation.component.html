@@ -1,0 +1,45 @@
+
+
+<div>
+    <input id="calender" type="date" placeholder="23/08/2021" #startDate/>
+    <input id="calender" type="date" placeholder="30/08/2021 " #endDate/>
+    <br/>
+    <br/>
+    <button id="button" type="button" (click)="findAll(startDate.value, endDate.value)">Search</button>
+    
+</div>
+
+
+<!-- <div class="reserve">
+    <div id="calender" class="col-md-6">
+        <h4>Datetimepicker</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="datepicker-container">
+                   <div class="form-group">
+                       <label>start date</label>
+                       <input
+                       id="reserve"
+                       class="form-control datatimepicker startDate"
+                       placheholder="23/08/2021"
+                       name="startDate">
+                   </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <input
+                id="x"
+                class="form-control datetimepicker takeItAt"
+                placeholder="06/07/2017"
+                name="takeItAt"
+                ngbDatepicker
+                #d="ngbDatepicker"
+                (click)="d.toggle()"
+                [(ngModel)]="takeItAt"
+                data-color="orange"
+                
+              /> -->

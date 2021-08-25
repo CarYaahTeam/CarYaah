@@ -1,3 +1,27 @@
+<<<<<<< HEAD
 <app-rent-button></app-rent-button>
 
 <router-outlet></router-outlet>
+=======
+<!-- <div class="container">
+    <h1>
+        Rent a car
+        <br/>
+        in a few taps</h1>
+        
+        <input ngx-google-places-autocomplete [options]='options' (onAddressChange)="AddressChange($event)"/>
+        {{ formattedaddress }}
+    </div> -->
+    <div class="container">
+        <h1>Rent a car
+            <br/>
+            in a few taps</h1>
+        
+        <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+    <p>{{ formattedaddress }}</p>
+    
+    </div>
+<router-outlet></router-outlet>
+
+   
+>>>>>>> 1244705122970ab5ee19b8a0ea5e374b7eae8d63
