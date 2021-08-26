@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 const { DataTypes } = require("sequelize");
 
 const Car = (sequelize) =>
   sequelize.define("car", {
-=======
-const { DataTypes } = require('sequelize');
-
-
-<<<<<<< HEAD
-const Car=(sequelize)=> sequelize.define('car', {
->>>>>>> 1244705122970ab5ee19b8a0ea5e374b7eae8d63
     // attributess
     id: {
       type: DataTypes.INTEGER,
@@ -21,7 +13,6 @@ const Car=(sequelize)=> sequelize.define('car', {
       allowNull: false,
     },
     type: {
-<<<<<<< HEAD
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -74,128 +65,6 @@ const Car=(sequelize)=> sequelize.define('car', {
       required: true,
       allowNull: false,
     },
-=======
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      AC: {
-        type: DataTypes.BOOLEAN ,
-        allowNull: false
-      },
-      GPS: {
-        type: DataTypes.BOOLEAN ,
-        allowNull: false
-      },
-      AUTOMATIC: {
-        type: DataTypes.BOOLEAN ,
-        allowNull: false
-      },
-      image: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      start_date_av: {
-        type: DataTypes.DATE,
-        allowNull: false
-      },
-      end_date_av: {
-        type: DataTypes.DATE,
-        allowNull: false
-      },
-      bail: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-      },
-      status: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      city: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      rating: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-      },
-      registration_number: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
->>>>>>> 1244705122970ab5ee19b8a0ea5e374b7eae8d63
   });
-=======
-const Car = (sequelize) => sequelize.define('car', {
-  // attributess
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  },
-  brand: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  type: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  AC: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false
-  },
-  GPS: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false
-  },
-  AUTOMATIC: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false
-  },
-  image: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  start_date_av: {
-    type: DataTypes.DATE,
-    allowNull: false
-  },
-  end_date_av: {
-    type: DataTypes.DATE,
-    allowNull: false
-  },
-  bail: {
-    type: DataTypes.DECIMAL,
-    allowNull: false
-  },
-  status: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  city: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  rating: {
-    type: DataTypes.DECIMAL,
-    allowNull: false
-  },
-  registration_number: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  id_owner: {
-    type: DataTypes.INTEGER,
-    required: true,
-    allowNull: false
-  }
-});
->>>>>>> 23269bb770b2460a6d550c9a879813876a14928f
-
 
 module.exports = Car;
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 1244705122970ab5ee19b8a0ea5e374b7eae8d63

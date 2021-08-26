@@ -3,21 +3,22 @@
     <div class="col-12">
       <form [formGroup]="regForm" (ngSubmit)="register()">
         <div class="form-group">
-          <label for="name" class="fa fa-user"></label>
+          <label for="username" class="fa fa-user"></label>
           <input
             type="text"
-            placeholder="Enter Your Full Name"
-            formControlName="name"
+            placeholder="Enter Your username"
+            formControlName="username"
           />
           <span
             class="text-danger"
             *ngIf="
-              regForm.controls.name.errors && regForm.controls.name.touched
+              regForm.controls.username.errors && regForm.controls.name.touched
             "
           >
-            <br />Full Name is Required
+            <br />username is Required
           </span>
         </div>
+
         <div class="form-group">
           <label for="password" class="fa fa-lock"></label>
           <input
@@ -33,6 +34,22 @@
             "
           >
             <br />Atleast 6 character Password is Required
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="name" class="fa fa-user"></label>
+          <input
+            type="text"
+            placeholder="Enter Your Full Name"
+            formControlName="name"
+          />
+          <span
+            class="text-danger"
+            *ngIf="
+              regForm.controls.name.errors && regForm.controls.name.touched
+            "
+          >
+            <br />Full Name is Required
           </span>
         </div>
         <div class="form-group">
@@ -52,17 +69,16 @@
           </span>
         </div>
         <div class="form-group">
-          <label for="address" class="fa fa-location on"></label>
+          <label for="adress" class="fa fa-location on"></label>
           <input
             type="tel"
             placeholder="Your Address"
-            formControlName="address"
+            formControlName="adress"
           />
           <span
             class="text-danger"
             *ngIf="
-              regForm.controls.address.errors &&
-              regForm.controls.address.touched
+              regForm.controls.adress.errors && regForm.controls.adress.touched
             "
           >
             <br />Invalid Address
@@ -75,7 +91,6 @@
             type="submit"
             class="btn btn-primary"
             [disabled]="!regForm.valid"
-            (click)="register()"
           >
             Register
           </button>
