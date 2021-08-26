@@ -9,11 +9,10 @@ export class AppComponent {
   title = 'rou';
   formattedaddress="";
   options : any ={
-    // fields: ["address_component", "place_id"]
+    fields: ["address_component", "place_id"],
     componentRestrictions: { country: 'UA' }
   }
   public handleAddressChange(address: any){
     this.formattedaddress=address.formatted_address
   }
 }
-

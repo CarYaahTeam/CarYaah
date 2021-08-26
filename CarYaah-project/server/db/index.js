@@ -50,11 +50,6 @@ async function initialize() {
     // sync all models with database
     await sequelize.sync();
 }
-// createReservation: function(params,callbacks){
-//     var queryStr= "INSERT into car(start_date_av,end_date_av) VALUES(?,?)";
-//     db.query(queryStr,params, function(err,results){
-//         callbacks(results)
-//     });
-// }
+
 
 module.exports =db
