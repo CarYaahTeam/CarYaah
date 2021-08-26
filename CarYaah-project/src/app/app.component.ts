@@ -6,25 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-<<<<<<< HEAD
-  title = 'rou';
+  title = 'caryaah';
   formattedaddress="";
+  flag: boolean = true
   options : any ={
     // fields: ["address_component", "place_id"]
     componentRestrictions: { country: 'UA' }
   }
-  public handleAddressChange(address: any){
-    this.formattedaddress=address.formatted_address
-  }
-}
-
-=======
-  title = 'myApp';
-  flag: boolean = true
-
-
   apply(value: string) {
     this.flag = value == "login" ? true : false;
   }
 }
->>>>>>> 6b3fc1dc25259c7a2505d35daff02795e93c0aeb
