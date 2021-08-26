@@ -1,21 +1,19 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
 
-import { } from './auth/register/register.component'
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  // addcar
 
   constructor(private http: HttpClient) { }
 
-  register() {
-    // const url = "http://localhost:3000/register"
-    // console.log(this.regForm.value);
-    // this.http.post(url, this.regForm.value).subscribe((data) => {
-    //   console.log(data);
-    // })
+  reg(data: object) {
+    console.log('hi', data)
+    const url = "http://localhost:3000/register"
+    this.http.post(url, data).subscribe((data) => {
+      console.log('there', data);
+    })
 
   }
 }

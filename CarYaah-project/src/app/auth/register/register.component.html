@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-      <form [formGroup]="regForm" (ngSubmit)="register()">
+      <form [formGroup]="regForm">
         <div class="form-group">
           <label for="username" class="fa fa-user"></label>
           <input
@@ -91,14 +91,15 @@
             type="submit"
             class="btn btn-primary"
             [disabled]="!regForm.valid"
+            (click)="register()"
           >
             Register
           </button>
         </div>
-
+        <!-- 
         <div class="text-success" *ngIf="successMessage">
           {{ regForm.value.email }} mailId is {{ successMessage }}
-        </div>
+        </div> -->
       </form>
     </div>
   </div>

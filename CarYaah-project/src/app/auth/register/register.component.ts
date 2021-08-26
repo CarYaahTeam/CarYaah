@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http'
+import { ClientService } from 'src/app/client.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
+
 export class RegisterComponent implements OnInit {
 
   // data: object = {}
@@ -15,12 +17,12 @@ export class RegisterComponent implements OnInit {
   regForm!: FormGroup
 
   constructor(
-    private fb: FormBuilder,
-    private http: HttpClient
+    private formData: FormBuilder,
+    private clientService: ClientService
   ) { }
 
   ngOnInit(): void {
-    this.regForm = this.fb.group({
+    this.regForm = this.formData.group({
       username: ['', [Validators.required]],
       name: ['', [Validators.required]],
       adress: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9_]{6}")]],
@@ -30,7 +32,9 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    // const data = this.regForm.username
+    console.log(this.regForm.value);
+    this.clientService.reg(this.regForm.value)
+    console.log(this.regForm.value);
 
   }
 

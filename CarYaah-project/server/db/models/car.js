@@ -56,6 +56,10 @@ const Car = (sequelize) =>
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
     registration_number: {
       type: DataTypes.INTEGER,
       allowNull: false,

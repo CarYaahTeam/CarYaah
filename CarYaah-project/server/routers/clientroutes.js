@@ -4,9 +4,7 @@ var clientcontroller = require("../controllers/clientcontrollers");
 clientRouter.route("/").post(clientcontroller.createOne);
 clientRouter.route("/").get(clientcontroller.retrieve);
 // clientRouter.route("/").get(clientcontroller.addReservation);
-
 // clientRouter.route("/deleteclient").delete(clientController.delete);
-
 // clientRouter.route("/").get(clientController.retrieveOne);
 // clientRouter.route("/").delete(clientController.deleteOne);
 // clientRouter.route("/").put(clientController.updateOne);

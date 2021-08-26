@@ -1,13 +1,20 @@
-var client = require("../db/models/client");
 var db = require("../db/index");
-exports.createOne = function (req, res) {
+
+exports.createOne = async function (req, res) {
   try {
-    const data = req.body;
-    var test = db.create(data);
-  } catch {
-    (e) => {
-      console.log(e);
-    };
+    // const newClient = new db.Client({
+    //   username: req.body.username,
+    //   password: req.body.password,
+    //   email: req.body.email,
+    //   name: req.body.name,
+    //   adress: req.body.adress,
+    // });
+    const client = await db.Client.create(req.body);
+    res.status(201).json(Client);
+    res.send(Client);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
   }
 };
 
