@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'caryaah';
-  formattedaddress="";
+  formattedaddress = "";
   flag: boolean = true
-  options : any ={
+  options: any = {
     fields: ["address_component", "place_id"],
     componentRestrictions: { country: 'UA' }
   }

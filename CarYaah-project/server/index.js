@@ -12,15 +12,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/register", clientRouter);
-app.use("/api/reservation", clientRouter);
-app.get("/", (req, res) => {
-  res.send({ msg: "done" });
-});
+app.use("/login", clientRouter);
 
-app.post("/owner", (req, res) => {
-  console.log("done");
-  res.send("success");
-});
+app.use("/api/reservation", clientRouter);
+
+// app.get("/", (req, res) => {
+//   res.send({ msg: "done" });
+// });
+
+// app.post("/owner", (req, res) => {
+//   console.log("done");
+//   res.send("success");
+// });
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
