@@ -1,0 +1,80 @@
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://iconarchive.com/download/i67327/bevel-and-emboss/car/car-blue.ico" alt="" width="200px" height="120px"/>
+            <h3>Welcome</h3>
+            <p>Earn money by renting out your car</p>
+           
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">OWNER</a>
+                </li>
+               
+            </ul>
+            <br/>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Please add your car's informations carefully</h3>
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Brand *" value="" #brand />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Type *" value="" #type />
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-control" placeholder="Start date" value="" #startDate/>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-control"  placeholder="End date" value="" #endDate/>
+                            </div>
+                            <div class="form-group">
+                                <div class="maxl">
+                                    <label class="radio inline"> 
+                                        <input type="radio"  value="Available" checked   #available>
+                                        <span> Available </span> 
+                                    </label> <br/>
+                                    <label class="radio inline"> 
+                                        <input type="radio"  value="not Available" #notAvailable>
+                                        <span>Not Available </span> 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Price*" value="" #price />
+                            </div> <br/>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option class="hidden"  selected disabled>Please select transmission you want</option>
+                                    <option> manual  </option>
+                                    <option> automatic  </option>
+                                </select>
+                                <br/><br/>
+                                <select class="form-control">
+                                    <option class="hidden"  selected disabled>Please select options</option>
+                                    <option>GPS</option>
+                                    <option>AC </option>
+                                </select>
+                            </div>
+
+                            <input type="submit" class="btnRegister"  value="Up-Date"/>
+                            <input type="submit" class="btnRegister"  value="Delete"/>
+                        </div>
+                        <button
+    (click)="add(brand.value, type.value,startDate.value, endDate.value, available.value, notAvailable.value, price.value)"
+                            class="btnRegister"> Publish 
+                    </button>
+                    
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</div>

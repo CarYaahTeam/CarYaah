@@ -1,18 +1,11 @@
 require('dotenv').config()
 const { Sequelize }= require('sequelize');
 const mysql = require('mysql2/promise');
-// const { createConnection}= require ('mysql2/promise')
-// const db = require('./models/client')
-const {DataTypes}= require('sequelize');
 
-
-
-const database = "CarYaah";
-const user = "root";
-const password = "root";
+const database = process.env.DB_NAME;
+const user = process.env.DB_USERNAME;
+const password =process.env.DB_PASSWORD;
 const host= 'localhost';
-
-
 const db = {};
 
 
@@ -20,14 +13,11 @@ initialize();
 
 async function initialize() {
     // create db if it doesn't already exist
-    const connection = await mysql.createConnection({ host, user, password });
+    const connection = await mysql.createConnection({user, password,host });
     await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
-
     // connect to db
     const sequelize = new Sequelize(database, user, password, { dialect: 'mysql'});
-
     // init models and add them to the exported db object
-    
     db.Admin=require('./models/admin')(sequelize)
     db.Booking=require('./models/booking')(sequelize)
     db.Car=require('./models/car')(sequelize)
@@ -36,7 +26,8 @@ async function initialize() {
     db.Owner=require('./models/owner')(sequelize)
     db.Rating_car=require('./models/rating_car')(sequelize)
     db.Rating_client=require('./models/rating_client')(sequelize)
-    
+
+
     db.Owner.hasMany(db.Car)
     db.Car.belongsTo(db.Owner)
     db.Client.hasMany(db.Booking)
@@ -50,6 +41,5 @@ async function initialize() {
     // sync all models with database
     await sequelize.sync();
 }
-
 
 module.exports =db

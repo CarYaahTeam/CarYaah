@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
 
+const {DataTypes}= require('sequelize');
 
 const Car = (sequelize) => sequelize.define('car', {
   // attributess
@@ -68,6 +68,5 @@ const Car = (sequelize) => sequelize.define('car', {
 });
 
 
+
 module.exports = Car;
-
-

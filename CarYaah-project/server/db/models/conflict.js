@@ -1,5 +1,5 @@
 const {DataTypes}= require('sequelize');
-// const db = require('../index.js')
+
 
 const Conflict =(sequelize)=> sequelize.define('conflict', {
     // attributess
