@@ -10,7 +10,7 @@ export class AppComponent {
   formattedaddress="";
   flag: boolean = true
   options : any ={
-    // fields: ["address_component", "place_id"]
+    fields: ["address_component", "place_id"],
     componentRestrictions: { country: 'UA' }
   }
   apply(value: string) {
