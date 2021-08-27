@@ -1,9 +1,18 @@
-const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 var db = require("../db/index");
+const bcrypt = require("bcryptjs");
+
 //---------------REGISTER ONE OWNER--------------//
 exports.createOwner = async function (req, res) {
   try {
-    const owner = await db.Owner.create(req.body);
+    const salt = await bcrypt.genSalt(10);
+    const hachedPass = await bcrypt.hash(req.body.password, salt);
+    const owner = await db.Owner.create({
+      username: req.body.username,
+      password: hachedPass,
+      name: req.body.name,
+      email: req.body.email,
+      adress: req.body.adress,
+    });
     res.status(201).json(Owner);
     res.send(Owner);
   } catch (err) {

@@ -47,6 +47,16 @@
             "
             type="submit"
             class="btn btn-primary"
+            [disabled]="
+              !{
+                username: username.value,
+                password: password.value,
+                name: name.value,
+                email: email.value,
+                adress: adress.value,
+                type: type.value
+              }
+            "
           >
             Register
           </button>

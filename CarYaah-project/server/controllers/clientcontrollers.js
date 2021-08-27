@@ -1,8 +1,17 @@
 var db = require("../db/index");
+const bcrypt = require("bcryptjs");
 //---------------REGISTER ONE CLIENT--------------//
 exports.createClient = async function (req, res) {
   try {
-    const client = await db.Client.create(req.body);
+    const salt = await bcrypt.genSalt(10);
+    const hachedPass = await bcrypt.hash(req.body.password, salt);
+    const client = await db.Client.create({
+      username: req.body.username,
+      password: hachedPass,
+      name: req.body.name,
+      email: req.body.email,
+      adress: req.body.adress,
+    });
     res.status(201).json(Client);
     res.send(Client);
   } catch (err) {
