@@ -45,9 +45,11 @@
           >
             Login
           </button>
-        </div>
-        <div class="text-center text-success" *ngIf="successMessage">
-          {{ successMessage }}
+          <nav>
+            <a routerLink="/register" routerLinkActive="active"
+              >if you are not registed start here</a
+            >
+          </nav>
         </div>
       </form>
     </div>

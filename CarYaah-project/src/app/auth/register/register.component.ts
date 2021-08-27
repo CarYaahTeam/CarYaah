@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ClientService } from 'src/app/client.service';
+import { OwnerService } from 'src/app/owner.service';
 
 @Component({
   selector: 'app-register',
@@ -14,28 +15,28 @@ export class RegisterComponent implements OnInit {
   // data: object = {}
   successMessage: string = ""
 
-  regForm!: FormGroup
+
 
   constructor(
     private formData: FormBuilder,
-    private clientService: ClientService
+    private clientService: ClientService,
+    private ownerService: OwnerService
   ) { }
 
   ngOnInit(): void {
-    this.regForm = this.formData.group({
-      username: ['', [Validators.required]],
-      name: ['', [Validators.required]],
-      adress: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9_]{6}")]],
-      email: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
-      password: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9_]{6,}")]]
-    })
+
+
   }
 
-  register() {
-    console.log(this.regForm.value);
-    this.clientService.reg(this.regForm.value)
-    console.log(this.regForm.value);
+  register(data: any) {
+    console.log(data)
+    if (data.type === "owner") {
+      this.ownerService.regOwner(data)
+    } else if (data.type === "client") {
+      this.clientService.regClient(data)
+      console.log('register', data);
 
+    }
   }
 
 }

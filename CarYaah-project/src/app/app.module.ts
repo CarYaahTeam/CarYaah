@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import '@angular/compiler'
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingAuth } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
@@ -23,8 +23,7 @@ import { CarcardComponent } from './carcard/carcard.component';
     AppComponent,
     CarReservationComponent,
     FilterComponent,
-    LoginComponent,
-    RegisterComponent,
+    routingAuth,
     RentButtonComponent,
     TestComponent,
     CarReservationComponent,

@@ -8,12 +8,18 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
-  reg(data: object) {
+  regClient(data: object) {
     console.log('hi', data)
-    const url = "http://localhost:3000/register"
+    const url = "http://localhost:3000/register/client"
     this.http.post(url, data).subscribe((data) => {
       console.log('there', data);
     })
+  }
 
+  login(data: object) {
+    const url = "http://localhost:3000/login"
+    this.http.post(url, data).subscribe((data) => {
+      console.log('login', data);
+    })
   }
 }
