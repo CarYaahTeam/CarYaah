@@ -3,22 +3,23 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const clientRouter = require("./routers/clientroutes");
-const CarRouter = require('../server/routers/carroutes')
+const ownerRouter = require("./routers/ownerroutes");
+const CarRouter = require("./routers/carroutes");
 
 const PORT = 3000;
-const sequelize = require("./db/index.js");
-// const db = require("./db/index.js");
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.use("/register", clientRouter);
-app.use("/login", clientRouter);
+app.use("/register/client", clientRouter);
+app.use("/register/owner", ownerRouter);
+app.use("/login/client", clientRouter);
+app.use("/login/owner", ownerRouter);
 
 app.use("/api/reservation", clientRouter);
 
-app.use('/cars', CarRouter);
+app.use("/cars", CarRouter);
 
 // app.get("/", (req, res) => {
 //   res.send({ msg: "done" });
