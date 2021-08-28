@@ -1,5 +1,4 @@
-
-const {DataTypes}= require('sequelize');
+const { DataTypes } = require("sequelize");
 
 const Car = (sequelize) => sequelize.define('car', {
   // attributess
