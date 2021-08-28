@@ -4,6 +4,7 @@ import '@angular/compiler'
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingAuth } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RatingModule } from 'ng-starrating';
 
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { FilterComponent } from './filter/filter.component';
@@ -14,6 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { RentButtonComponent } from './components/rent-button/rent-button.component';
 import { TestComponent } from './components/test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
+import {StarratingComponent} from './starrating/starrating.component'
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -27,7 +30,9 @@ import { CarcardComponent } from './carcard/carcard.component';
     RentButtonComponent,
     TestComponent,
     CarReservationComponent,
-    CarcardComponent
+    CarcardComponent,
+    StarratingComponent
+
   ],
   imports: [
     HttpClientModule,
@@ -39,7 +44,8 @@ import { CarcardComponent } from './carcard/carcard.component';
     ]),
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

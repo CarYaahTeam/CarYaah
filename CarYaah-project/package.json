@@ -29,6 +29,7 @@
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.10.2",
     "mysql2": "^2.3.0",
+    "ng-starrating": "^1.0.20",
     "ngx-google-places-autocomplete": "^2.0.5",
     "nodemon": "^2.0.12",
     "promise": "^8.1.0",
