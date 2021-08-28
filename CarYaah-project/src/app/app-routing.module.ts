@@ -11,8 +11,9 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: TestComponent },
   { path: '', component: CarReservationComponent },
+ 
+ 
   { path: 'auth', component: AuthComponent },
   { path: 'filter', component: FilterComponent },
   {path: 'owner', component: TestComponent},
