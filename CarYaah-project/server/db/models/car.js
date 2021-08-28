@@ -19,18 +19,22 @@ const Car = (sequelize) =>
     AC: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
     GPS: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
     AUTOMATIC: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
     image: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "",
     },
     start_date_av: {
       type: DataTypes.DATE,
@@ -42,17 +46,23 @@ const Car = (sequelize) =>
     },
     bail: {
       type: DataTypes.DECIMAL,
-      allowNull: false,
+      allowNull: true,
     },
     status: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "available",
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     rating: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      defaultValue: 0.0,
+    },
+    price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
@@ -62,7 +72,7 @@ const Car = (sequelize) =>
     },
     registration_number: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     id_owner: {
       type: DataTypes.INTEGER,
@@ -70,5 +80,7 @@ const Car = (sequelize) =>
       allowNull: false,
     },
   });
+
+
 
 module.exports = Car;

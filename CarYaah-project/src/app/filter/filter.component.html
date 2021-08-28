@@ -1,6 +1,9 @@
-<input type="search"/>
-<input id="calender" type="date" placeholder="23/08/2021" #startDate/>
-<input id="calender" type="date" placeholder="30/08/2021 " #endDate/>
+<!-- <div class="top"> -->
+<!-- <input id="adress" class="adress" type="text" placeholder="adress"/> -->
+<!-- <input id="cal2" type="date" placeholder="23/08/2021" #startDate/>
+<input class="cal2" type="date" placeholder="30/08/2021 " #endDate/> -->
+
+<!-- </div> -->
 <div>
     <div class="container">
       <h3 class="title">Price</h3>
@@ -10,13 +13,13 @@
       <div class="check">
         <h3 class="title1">Type</h3>
         <input class="filter" type="checkbox"  name="vehicle1" value="car">
-        <label for="cars"> Sedan</label><br>
+        <label class="label" for="cars"> Sedan</label><br>
         <input type="checkbox"  name="vehicle2" value="car">
-        <label for="cars"> Van</label><br>
+        <label class="label" for="cars"> Van</label><br>
         <input type="checkbox"  name="vehicle3" value="car">
-        <label for="cars"> Pickup</label><br>
+        <label  class="label" for="cars"> Pickup</label><br>
         <input type="checkbox"  name="vehicle4" value="car">
-        <label for="cars">Mini Truck</label><br>
+        <label class="label" for="cars">Mini Truck</label><br>
       </div>
       <div class="equipment">
         <h3 class="title2">Equipment</h3>
@@ -49,6 +52,7 @@
           formControlName="transmission"
           required
         >
+      
           <option value="" class="hidden" selected disabled>
             Transmission
           </option>

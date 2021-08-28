@@ -1,25 +1,25 @@
-import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClientService {
+export class OwnerService {
 
   constructor(private http: HttpClient) { }
 
-  regClient(data: object) {
+  regOwner(data: object) {
     console.log('hi', data)
-    const url = "http://localhost:3000/register/client"
+    const url = "http://localhost:3000/register/owner"
     this.http.post(url, data).subscribe((data) => {
       console.log('there', data);
     })
   }
-
-  logClient(data: object) {
-    const url = "http://localhost:3000/login/client"
+  logOwner(data: object) {
+    const url = "http://localhost:3000/login/owner"
     this.http.post(url, data).subscribe((data) => {
       console.log('login', data);
     })
+
   }
 }

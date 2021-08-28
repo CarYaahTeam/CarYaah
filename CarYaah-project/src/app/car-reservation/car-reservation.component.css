@@ -1,0 +1,27 @@
+.all {
+  background-image: url(https://cdn.motor1.com/images/mgl/0N8rm/s1/2014-441058-2015-chevrolet-corvette-z061.jpg);
+  height: 790px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.in {
+  margin-right: -30px;
+  margin-left: 59px;
+  width: 279px;
+  height: 67px;
+}
+h1 {
+  font: 410 70px/220px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 0px 40px 16px;
+  color: darkkhaki;
+}
+
+#button {
+  width: 590px;
+  background-color: gold;
+  margin-left: 60px;
+  padding: 4px;
+  font-size: 18px;
+  font-weight: bolder;
+}
