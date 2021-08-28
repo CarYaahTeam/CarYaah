@@ -5,6 +5,10 @@ import '@angular/compiler'
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AgmCoreModule } from '@agm/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
+import { MatCardModule } from '@angular/material/card';
 
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { FilterComponent } from './filter/filter.component';
@@ -15,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { RentButtonComponent } from './components/rent-button/rent-button.component';
 import { TestComponent } from './components/test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
-
+import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 
 
 
@@ -24,25 +28,34 @@ import { CarcardComponent } from './carcard/carcard.component';
     AppComponent,
     CarReservationComponent,
     FilterComponent,
-    
     LoginComponent,
     RegisterComponent,
     RentButtonComponent,
     TestComponent,
     CarReservationComponent,
-    CarcardComponent
+    CarcardComponent,
+    FeedbackClientComponent,
+
+
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserModule, 
+    BrowserAnimationsModule, 
+    MatCardModule,
+    MatGoogleMapsAutocompleteModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDOQjKI6GLozK-tgmd7m98Ev-ERhXq0VDI',
+      libraries: ['places'],
+    }),
     RouterModule.forRoot([
       {path:"filter",component: FilterComponent}
     ]),
     BrowserModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
