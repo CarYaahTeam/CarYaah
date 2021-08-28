@@ -38,7 +38,7 @@ async function initialize() {
   db.Rating_car.belongsTo(db.Car);
   db.Conflict.belongsTo(db.Client);
   db.Conflict.belongsTo(db.Car);
-  // sync all models with database
+
   await sequelize.sync();
 }
 
