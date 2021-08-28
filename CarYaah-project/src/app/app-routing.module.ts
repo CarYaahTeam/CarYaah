@@ -6,6 +6,9 @@ import { CarReservationComponent } from './car-reservation/car-reservation.compo
 import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import {CarcardComponent} from './carcard/carcard.component'
+import {StarratingComponent} from './starrating/starrating.component'
+
 
 const routes: Routes = [
   { path: '', component: TestComponent },
@@ -14,6 +17,9 @@ const routes: Routes = [
   { path: 'filter', component: FilterComponent },
   { path: 'owner', component: TestComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  {path: 'cars', component: CarcardComponent},
+  {path: 'stars', component: StarratingComponent},
   { path: 'login', component: LoginComponent }
 ];
 
