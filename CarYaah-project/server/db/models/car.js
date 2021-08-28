@@ -63,7 +63,12 @@ const Car = (sequelize) =>
     registration_number: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    }
+    },
+    id_owner: {
+      type: DataTypes.INTEGER,
+      required: true,
+      allowNull: false,
+    },
   });
 
 module.exports = Car;
