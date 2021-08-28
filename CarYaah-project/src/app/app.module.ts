@@ -4,7 +4,10 @@ import '@angular/compiler'
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingAuth } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { RatingModule } from 'ng-starrating';
+import { AgmCoreModule } from '@agm/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
+import { MatCardModule } from '@angular/material/card';
 
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { FilterComponent } from './filter/filter.component';
@@ -15,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { RentButtonComponent } from './components/rent-button/rent-button.component';
 import { TestComponent } from './components/test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
+import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 import { StarratingComponent } from './starrating/starrating.component'
 import { MatButtonModule } from '@angular/material/button';
 
@@ -31,6 +35,8 @@ import { MatButtonModule } from '@angular/material/button';
     TestComponent,
     CarReservationComponent,
     CarcardComponent,
+    FeedbackClientComponent,
+
     StarratingComponent
 
   ],
@@ -38,7 +44,13 @@ import { MatButtonModule } from '@angular/material/button';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserModule,
+    BrowserAnimationsModule, 
+    MatCardModule,
+    MatGoogleMapsAutocompleteModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDOQjKI6GLozK-tgmd7m98Ev-ERhXq0VDI',
+      libraries: ['places'],
+    }),
     RouterModule.forRoot([
       { path: "filter", component: FilterComponent }
     ]),

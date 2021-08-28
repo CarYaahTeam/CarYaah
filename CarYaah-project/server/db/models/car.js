@@ -71,4 +71,6 @@ const Car = (sequelize) =>
     },
   });
 
+
+
 module.exports = Car;
