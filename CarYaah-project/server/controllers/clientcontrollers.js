@@ -53,7 +53,7 @@ exports.retrieve = function (req, res) {
   });
 };
 
-module.exports = { createOne, retrieve };
+// module.exports = { createOne, retrieve };
 
 // exports.retrieveOne = function (req, res) {
 //   client.findOne({ _id: req.params.id }, function (err, result) {
