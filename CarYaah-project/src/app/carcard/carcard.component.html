@@ -1,7 +1,10 @@
 <div class="container">
     <div *ngFor= 'let car of cars' class="card">
-        <!-- <img  src="{{car?.image}}"/> -->
         <div class="img" style="background-image: url({{car?.image}});">
+        </div>
+        <div class="circle">
+            <i class="far fa-thumbs-up fa-2x"></i>
+            <i class="fas fa-thumbs-up fa-2x"></i>
         </div>
         <br>
         <div class="price">
@@ -12,6 +15,7 @@
         </div>
         <br>
         <app-starrating></app-starrating>
+        
     </div>
     
 </div>
