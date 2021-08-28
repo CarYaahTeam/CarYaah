@@ -29,7 +29,6 @@ app.use('/cars', CarRouter);
 //   res.send("success");
 // });
 
-
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });

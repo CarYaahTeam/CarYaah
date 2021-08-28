@@ -2,6 +2,13 @@ var db = require("../db/index");
 
 exports.createOne = async function (req, res) {
   try {
+    // const newClient = new db.Client({
+    //   username: req.body.username,
+    //   password: req.body.password,
+    //   email: req.body.email,
+    //   name: req.body.name,
+    //   adress: req.body.adress,
+    // });
     const client = await db.Client.create(req.body);
     res.status(201).json(Client);
     res.send(Client);
@@ -12,7 +19,7 @@ exports.createOne = async function (req, res) {
 };
 
 exports.retrieve = function (req, res) {
-  db.Client.findAll({}, function (err, result) {
+  client.findAll({}, function (err, result) {
     if (err) {
       res.send(err);
     } else {
@@ -20,8 +27,6 @@ exports.retrieve = function (req, res) {
     }
   });
 };
-
-
 
 // exports.retrieveOne = function (req, res) {
 //   client.findOne({ _id: req.params.id }, function (err, result) {

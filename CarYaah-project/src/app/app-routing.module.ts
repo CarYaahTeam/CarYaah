@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from "../app/components/test/test.component"
 import { FilterComponent } from './filter/filter.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
-import {CarcardComponent} from '../app/carcard/carcard.component'
 import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
-import{StarratingComponent} from '../app/starrating/starrating.component'
+import {CarcardComponent} from './carcard/carcard.component'
+import {StarratingComponent} from './starrating/starrating.component'
 
 
 const routes: Routes = [
@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   {path: 'cars', component: CarcardComponent},
-  {path: 'stars', component: StarratingComponent}
+  {path: 'stars', component: StarratingComponent},
+  { path: 'login', component: LoginComponent }
 ];
 
 
