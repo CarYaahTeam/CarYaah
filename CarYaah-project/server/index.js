@@ -14,8 +14,9 @@ app.use(cors());
 
 app.use("/register/client", clientRouter);
 app.use("/register/owner", ownerRouter);
+app.use("/login/client", clientRouter);
+app.use("/login/owner", ownerRouter);
 
-app.use("/login", clientRouter);
 app.use("/api/reservation", clientRouter);
 
 // app.get("/", (req, res) => {

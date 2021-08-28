@@ -1,47 +1,36 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-      <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div>
         <div class="form-group">
           <label for="email" class="fa fa-envelope"></label>
-          <input
-            type="email"
-            placeholder="Email Address"
-            formControlName="email"
-          />
-          <span
-            class="text-danger"
-            *ngIf="
-              loginForm.controls.email.errors &&
-              loginForm.controls.email.touched
-            "
-            ><br />Invalid Email Address</span
-          >
+          <input type="email" placeholder="Email Address" #email />
         </div>
 
         <div class="form-group">
           <label for="password" class="fa fa-lock"></label>
-          <input
-            type="password"
-            placeholder="Password"
-            formControlName="password"
-          />
-          <span
-            class="text-danger"
-            *ngIf="
-              loginForm.controls.password.errors &&
-              loginForm.controls.password.touched
-            "
-            ><br />Invalid Password</span
-          >
+          <input type="password" placeholder="Password" #password />
         </div>
-
+        <div class="form-group form-check text-center">
+          <select #type>
+            <option>are a car owner ?</option>
+            <option>owner</option>
+            <option>client</option>
+          </select>
+          <label class="form-check-label" for="exampleCheck1"></label>
+        </div>
         <div class="text-center">
           <button
             id="submitButton"
             type="submit"
             class="btn btn-primary"
-            [disabled]="!loginForm.valid"
+            (click)="
+              login({
+                email: email.value,
+                password: password.value,
+                type: type.value
+              })
+            "
           >
             Login
           </button>
@@ -51,7 +40,7 @@
             >
           </nav>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>

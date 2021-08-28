@@ -16,8 +16,8 @@ export class ClientService {
     })
   }
 
-  login(data: object) {
-    const url = "http://localhost:3000/login"
+  logClient(data: object) {
+    const url = "http://localhost:3000/login/client"
     this.http.post(url, data).subscribe((data) => {
       console.log('login', data);
     })

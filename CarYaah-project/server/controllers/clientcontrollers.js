@@ -11,6 +11,7 @@ exports.createClient = async function (req, res) {
       name: req.body.name,
       email: req.body.email,
       adress: req.body.adress,
+      salt: salt,
     });
     res.status(201).json(Client);
     res.send(Client);
@@ -28,11 +29,15 @@ exports.loginClient = async function (req, res) {
     });
     !client && res.status(400).json("wrong info");
 
-    const validated = await compare(req.body.password, client.password);
+    const validated = await bcrypt.compare(
+      req.body.password,
+      client.password,
+      client.salt
+    );
     !validated && res.status(400).json("wrong info");
 
-    // const { password, ...others } = client._doc;
-    // console.log("other", othersparameters);
+    const { password, ...others } = client._doc;
+    console.log("other", othersparameters);
     res.status(200).json(others.parameters);
   } catch (err) {
     res.status(500).json(err);

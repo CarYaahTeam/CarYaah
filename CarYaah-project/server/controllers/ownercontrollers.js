@@ -12,6 +12,7 @@ exports.createOwner = async function (req, res) {
       name: req.body.name,
       email: req.body.email,
       adress: req.body.adress,
+      salt: salt,
     });
     res.status(201).json(Owner);
     res.send(Owner);
@@ -29,12 +30,16 @@ exports.loginOwner = async function (req, res) {
     });
     !owner && res.status(400).json("wrong info");
 
-    const validated = await compare(req.body.password, owner.password);
+    const validated = await bcrypt.compare(
+      req.body.password,
+      owner.password,
+      owner.salt
+    );
     !validated && res.status(400).json("wrong info");
 
     const { password, ...others } = owner._doc;
-    console.log("other", othersparameters);
-    res.status(200).json(others.parameters);
+    console.log("other", others);
+    res.status(200).json(others);
   } catch (err) {
     res.status(500).json(err);
   }
