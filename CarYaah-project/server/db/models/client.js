@@ -10,23 +10,23 @@ const Client = (sequelize) =>
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     adress: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   });
 
