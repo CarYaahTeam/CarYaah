@@ -16,4 +16,35 @@ export class AppComponent {
   apply(value: string) {
     this.flag = value == 'login' ? true : false;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }
