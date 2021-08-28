@@ -1,7 +1,9 @@
 const express = require("express");
+const db = require("./db/index.js");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
+
 const clientRouter = require("./routers/clientroutes");
 const ownerRouter = require("./routers/ownerroutes");
 const CarRouter = require("./routers/carroutes");

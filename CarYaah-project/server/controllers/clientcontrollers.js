@@ -53,6 +53,18 @@ exports.retrieve = function (req, res) {
   });
 };
 
+module.exports = { createOne, retrieve };
+
+// exports.retrieveOne = function (req, res) {
+//   client.findOne({ _id: req.params.id }, function (err, result) {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.send(result);
+//     }
+//   });
+// };
+
 // exports.updateOne = function (req, res) {
 //   client.findByIdAndUpdate(
 //     { _id: req.params.id },
