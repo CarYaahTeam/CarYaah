@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import '@angular/compiler'
-import { NavComponent } from './components/nav/nav.component';
+import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingAuth } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { RatingModule } from 'ng-starrating';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
-import { FilterComponent } from './filter/filter.component';
-import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms'
-import { RentButtonComponent } from './components/rent-button/rent-button.component';
-import { TestComponent } from './components/test/test.component';
+import { CarInfoComponent } from './car-info/car-info.component';
+// import { HomepageComponent } from './components/homepage/homepage.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RentButtonComponent } from './rent-button/rent-button.component';
+import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
 import { StarratingComponent } from './starrating/starrating.component'
 import { MatButtonModule } from '@angular/material/button';
@@ -20,12 +20,15 @@ import { ClientComponent } from './client/client.component';
 
 
 
+import { LikeCarComponent } from './like-car/like-car.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarReservationComponent,
-    FilterComponent,
+    NavComponent,
+    CarInfoComponent,
+    // HomepageComponent
     routingAuth,
     NavComponent,
     RentButtonComponent,
@@ -33,17 +36,19 @@ import { ClientComponent } from './client/client.component';
     CarReservationComponent,
     CarcardComponent,
     StarratingComponent,
-    ClientComponent
-
+    ClientComponent,
+    LikeCarComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
-    RouterModule.forRoot([
-      { path: "filter", component: FilterComponent }
-    ]),
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
