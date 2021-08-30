@@ -9,7 +9,7 @@ exports.createOwnerCar = async (req, res) => {
       start_date_av: req.body.startDate,
       end_date_av: req.body.endDate,
       price: req.body.price,
-      id_owner: 1, //TODO: replace with ID from token
+      // id_owner: 1, //TODO: replace with ID from token
     };
 
     const car = await db.Car.create(ownerCar);
@@ -19,7 +19,14 @@ exports.createOwnerCar = async (req, res) => {
   }
 };
 
-
+exports.getOwnerCars = async (req, res) => {
+  try {
+    const cars = await db.Car.findAll();
+    return res.status(201).json(cars);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
 //---------------REGISTER ONE OWNER--------------//
 exports.createOwner = async function (req, res) {
   try {

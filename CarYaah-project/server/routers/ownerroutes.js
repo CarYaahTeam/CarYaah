@@ -1,6 +1,9 @@
 var ownerRouter = require("express").Router();
-var ownercontroller = require("../controllers/ownercontrollers");
+var ownercontrollers = require("../controllers/ownercontrollers");
 
-ownerRouter.route("/").post(ownercontroller.createOwner);
-ownerRouter.route("/").post(ownercontroller.loginOwner);
+ownerRouter.route("/signup").post(ownercontrollers.createOwner);
+ownerRouter.route("/signin").post(ownercontrollers.loginOwner);
+ownerRouter.post("/creat", ownercontrollers.createOwnerCar);
+ownerRouter.get("/get", ownercontrollers.getOwnerCars);
+
 module.exports = ownerRouter;
