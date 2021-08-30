@@ -1,75 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-.container{
-    display: inline-block;
-    margin-top: 200px;
-    justify-content: center;
-    left: 100px;
-    margin-left: 350px;
-}
-
-.card{
-    position: relative;
-    width: 300px;
-    height: 300px;
-    background-color: #f3f3f7;
-    margin: 50px;
-    border-radius: 15px;
-    font-family: Quicksand;
-    display: inline-table;
+.container {
+  display: inline-block;
+  margin-top: 200px;
+  justify-content: center;
+  left: 100px;
+  margin-left: 350px;
 }
 
-.img{
-    height: 150px;
-    width: 300px;
-    background-size: cover;
-    border-radius: 15px 15px 0 0; 
-
-
-
+.card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #f3f3f7;
+  margin: 50px;
+  border-radius: 15px;
+  font-family: Quicksand;
+  display: inline-table;
 }
 
-.price{
-    position: relative;
-    background-color: white;
-    width: fit-content;
-    font-size: large;
-    font-weight: bold;
-    box-shadow: whitesmoke;
-    top: -50px;
-    left:180px;
-    height: 50px;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-    border-radius: 15px 15px 15px 0; 
-
+.img {
+  height: 150px;
+  width: 300px;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
 }
 
-.brand{
-    text-transform: capitalize; 
-    font-size: large;
-    font-weight: bold;
-    position: relative;
-    left:5px;
-    top:-50px;
-    background-color: white;
-    width: fit-content;
-    border-radius: 15px;
-    padding: 10px;
-    font-size: large;
-    font-weight: bold;
-    box-shadow: whitesmoke;
+.price {
+  position: relative;
+  background-color: white;
+  width: fit-content;
+  font-size: large;
+  font-weight: bold;
+  box-shadow: whitesmoke;
+  top: -50px;
+  left: 180px;
+  height: 50px;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px 15px 15px 0;
+}
 
+.brand {
+  text-transform: capitalize;
+  font-size: large;
+  font-weight: bold;
+  position: relative;
+  left: 5px;
+  top: -50px;
+  background-color: white;
+  width: fit-content;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  box-shadow: whitesmoke;
 }
 
 app-starrating {
-    position: relative;
-    top:-40px;
-    left:5px;
+  position: relative;
+  top: -40px;
+  left: 5px;
 }

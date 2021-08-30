@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarcardService } from '../carcard.service';
+import { CarsServerService } from '../cars-server.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-carcard',
@@ -7,7 +9,11 @@ import { CarcardService } from '../carcard.service';
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
-  constructor(private carCardService: CarcardService) {}
+  constructor(
+    private carCardService: CarcardService,
+    private ts: CarsServerService,
+    private http: HttpClient
+  ) {}
 
   cars: any = [];
 

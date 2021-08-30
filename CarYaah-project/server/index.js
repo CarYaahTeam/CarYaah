@@ -15,12 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/register/client", clientRouter);
-app.use("/register/owner", ownerRouter);
 app.use("/login/client", clientRouter);
-app.use("/login/owner", ownerRouter);
 app.use("/api/reservation", clientRouter);
 app.use("/cars", CarRouter);
-
 app.use("/owner", ownerRouter);
 
 app.listen(PORT, () => {
