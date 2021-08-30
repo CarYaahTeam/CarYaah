@@ -18,19 +18,10 @@ app.use("/register/client", clientRouter);
 app.use("/register/owner", ownerRouter);
 app.use("/login/client", clientRouter);
 app.use("/login/owner", ownerRouter);
-
 app.use("/api/reservation", clientRouter);
-
 app.use("/cars", CarRouter);
 
-// app.get("/", (req, res) => {
-//   res.send({ msg: "done" });
-// });
-
-// app.post("/owner", (req, res) => {
-//   console.log("done");
-//   res.send("success");
-// });
+app.use("/owner", ownerRouter);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

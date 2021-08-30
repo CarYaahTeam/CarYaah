@@ -74,13 +74,6 @@ const Car = (sequelize) =>
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    id_owner: {
-      type: DataTypes.INTEGER,
-      required: true,
-      allowNull: false,
-    },
   });
-
-
 
 module.exports = Car;

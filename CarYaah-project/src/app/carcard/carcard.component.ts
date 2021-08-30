@@ -1,33 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {CarcardService} from '../carcard.service'
-
+import { CarcardService } from '../carcard.service';
 
 @Component({
   selector: 'app-carcard',
   templateUrl: './carcard.component.html',
-  styleUrls: ['./carcard.component.css']
+  styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
-  
-  
+  constructor(private carCardService: CarcardService) {}
 
-  constructor(private carCardService : CarcardService) { }
-
-  cars : any=[]
+  cars: any = [];
 
   ngOnInit(): void {
-    this.getDataFromAPI()
+    this.getDataFromAPI();
   }
 
-  getDataFromAPI(){
-    this.carCardService.getCars().subscribe((resp)=>{
-      this.cars= resp;
+  getDataFromAPI() {
+    this.carCardService.getCars().subscribe((resp) => {
+      this.cars = resp;
       console.log(resp);
-      
-    })
+    });
   }
-  // onRate($event:{oldValue:number, newValue:number, starRating:CarcardComponent}) {
-  //   alert(`Old Value:${$event.oldValue}, 
-  //     New Value: ${$event.newValue},`);
-  // }
 }
