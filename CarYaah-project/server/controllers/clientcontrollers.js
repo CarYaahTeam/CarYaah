@@ -1,5 +1,8 @@
+require("dotenv");
 var db = require("../db/index");
 const bcrypt = require("bcryptjs");
+// import { generateToken, isAdmin, isAuth } from "../utils.js";
+const utils = require("../middleware/index");
 //---------------REGISTER ONE CLIENT--------------//
 exports.createClient = async function (req, res) {
   try {
@@ -11,10 +14,11 @@ exports.createClient = async function (req, res) {
       name: req.body.name,
       email: req.body.email,
       adress: req.body.adress,
+      isOwner: req.body.isOwner,
+      isClient: req.body.isClient,
       salt: salt,
     });
-    res.status(201).json(Client);
-    res.send(Client);
+    res.send({ token: utils.generateToken(client) });
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
@@ -25,30 +29,77 @@ exports.createClient = async function (req, res) {
 exports.loginClient = async function (req, res) {
   try {
     const client = await db.Client.findAll({
-      where: { password: req.body.password },
+      where: { email: req.body.email },
     });
-    !client && res.status(400).json("wrong info");
-
-    const validated = await bcrypt.compare(
-      req.body.password,
-      client.password,
-      client.salt
-    );
-    !validated && res.status(400).json("wrong info");
-
-    const { password, ...others } = client._doc;
-    console.log("other", othersparameters);
-    res.status(200).json(others.parameters);
+    if (client) {
+      if (bcrypt.compareSync(req.body.password, client.password, client.salt)) {
+        res.send({
+          username: req.body.username,
+          password: hachedPass,
+          name: req.body.name,
+          email: req.body.email,
+          adress: req.body.adress,
+          isOwner: req.body.isOwner,
+          isClient: req.body.isClient,
+          token: generateToken(client),
+        });
+      }
+    }
+    res.status(401).json({ message: "Invalid email or password" });
   } catch (err) {
     res.status(500).json(err);
   }
 };
-exports.retrieve = function (req, res) {
-  client.findAll({}, function (err, result) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.send(result);
-    }
-  });
-};
+// exports.retrieve = function (req, res) {
+//   client.findAll({}, function (err, result) {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.send(result);
+//     }
+//   });
+// };
+
+// exports.retrieveOne = function (req, res) {
+//   client.findOne({ _id: req.params.id }, function (err, result) {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.send(result);
+//     }
+//   });
+// };
+
+// exports.updateOne = function (req, res) {
+//   client.findByIdAndUpdate(
+//     { _id: req.params.id },
+//     req.body.id,
+//     function (err, result) {
+//       if (err) {
+//         res.send(err);
+//       } else {
+//         res.send(result);
+//       }
+//     }
+//   );
+// };
+
+// exports.delete = function (req, res) {
+//   client.delete({}, function (err, result) {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.send(result);
+//     }
+//   });
+// };
+
+// exports.deleteOne = function (req, res) {
+//   client.findByIdAndDelete({ _id: req.params.id }, function (err, result) {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.send(result);
+//     }
+//   });
+// };

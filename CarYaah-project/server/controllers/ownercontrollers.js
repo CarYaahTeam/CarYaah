@@ -1,6 +1,5 @@
 const db = require("../db");
 const bcrypt = require("bcryptjs");
-
 exports.createOwnerCar = async (req, res) => {
   try {
     const ownerCar = {
