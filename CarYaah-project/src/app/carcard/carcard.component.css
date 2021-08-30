@@ -54,14 +54,7 @@
     text-align: center;
     padding: 10px;
     border-radius: 15px; 
-
-.img {
-  height: 150px;
-  width: 300px;
-  background-size: cover;
-  border-radius: 15px 15px 0 0;
 }
-
 .brand{
     text-transform: capitalize; 
     font-size: large;
