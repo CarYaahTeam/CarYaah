@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
 
   successMessage: string = "";
   loginForm!: FormGroup;
-  isLoggedin!: boolean;
 
   constructor(
     private fb: FormBuilder,
