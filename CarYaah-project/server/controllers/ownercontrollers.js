@@ -1,6 +1,6 @@
 const db = require("../db");
-
-const createOwnerCar = async (req, res) => {
+const bcrypt = require("bcryptjs");
+exports.createOwnerCar = async (req, res) => {
   try {
     const ownerCar = {
       brand: req.body.brand,
@@ -17,10 +17,6 @@ const createOwnerCar = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-
-module.exports = { createOwnerCar };
-var db = require("../db/index");
-const bcrypt = require("bcryptjs");
 
 //---------------REGISTER ONE OWNER--------------//
 exports.createOwner = async function (req, res) {

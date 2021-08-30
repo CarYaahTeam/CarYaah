@@ -1,9 +1,8 @@
 var clientRouter = require("express").Router();
-var c = require("../controllers/clientcontrollers");
-clientRouter.route("/").post(c.createOne);
+var clientcontroller = require("../controllers/clientcontrollers");
 
-clientRouter.route("/").post(clientcontroller.createClient);
-clientRouter.route("/").post(clientcontroller.loginClient);
+clientRouter.route("/register").post(clientcontroller.createClient);
+clientRouter.route("/login").post(clientcontroller.loginClient);
 // clientRouter.route("/").get(clientcontroller.addReservation);
 // clientRouter.route("/deleteclient").delete(clientController.delete);
 // clientRouter.route("/").get(clientController.retrieveOne);
