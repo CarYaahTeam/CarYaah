@@ -1,12 +1,12 @@
-const {DataTypes}= require('sequelize');
+const { DataTypes } = require("sequelize");
 
-
-const Conflict =(sequelize)=> sequelize.define('conflict', {
+const Conflict = (sequelize) =>
+  sequelize.define("conflict", {
     // attributess
     id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
     },
 
     conflict_report: {
@@ -19,4 +19,4 @@ const Conflict =(sequelize)=> sequelize.define('conflict', {
       }
   });
 
-  module.exports=Conflict
+module.exports = Conflict;

@@ -117,3 +117,43 @@ li {
   height: 180px;
   border-radius: 140px;
 }
+/* **************************************************** */
+.gallery {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-rows: max-content;
+  grid-gap: 1rem;
+  justify-items: center;
+}
+/*Parameters for the Grid of images 
+-display grid: will show the content in one grid 
+-template-columns: sets the min and mix size of the columns for the grid depending on the size of the page 
+-auto-rows: sets the heught of each row. You could set mins and max for this, but I felt like it looked better with a singular value for right now. Plus there is still a decent level of responsive transition moving from desktop to phone 
+-grid gap: just used for spacing so each div isnt extremely close to the other 
+*/
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+/*Used to ensure that the images maintain their full height and width*/
+
+.art {
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 3px 2px 3px 2px;
+}
+
+.bio {
+  color: white;
+  position: absolute;
+}
+
+.art:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  border: 5px solid white;
+}

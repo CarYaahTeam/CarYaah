@@ -13,8 +13,6 @@ import { NavComponent } from './nav/nav.component';
 import { CarInfoComponent } from './car-info/car-info.component';
 // import { HomepageComponent } from './components/homepage/homepage.component';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RentButtonComponent } from './rent-button/rent-button.component';
 import { TestComponent } from './test/test.component';
