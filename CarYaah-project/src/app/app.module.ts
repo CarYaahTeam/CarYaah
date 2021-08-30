@@ -8,23 +8,21 @@ import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import { MatCardModule } from '@angular/material/card';
-
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
-
-import { NavComponent } from './components/nav/nav.component';
-import { CarInfoComponent } from './components/car-info/car-info.component';
+import { NavComponent } from './nav/nav.component';
+import { CarInfoComponent } from './car-info/car-info.component';
 // import { HomepageComponent } from './components/homepage/homepage.component';
-import { FilterComponent } from './filter/filter.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RentButtonComponent } from './components/rent-button/rent-button.component';
-import { TestComponent } from './components/test/test.component';
+import { RentButtonComponent } from './rent-button/rent-button.component';
+import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
 import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
+import { LikeCarComponent } from './like-car/like-car.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +31,6 @@ import { MatButtonModule } from '@angular/material/button';
     NavComponent,
     CarInfoComponent,
     // HomepageComponent
-
-    FilterComponent,
     routingAuth,
     RentButtonComponent,
     TestComponent,
@@ -43,13 +39,13 @@ import { MatButtonModule } from '@angular/material/button';
     FeedbackClientComponent,
 
     StarratingComponent,
+      LikeCarComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
-    RouterModule.forRoot([{ path: 'filter', component: FilterComponent }]),
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -60,7 +56,6 @@ import { MatButtonModule } from '@angular/material/button';
       apiKey: 'AIzaSyDOQjKI6GLozK-tgmd7m98Ev-ERhXq0VDI',
       libraries: ['places'],
     }),
-    RouterModule.forRoot([{ path: 'filter', component: FilterComponent }]),
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
