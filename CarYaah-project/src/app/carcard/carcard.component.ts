@@ -9,11 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
-  constructor(
-    private carCardService: CarcardService,
-    private ts: CarsServerService,
-    private http: HttpClient
-  ) {}
+  constructor(private carCardService: CarcardService) {}
 
   cars: any = [];
 
@@ -24,7 +20,7 @@ export class CarcardComponent implements OnInit {
   getDataFromAPI() {
     this.carCardService.getCars().subscribe((resp) => {
       this.cars = resp;
-      console.log(resp);
+      console.log(this.cars);
     });
   }
 }
