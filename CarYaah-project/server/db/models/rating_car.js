@@ -9,9 +9,9 @@ const Rating_car = (sequelize) =>
       primaryKey: true,
     },
     rating: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-      }
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
   });
 
 module.exports = Rating_car;

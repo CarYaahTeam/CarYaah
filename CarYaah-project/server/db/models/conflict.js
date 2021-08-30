@@ -10,13 +10,13 @@ const Conflict = (sequelize) =>
     },
 
     conflict_report: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      conflict_status: {
-        type: DataTypes.STRING,
-        allowNull: false
-      }
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    conflict_status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   });
 
 module.exports = Conflict;
