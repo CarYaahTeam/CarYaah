@@ -11,16 +11,6 @@ const Rating_car =(sequelize)=> sequelize.define('rating_car', {
     rating: {
         type: DataTypes.DECIMAL,
         allowNull: false
-      },
-    id_car: {
-        type: DataTypes.INTEGER,
-        required : true,
-        allowNull: false
-      },
-      id_client: {
-        type: DataTypes.INTEGER,
-        required : true,
-        allowNull: false
       }
   });
 
