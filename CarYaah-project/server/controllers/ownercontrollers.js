@@ -20,7 +20,6 @@ exports.createOwnerCar = async (req, res) => {
 };
 
 
-
 //---------------REGISTER ONE OWNER--------------//
 exports.createOwner = async function (req, res) {
   try {

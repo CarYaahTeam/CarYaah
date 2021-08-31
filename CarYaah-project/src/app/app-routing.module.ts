@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TestComponent } from '../app/components/test/test.component';
+import { TestComponent } from './test/test.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
-import { CarInfoComponent } from './components/car-info/car-info.component';
-
-import { RentButtonComponent } from './components/rent-button/rent-button.component';
+import { CarInfoComponent } from './car-info/car-info.component';
+import {UserProfileComponent} from '../app/user-profile/user-profile.component'
+import { RentButtonComponent } from './rent-button/rent-button.component';
 import { FilterComponent } from './filter/filter.component';
 import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 
@@ -15,12 +15,12 @@ import { CarcardComponent } from './carcard/carcard.component';
 import { StarratingComponent } from './starrating/starrating.component';
 
 const routes: Routes = [
-  { path: '', component: CarReservationComponent },
+  { path: 'home', component: CarReservationComponent },
 
   { path: 'auth', component: AuthComponent },
   { path: 'filter', component: FilterComponent },
   { path: 'owner', component: TestComponent },
-  { path: '', component: RentButtonComponent },
+  // { path: 'owner', component: RentButtonComponent },
   { path: 'feedback', component: FeedbackClientComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'cars', component: CarInfoComponent },
+  { path: 'user', component: UserProfileComponent},
 ];
 
 @NgModule({

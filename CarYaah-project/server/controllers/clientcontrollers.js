@@ -53,7 +53,13 @@ exports.retrieve = function (req, res) {
   });
 };
 
-// module.exports = { createOne, retrieve };
+//---------------------user profil---------------------------------//
+
+exports.retrievAllUsers =function(req, res) {
+  db.Client.findAll().then( (result) => res.json(result)).catch(err=>{
+      console.log(err)
+  })
+}
 
 // exports.retrieveOne = function (req, res) {
 //   client.findOne({ _id: req.params.id }, function (err, result) {
