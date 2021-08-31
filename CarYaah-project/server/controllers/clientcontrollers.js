@@ -8,14 +8,12 @@ exports.createClient = async function (req, res) {
   try {
     const salt = await bcrypt.genSalt(10);
     const hachedPass = await bcrypt.hash(req.body.password, salt);
-
     const client = await db.Client.create({
       username: req.body.username,
       password: hachedPass,
       name: req.body.name,
       email: req.body.email,
       adress: req.body.adress,
-
       salt: salt,
     });
     res.send(client);
@@ -37,7 +35,7 @@ exports.loginClient = async function (req, res) {
     } else if (!validPss) {
       res.status(401).json({ message: "Invalid password" });
     }
-    // createand assign a token
+    // create and assign a token
     const token = jwt.sign({ id: client.id }, process.env.ACCESS_TOKEN_SECRET);
     return res.status(200).json({ data: client, auth_token: token });
   } catch (err) {

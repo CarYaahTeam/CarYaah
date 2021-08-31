@@ -10,11 +10,11 @@ const Owner = (sequelize) =>
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -22,7 +22,7 @@ const Owner = (sequelize) =>
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     adress: {
       type: DataTypes.STRING,

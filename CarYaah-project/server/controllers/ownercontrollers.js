@@ -39,8 +39,7 @@ exports.createOwner = async function (req, res) {
       adress: req.body.adress,
       salt: salt,
     });
-    res.status(201).json(Owner);
-    res.send(Owner);
+    res.send(owner);
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
@@ -50,12 +49,17 @@ exports.createOwner = async function (req, res) {
 
 exports.loginOwner = async function (req, res) {
   try {
-    const owner = await db.Onwer.findAll({
-      where: { password: req.body.password },
+    const owner = await db.Onwer.findOne({
+      where: { email: req.body.email },
     });
-   if(owner){
-    return res.status(200).json(owner);
-   }
+    const validPss = await bcrypt.compare(req.body.password, owner.password);
+    if (!owner) {
+      res.status(401).json({ message: "Invalid email" });
+    } else if (!validPss) {
+      res.status(401).json({ message: "Invalid password" });
+    }
+    const token = jwt.sign({ id: owner.id }, process.env.ACCESS_TOKEN_SECRET);
+    return res.status(200).json({ data: owner, auth_token: token });
   } catch (err) {
     res.status(500).json(err);
   }
