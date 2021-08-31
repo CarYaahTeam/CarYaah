@@ -4,7 +4,7 @@ const db = require("./db/index.js");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const clientRouter = require("./routers/clientroutes");
-const ownerRouter = require("./routers/ownerrouters");
+const ownerRouter = require("./routers/ownerroutes");
 const CarRouter = require("./routers/carroutes");
 
 const PORT = 3000;

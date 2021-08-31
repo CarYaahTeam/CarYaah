@@ -2,7 +2,7 @@
   <div class="filter-container">
     <h3 class="title">Filter By Price</h3>
     <div class="slidecontainer">
-      <input class="inp" type="range" min="1" max="100" value="50" />
+      <input class="inp" type="range" min='0' max='100' step='10' autocomplete="off" role="slider" value="50" (input)='valueChanged($event)'/>
     </div>
     <div class="check">
       <h3 class="title1">Type</h3>
@@ -35,7 +35,7 @@
   </div>
   <div class="card-container">
     <div *ngFor="let car of cars" class="card">
-      <div class="img" style="background-image: url({{ car?.image }});"></div>
+      <div class="img" style="background-image: url({{car?.image}});"></div>
       <app-like-car></app-like-car>
 
       <div class="price">
