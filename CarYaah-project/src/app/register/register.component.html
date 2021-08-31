@@ -3,27 +3,27 @@
     <div class="col-12">
       <div>
         <div class="form-group">
-          <label for="username" class="fa fa-user"></label>
-          <input type="text" #username placeholder="Enter Your username" />
+          <label for="email" class="fa fa-envelope"></label>
+          <input type="email" #email placeholder="Email Adress" />
         </div>
-
         <div class="form-group">
           <label for="password" class="fa fa-lock"></label>
           <input type="password" #password placeholder="Password" />
           <span class="text-danger"> </span>
         </div>
+        <!-- <div class="form-group">
+          <label for="username" class="fa fa-user"></label>
+          <input type="text" #username placeholder="Enter Your username" />
+        </div>
+
         <div class="form-group">
           <label for="name" class="fa fa-user"></label>
           <input type="text" #name placeholder="Enter Your Full Name" />
         </div>
         <div class="form-group">
-          <label for="email" class="fa fa-envelope"></label>
-          <input type="email" #email placeholder="Email Adress" />
-        </div>
-        <div class="form-group">
           <label for="adress" class="fa fa-location on"></label>
           <input type="tel" #adress placeholder="Your Address" />
-        </div>
+        </div> -->
         <div class="form-group form-check text-center">
           <select #type>
             <option>are a car owner ?</option>
@@ -37,11 +37,9 @@
             id="submitButton"
             (click)="
               register({
-                username: username.value,
-                password: password.value,
-                name: name.value,
                 email: email.value,
-                adress: adress.value,
+                password: password.value,
+
                 type: type.value
               })
             "

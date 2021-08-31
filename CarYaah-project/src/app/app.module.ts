@@ -17,7 +17,7 @@ import { CarcardComponent } from './carcard/carcard.component';
 import { StarratingComponent } from './starrating/starrating.component'
 import { MatButtonModule } from '@angular/material/button';
 import { ClientComponent } from './client/client.component';
-
+import { CookieService } from 'ngx-cookie-service'
 
 
 import { LikeCarComponent } from './like-car/like-car.component';
@@ -54,7 +54,7 @@ import { LikeCarComponent } from './like-car/like-car.component';
     HttpClientModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

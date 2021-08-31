@@ -53,18 +53,9 @@ exports.loginOwner = async function (req, res) {
     const owner = await db.Onwer.findAll({
       where: { password: req.body.password },
     });
-    !owner && res.status(400).json("wrong info");
-
-    const validated = await bcrypt.compare(
-      req.body.password,
-      owner.password,
-      owner.salt
-    );
-    !validated && res.status(400).json("wrong info");
-
-    const { password, ...others } = owner._doc;
-    console.log("other", others);
-    res.status(200).json(others);
+   if(owner){
+    return res.status(200).json(owner);
+   }
   } catch (err) {
     res.status(500).json(err);
   }

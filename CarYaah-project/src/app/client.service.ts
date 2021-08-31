@@ -1,14 +1,26 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { Observable } from "rxjs";
+
+interface IClient {
+  name: string;
+  password: string;
+  email: string;
+  adress: string;
+  username: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private cookies: CookieService
+  ) { }
 
-  regClient(data: object) {
+  regClient(data: object = {}) {
     console.log('hi', data)
     const url = "http://localhost:3000/client/signup"
     this.http.post(url, data).subscribe((data) => {
@@ -16,10 +28,8 @@ export class ClientService {
     })
   }
 
-  logClient(data: object) {
+  logClient(email: string, password: string): Observable<{ auth_token: string, data: IClient }> {
     const url = "http://localhost:3000/client/signin"
-    this.http.post(url, data).subscribe((data) => {
-      console.log('login', data);
-    })
+    return this.http.post<{ auth_token: string, data: IClient }>(url, { email, password })
   }
 }
