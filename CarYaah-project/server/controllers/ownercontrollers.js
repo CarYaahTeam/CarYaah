@@ -1,5 +1,6 @@
 const db = require("../db");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 exports.createOwnerCar = async (req, res) => {
   try {
     const ownerCar = {
@@ -50,7 +51,7 @@ exports.createOwner = async function (req, res) {
 exports.loginOwner = async function (req, res) {
   try {
     const { email, password } = req.body;
-    const owner = await db.Onwer.findOne({
+    const owner = await db.Owner.findOne({
       where: { email },
     });
     if (!owner) throw new Error("Invalid email");
@@ -66,6 +67,7 @@ exports.loginOwner = async function (req, res) {
 
     return res.status(200).json({ data: owner, auth_token: token });
   } catch (err) {
+    console.log("dada", err);
     res.status(403).json(err.message);
   }
 };

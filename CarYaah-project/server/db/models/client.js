@@ -10,6 +10,7 @@ const Client = (sequelize) =>
     },
     username: {
       type: DataTypes.STRING,
+      defaultValue: "",
       allowNull: false,
     },
     password: {
@@ -18,6 +19,7 @@ const Client = (sequelize) =>
     },
     name: {
       type: DataTypes.STRING,
+      defaultValue: "",
       allowNull: false,
     },
     email: {
@@ -26,6 +28,7 @@ const Client = (sequelize) =>
     },
     adress: {
       type: DataTypes.STRING,
+      defaultValue: "",
       allowNull: false,
     },
   });

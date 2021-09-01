@@ -10,23 +10,26 @@ const Owner = (sequelize) =>
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: "",
+      allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: "",
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     adress: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: "",
+      allowNull: false,
     },
   });
 
