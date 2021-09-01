@@ -12,4 +12,7 @@ export class UserService {
 console.log();
  
   }
+  getFav(){
+    return this.http.get('http://localhost:3000/client/id')
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarcardService } from '../carcard.service';
 import { HttpClient } from '@angular/common/http';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carcard',
@@ -11,14 +11,15 @@ import { HttpClient } from '@angular/common/http';
 export class CarcardComponent implements OnInit {
   liked : boolean=true;
 
-  constructor(private carCardService: CarcardService) {}
+  constructor(private carCardService: CarcardService , private route : Router  ) {}
 
   cars: any = [];
+ 
 
   ngOnInit(): void {
     this.getDataFromAPI();
+  
   }
-
   getDataFromAPI(){
     this.carCardService.getCars().subscribe((resp)=>{
       this.cars= resp;
@@ -38,4 +39,13 @@ export class CarcardComponent implements OnInit {
   onClick(){
     this.liked=!this.liked
   }
+
+  createFav(carId : number){
+      this.carCardService.create(carId).subscribe((data:any)=>{
+        console.log(data['fav'])
+      })
+    }
+
 }
+
+

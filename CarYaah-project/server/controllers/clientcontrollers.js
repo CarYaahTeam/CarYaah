@@ -68,3 +68,13 @@ exports.retrievAllUsers =function(req, res) {
   })
 }
 
+
+exports.getFavCars = async (req,res)=>{
+  try {
+      const fav = await db.Favourite.findAll()
+      return res.status(201).json(fav)
+  } catch(error){
+    console.log(error) 
+  }
+}
+
