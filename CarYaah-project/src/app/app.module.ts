@@ -17,7 +17,7 @@ import { CarcardComponent } from './carcard/carcard.component';
 import { StarratingComponent } from './starrating/starrating.component'
 import { MatButtonModule } from '@angular/material/button';
 import { ClientComponent } from './client/client.component';
-
+import { FormsModule } from '@angular/forms'; 
 
 
 import { LikeCarComponent } from './like-car/like-car.component';
@@ -53,6 +53,7 @@ import { LikeCarComponent } from './like-car/like-car.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

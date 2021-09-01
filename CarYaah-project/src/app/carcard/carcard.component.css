@@ -23,7 +23,7 @@
     margin: 50px;
     border-radius: 15px;
     font-family: Quicksand;
-    display: inline-table;
+    display:inline-flex;
     box-shadow: -0.7em 0 .4em grey;
 }
 
