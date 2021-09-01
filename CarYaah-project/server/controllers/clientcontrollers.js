@@ -1,7 +1,6 @@
 require("dotenv");
 var db = require("../db/index");
 const bcrypt = require("bcryptjs");
-const utils = require("../middleware/index");
 const jwt = require("jsonwebtoken");
 //---------------REGISTER ONE CLIENT--------------//
 exports.createClient = async function (req, res) {
@@ -10,13 +9,13 @@ exports.createClient = async function (req, res) {
     const hachedPass = await bcrypt.hash(req.body.password, salt);
     const client = await db.Client.create({
       username: req.body.username,
+      email: req.body.email,
       password: hachedPass,
       name: req.body.name,
-      email: req.body.email,
       adress: req.body.adress,
       salt: salt,
     });
-    res.send(client);
+    res.status(201).send(client);
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
@@ -26,19 +25,23 @@ exports.createClient = async function (req, res) {
 
 exports.loginClient = async function (req, res) {
   try {
+    const { email, password } = req.body;
     const client = await db.Client.findOne({
-      where: { email: req.body.email },
+      where: { email },
     });
-    const validPss = await bcrypt.compare(req.body.password, client.password);
-    if (!client) {
-      res.status(401).json({ message: "Invalid email " });
-    } else if (!validPss) {
-      res.status(401).json({ message: "Invalid password" });
-    }
+    if (!client) throw new Error("Invalid email");
+
+    const validPss = await bcrypt.compare(password, client.password);
+    if (!validPss) throw new Error("Invalid password");
+
     // create and assign a token
-    const token = jwt.sign({ id: client.id }, process.env.ACCESS_TOKEN_SECRET);
+    const token = jwt.sign({ id: client.id }, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: 10,
+    });
+    delete client.password;
+
     return res.status(200).json({ data: client, auth_token: token });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(403).json(err.message);
   }
 };

@@ -18,7 +18,7 @@ const Client = (sequelize) =>
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -26,7 +26,7 @@ const Client = (sequelize) =>
     },
     adress: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
   });
 

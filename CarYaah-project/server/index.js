@@ -17,7 +17,6 @@ app.use("/owner", ownerRouter);
 
 app.use("/api/reservation", clientRouter);
 app.use("/cars", CarRouter);
-app.use("/owner", ownerRouter);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

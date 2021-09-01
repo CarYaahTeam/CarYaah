@@ -33,13 +33,13 @@ exports.createOwner = async function (req, res) {
     const hachedPass = await bcrypt.hash(req.body.password, salt);
     const owner = await db.Owner.create({
       username: req.body.username,
+      email: req.body.email,
       password: hachedPass,
       name: req.body.name,
-      email: req.body.email,
       adress: req.body.adress,
       salt: salt,
     });
-    res.send(owner);
+    res.status(201).send(owner);
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
@@ -49,18 +49,23 @@ exports.createOwner = async function (req, res) {
 
 exports.loginOwner = async function (req, res) {
   try {
+    const { email, password } = req.body;
     const owner = await db.Onwer.findOne({
-      where: { email: req.body.email },
+      where: { email },
     });
-    const validPss = await bcrypt.compare(req.body.password, owner.password);
-    if (!owner) {
-      res.status(401).json({ message: "Invalid email" });
-    } else if (!validPss) {
-      res.status(401).json({ message: "Invalid password" });
-    }
-    const token = jwt.sign({ id: owner.id }, process.env.ACCESS_TOKEN_SECRET);
+    if (!owner) throw new Error("Invalid email");
+
+    const validPss = await bcrypt.compare(password, owner.password);
+    if (!validPss) throw new Error("Invalid password");
+
+    // create and assign a token
+    const token = jwt.sign({ id: owner.id }, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: 10,
+    });
+    delete owner.password;
+
     return res.status(200).json({ data: owner, auth_token: token });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(403).json(err.message);
   }
 };

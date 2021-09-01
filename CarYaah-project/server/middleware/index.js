@@ -1,13 +1,34 @@
 const jwt = require("jsonwebtoken");
-exports.auth = (req, res, next) => {
-  const token = req.body.auth_token;
-  if (!token) {
-    return res.status(401).send("Access Denied");
-  }
+const { Client } = require("../db");
+const { Onwer } = require("../db");
+
+exports.authClient = async (req, res, next) => {
   try {
-    const verified = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    req.data = verified;
+    const token = req.headers.Authorization;
+    if (!token) throw new Error("Access Denied");
+
+    const { id } = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    client = await Client.findOne({ where: { id } });
+
+    if (!client) throw new Error("Access Denied");
+    req.client = client;
+    next();
   } catch (err) {
-    return res.status(400).send("Invalid Token");
+    return res.status(403).send(err.message);
+  }
+};
+exports.authOwner = async (req, res, next) => {
+  try {
+    const token = req.headers.Authorization;
+    if (!token) throw new Error("Access Denied");
+
+    const { id } = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    owner = await Onwer.findOne({ where: { id } });
+
+    if (!owner) throw new Error("Access Denied");
+    req.owner = owner;
+    next();
+  } catch (err) {
+    return res.status(403).send(err.message);
   }
 };

@@ -21,6 +21,7 @@ import { CookieService } from 'ngx-cookie-service'
 
 
 import { LikeCarComponent } from './like-car/like-car.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { LikeCarComponent } from './like-car/like-car.component';
     StarratingComponent,
     ClientComponent,
     LikeCarComponent,
+    AdminComponent,
   ],
   imports: [
     HttpClientModule,
