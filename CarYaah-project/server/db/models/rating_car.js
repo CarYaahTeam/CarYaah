@@ -1,18 +1,17 @@
-const {DataTypes}= require('sequelize');
+const { DataTypes } = require("sequelize");
 
-
-const Rating_car =(sequelize)=> sequelize.define('rating_car', {
+const Rating_car = (sequelize) =>
+  sequelize.define("rating_car", {
     // attributess
     id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
     },
     rating: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
-      }
-
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
   });
 
-  module.exports=Rating_car
+module.exports = Rating_car;

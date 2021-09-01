@@ -18,7 +18,7 @@ const Owner = (sequelize) =>
     },
     name: {
       type: DataTypes.STRING,
-      allowNull:true,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,

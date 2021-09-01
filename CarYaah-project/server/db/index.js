@@ -27,7 +27,7 @@ async function initialize() {
   db.Owner = require("./models/owner")(sequelize);
   db.Rating_car = require("./models/rating_car")(sequelize);
   db.Rating_client = require("./models/rating_client")(sequelize);
-  db.Favourite = require("./models/favourite-car")(sequelize);
+  db.Favourite = require('./models/favourite-car')(sequelize);
 
   db.Owner.hasMany(db.Car);
   db.Car.belongsTo(db.Owner);

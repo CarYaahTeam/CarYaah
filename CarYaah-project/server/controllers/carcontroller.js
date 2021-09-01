@@ -1,7 +1,11 @@
 var db = require("../db/index");
 
-exports.retrievAllCars =function(req, res) {
-    db.Car.findAll().then( (result) => res.json(result)).catch(err=>{
-        console.log(err)
-    })
+exports.retrievAllCars = async (req, res) =>{
+
+    try {
+        const cars = await db.Car.findAll();
+        return res.status(201).json(cars);
+      } catch (error) {
+         console.log(error)
+      }
   }
