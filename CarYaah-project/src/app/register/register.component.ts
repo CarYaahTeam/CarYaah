@@ -38,7 +38,8 @@ export class RegisterComponent implements OnInit {
     console.log(data)
     if (data.type === "owner") {
       this.ownerService.regOwner(data)
-      this.To("/owner/profile")
+      //this.To("/owner/profile")
+      //we don't have for now 
 
     } else if (data.type === "client") {
       this.clientService.regClient(data)
