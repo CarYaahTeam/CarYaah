@@ -1,6 +1,6 @@
 const db = require("../db");
 const bcrypt = require("bcryptjs");
-
+//_________________________________________________________________________________________________________
 exports.createOwnerCar = async (req, res) => {
   try {
     const ownerCar = {
@@ -18,7 +18,7 @@ exports.createOwnerCar = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-
+//_________________________________________________________________________________________________________
 exports.getOwnerCars = async (req, res) => {
   try {
     const cars = await db.Car.findAll();
@@ -27,6 +27,32 @@ exports.getOwnerCars = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+//_________________________________________________________________________________________________________
+exports.deleteOwnerCar = async (req, res) => {
+  try {
+    const cars = await db.Car.destroy({ where: { id: req.params.id } });
+    return res.status(201).json(cars);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+//_________________________________________________________________________________________________________
+exports.updateOwnerCar = async (req, res) => {
+  try {
+    const cars = await db.Car.findOne({ where: { id: req.params.id } });
+    cars.brand = req.body.brand;
+    cars.type = req.body.type;
+    cars.start_date_av = req.body.startDate;
+    cars.end_date_av = req.body.endDate;
+    cars.price = req.body.price;
+    await cars.save();
+    return res.status(201).json(cars);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+//_________________________________________________________________________________________________________
+
 //---------------REGISTER ONE OWNER--------------//
 exports.createOwner = async function (req, res) {
   try {
@@ -47,6 +73,7 @@ exports.createOwner = async function (req, res) {
     res.status(500).send(err);
   }
 };
+
 //---------------------LOGIN ONE OWNER-----------------//
 
 exports.loginOwner = async function (req, res) {

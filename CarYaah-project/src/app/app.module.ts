@@ -23,6 +23,8 @@ import { FeedbackClientComponent } from './feedback-client/feedback-client.compo
 import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
 import { LikeCarComponent } from './like-car/like-car.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { LikeCarComponent } from './like-car/like-car.component';
 
     StarratingComponent,
     LikeCarComponent,
+    HomepageComponent,
+    OpinionCustomerComponent,
   ],
   imports: [
     HttpClientModule,
