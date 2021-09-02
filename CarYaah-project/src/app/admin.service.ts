@@ -10,15 +10,11 @@ export class AdminService {
 
   fetchclients() {
     const url = "http://localhost:3000/admin/clients"
-    this.http.get(url).subscribe((data) => {
-      console.log('clients', data);
-    })
+    return this.http.get(url)
   }
   fetchowners() {
     const url = "http://localhost:3000/admin/owners"
-    this.http.get(url).subscribe((data) => {
-      console.log('owners', data);
-    })
+    return this.http.get(url)
   }
 
 }

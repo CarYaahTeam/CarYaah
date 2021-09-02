@@ -33,12 +33,10 @@ export class LoginComponent implements OnInit {
       this.ownerService.logOwner(email, password).subscribe((data) => {
         this.cookies.set("token", data.auth_token)
       })
-      this.To("/owner/profile")
     } else if (type === "client") {
       this.clientService.logClient(email, password).subscribe((data) => {
         this.cookies.set("token", data.auth_token)
       })
-      this.To("/client/profile")
     } else {
       alert('you are not registered')
     }

@@ -6,8 +6,9 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
-  constructor(private adminService: AdminService,) { }
+  constructor(private adminService: AdminService) { }
+  clients: any
+  owners: any
 
   ngOnInit(): void {
     this.getclients()
@@ -16,13 +17,19 @@ export class AdminComponent implements OnInit {
 
 
   getclients() {
-    this.adminService.fetchclients()
-  }
-  getowners() {
-    const x = this.adminService.fetchowners()
-    console.log("ts", x);
+    this.adminService.fetchclients().subscribe((data) => {
+      this.clients = data
+      console.log('clients ts', this.clients);
+    })
 
   }
+  getowners() {
+    this.adminService.fetchowners().subscribe((data) => {
+      this.owners = data
+      console.log('owners ts', this.owners);
+    })
+  }
+
 
 }
 

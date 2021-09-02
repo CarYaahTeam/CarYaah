@@ -2,13 +2,19 @@
 <div class="container">
   <div class="navbar">nav elements</div>
   <div class="listofclients">
-    <ul>
-      <li>clients</li>
+    <h3>CLIENTS</h3>
+    <ul *ngFor="let client of clients">
+      <li>{{ client.username }}</li>
+      <p>{{ client.adress }}</p>
+      <button>BAN</button>
     </ul>
   </div>
   <div class="listofowners">
-    <ul>
-      <li>owners</li>
+    <h3>OWNERS</h3>
+    <ul *ngFor="let owner of owners">
+      <li>{{ owner.username }}</li>
+      <p>{{ owner.adress }}</p>
+      <button>BAN</button>
     </ul>
   </div>
 </div>

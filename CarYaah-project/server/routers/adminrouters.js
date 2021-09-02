@@ -3,5 +3,6 @@ var admincontroller = require("../controllers/admincontroller");
 
 adminRouter.route("/clients").get(admincontroller.fetchclients);
 adminRouter.route("/owners").get(admincontroller.fetchowners);
+adminRouter.route("/delete/client").delete(admincontroller.deleteClient);
 
 module.exports = adminRouter;

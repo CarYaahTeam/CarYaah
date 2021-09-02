@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import '@angular/compiler';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +16,7 @@ import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
 import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
-import { ClientComponent } from './client/client.component';
+import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { LikeCarComponent } from './like-car/like-car.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -40,7 +41,6 @@ import { AdminComponent } from './admin/admin.component';
     CarReservationComponent,
     CarcardComponent,
     StarratingComponent,
-    ClientComponent,
     LikeCarComponent,
     HomepageComponent,
     OpinionCustomerComponent,
@@ -48,15 +48,12 @@ import { AdminComponent } from './admin/admin.component';
   ],
   imports: [
     HttpClientModule,
-    BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    BrowserModule,
-    BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
-    BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
