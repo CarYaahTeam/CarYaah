@@ -3,6 +3,7 @@ import { CarcardService } from '../carcard.service';
 import { CarsServerService } from '../cars-server.service';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-carcard',
   templateUrl: './carcard.component.html',
@@ -17,10 +18,11 @@ export class CarcardComponent implements OnInit {
     this.getDataFromAPI();
   }
 
-  getDataFromAPI() {
-    this.carCardService.getCars().subscribe((resp) => {
-      this.cars = resp;
+  getDataFromAPI(){
+    this.carCardService.getCars().subscribe((resp)=>{
+      this.cars= resp;
       console.log(this.cars);
-    });
+      
+    })
   }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ClientService } from 'src/app/client.service';
 import { OwnerService } from 'src/app/owner.service';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -9,29 +11,40 @@ import { OwnerService } from 'src/app/owner.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  title = 'cookies-angular'
   successMessage: string = "";
   loginForm!: FormGroup;
+  d: any
+
   constructor(
-    private fb: FormBuilder,
     private clientService: ClientService,
-    private ownerService: OwnerService
+    private ownerService: OwnerService,
+    private route: Router,
+    private cookies: CookieService
   ) { }
-
   ngOnInit(): void {
-    // this.loginForm = this.fb.group({
-    //   email: ['', [Validators.required, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
-    //   password: ['', [Validators.required, Validators.pattern("[A-Za-z0-9@!_]{6,}")]]
-    // })
-  }
 
-  login(data: any) {
-    console.log(data);
-    if (data.type === "owner") {
-      this.ownerService.logOwner(data)
-    } else if (data.type === "client") {
-      this.clientService.logClient(data)
+  }
+  To(str: string) {
+    this.route.navigateByUrl(str)
+  }
+  login(email: string, password: string, type: string) {
+    if (type === "owner") {
+      this.ownerService.logOwner(email, password).subscribe((data) => {
+        this.cookies.set("token", data.auth_token)
+      })
+      this.To("/owner/profile")
+    } else if (type === "client") {
+      this.clientService.logClient(email, password).subscribe((data) => {
+        this.cookies.set("token", data.auth_token)
+      })
+      this.To("/client/profile")
+    } else {
+      alert('you are not registered')
     }
   }
+
+
+
 
 }

@@ -1,49 +1,48 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import '@angular/compiler';
+import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingAuth } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import { MatCardModule } from '@angular/material/card';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
-import { NavComponent } from './nav/nav.component';
 import { CarInfoComponent } from './car-info/car-info.component';
 // import { HomepageComponent } from './components/homepage/homepage.component';
-import { RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RentButtonComponent } from './rent-button/rent-button.component';
 import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
-import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
+import { ClientComponent } from './client/client.component';
+import { CookieService } from 'ngx-cookie-service';
+
 import { LikeCarComponent } from './like-car/like-car.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    CarReservationComponent,
     NavComponent,
     CarInfoComponent,
     // HomepageComponent
     routingAuth,
+    NavComponent,
     RentButtonComponent,
     TestComponent,
     CarReservationComponent,
     CarcardComponent,
-    FeedbackClientComponent,
-
     StarratingComponent,
+    ClientComponent,
     LikeCarComponent,
     HomepageComponent,
     OpinionCustomerComponent,
+    AdminComponent,
   ],
   imports: [
     HttpClientModule,
@@ -55,17 +54,12 @@ import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.co
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatGoogleMapsAutocompleteModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDOQjKI6GLozK-tgmd7m98Ev-ERhXq0VDI',
-      libraries: ['places'],
-    }),
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

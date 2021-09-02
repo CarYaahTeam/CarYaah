@@ -1,5 +1,7 @@
+require("dotenv");
 var db = require("../db/index");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 //---------------REGISTER ONE CLIENT--------------//
 exports.createClient = async function (req, res) {
   try {
@@ -7,14 +9,13 @@ exports.createClient = async function (req, res) {
     const hachedPass = await bcrypt.hash(req.body.password, salt);
     const client = await db.Client.create({
       username: req.body.username,
+      email: req.body.email,
       password: hachedPass,
       name: req.body.name,
-      email: req.body.email,
       adress: req.body.adress,
       salt: salt,
     });
-    res.status(201).json(Client);
-    res.send(Client);
+    res.status(201).send(client);
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
@@ -24,31 +25,23 @@ exports.createClient = async function (req, res) {
 
 exports.loginClient = async function (req, res) {
   try {
-    const client = await db.Client.findAll({
-      where: { password: req.body.password },
+    const { email, password } = req.body;
+    const client = await db.Client.findOne({
+      where: { email },
     });
-    !client && res.status(400).json("wrong info");
+    if (!client) throw new Error("Invalid email");
 
-    const validated = await bcrypt.compare(
-      req.body.password,
-      client.password,
-      client.salt
-    );
-    !validated && res.status(400).json("wrong info");
+    const validPss = await bcrypt.compare(password, client.password);
+    if (!validPss) throw new Error("Invalid password");
 
-    const { password, ...others } = client._doc;
-    console.log("other", othersparameters);
-    res.status(200).json(others.parameters);
+    // create and assign a token
+    const token = jwt.sign({ id: client.id }, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: 10,
+    });
+    delete client.password;
+
+    return res.status(200).json({ data: client, auth_token: token });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(403).json(err.message);
   }
-};
-exports.retrieve = function (req, res) {
-  client.findAll({}, function (err, result) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.send(result);
-    }
-  });
 };
