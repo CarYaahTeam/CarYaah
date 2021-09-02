@@ -25,6 +25,7 @@ import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.co
 
 
 import { AdminComponent } from './admin/admin.component';
+import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AdminComponent } from './admin/admin.component';
     HomepageComponent,
     OpinionCustomerComponent,
     AdminComponent,
+    OwnerProfileComponent,
   ],
   imports: [
     HttpClientModule,

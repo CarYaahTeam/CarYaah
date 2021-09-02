@@ -7,14 +7,15 @@ import { RentButtonComponent } from './rent-button/rent-button.component';
 import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { CarcardComponent } from './carcard/carcard.component'
-import { StarratingComponent } from './starrating/starrating.component'
+import { CarcardComponent } from './carcard/carcard.component';
+import { StarratingComponent } from './starrating/starrating.component';
 import { ClientComponent } from './client/client.component';
 import { AdminComponent } from './admin/admin.component';
+import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
-  { path: '', component: TestComponent },
+  { path: 'test', component: TestComponent },
   { path: 'client/profile', component: ClientComponent },
   { path: '', component: CarReservationComponent },
   { path: 'owner', component: TestComponent },
@@ -22,13 +23,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cars', component: CarcardComponent },
   { path: 'stars', component: StarratingComponent },
-  { path: 'cars', component: CarInfoComponent },
+  { path: 'carinfo', component: CarInfoComponent },
+  { path: 'ownerprofile', component: OwnerProfileComponent },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-export const routingAuth = [RegisterComponent, LoginComponent]
+export class AppRoutingModule {}
+export const routingAuth = [RegisterComponent, LoginComponent];

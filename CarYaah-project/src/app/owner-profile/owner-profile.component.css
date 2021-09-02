@@ -1,0 +1,11 @@
+.profile {
+  display: flex;
+}
+
+.sidebar {
+  flex: 2;
+  display: flex;
+}
+.main {
+  flex: 7;
+}
