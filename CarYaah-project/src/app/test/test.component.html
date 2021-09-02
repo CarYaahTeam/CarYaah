@@ -36,6 +36,7 @@
                             <div class="form-group">
                            
                             </div>
+                            <img src="" alt="" class="card">
                             <div>
                                 <input type="file" class="upImg" value="css" >
                             </div>
@@ -51,22 +52,22 @@
                                     <option> automatic  </option>
                                 </select>
                                 <br/><br/>
-                                <select class="form-control">
+                                <!-- <select class="form-control">
                                     <option class="hidden"  selected disabled #option>Please select options</option>
                                     <option >GPS</option>
-                                    <option>AC </option>
-                                </select>
+                                    <option>AC </option> -->
+                                    <input type="checkbox" name="GPS" value="GPS">
+                                    <label class="gps_Ac" > GPS </label> <br> <br> 
+                                    <input type="checkbox" name="AC" value="AC"> 
+                                    <label class="gps_Ac"  > AC </label><br>
+                                <!-- </select> -->
                             </div>
-                            <!-- <div>
-                                <input type="file" class="upImg" value="css" >
-
-                            </div> -->
 
                             <input type="submit" class="btnRegister"  value="Up-Date"/>
-                            <input type="submit" class="btnRegister"  value="Delete"/>
+                            <input type="submit" class="btnRegister"  value="Delete" />
                         </div>
                         <button
-    (click)="add(brand.value, type.value, startDate.value, endDate.value, price.value)"
+                        (click)="add(brand.value, type.value, startDate.value, endDate.value, price.value)"
                             class="btnRegister"> Publish 
                     </button>
                     
