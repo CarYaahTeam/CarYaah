@@ -16,5 +16,9 @@ export class AdminService {
     const url = "http://localhost:3000/admin/owners"
     return this.http.get(url)
   }
+  deleteclient(data: any) {
+    const url = "http://localhost:3000/admin/delete/client"
+    return this.http.post(url, data)
+  }
 
 }

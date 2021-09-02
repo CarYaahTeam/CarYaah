@@ -33,6 +33,7 @@ exports.deleteClient = async function (req, res) {
     await db.Client.destroy({
       where: { id },
     });
+    res.status(200).send("client deleted");
   } catch (err) {
     console.log(err);
     res.status(500).send(err);

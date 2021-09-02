@@ -29,6 +29,11 @@ export class AdminComponent implements OnInit {
       console.log('owners ts', this.owners);
     })
   }
+  deleteClient(data: any) {
+    this.adminService.deleteclient(data).subscribe((data) => {
+      console.log(data);
+    })
+  }
 
 
 }

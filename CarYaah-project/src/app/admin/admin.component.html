@@ -6,7 +6,7 @@
     <ul *ngFor="let client of clients">
       <li>{{ client.username }}</li>
       <p>{{ client.adress }}</p>
-      <button>BAN</button>
+      <button (click)="deleteClient(client.id)">BAN</button>
     </ul>
   </div>
   <div class="listofowners">
