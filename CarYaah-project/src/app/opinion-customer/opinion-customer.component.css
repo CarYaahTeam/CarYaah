@@ -1,0 +1,27 @@
+.next {
+  border-radius: 80%;
+  background-color: rgb(205, 219, 9);
+  color: white;
+  width: 100px;
+  height: 60px;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+.all {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYRljVUBul_4MibV1eTXOKZhKwdv4IQn5R2Q&usqp=CAU);
+  border: 5px solid yellow;
+  /* height: 800px;
+  width: 2020px; */
+  padding-top: 20px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+}
+.types {
+  width: 100%;
+}
+
+/* ************************************************************************************************************* */

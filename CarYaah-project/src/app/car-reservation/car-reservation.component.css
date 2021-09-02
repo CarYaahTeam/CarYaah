@@ -1,27 +1,65 @@
 .all {
-  background-image: url(https://cdn.motor1.com/images/mgl/0N8rm/s1/2014-441058-2015-chevrolet-corvette-z061.jpg);
-  height: 800px;
+  background-image: url(https://www.usebusinesstips.com/wp-content/uploads/2018/08/Vehicle-Rental-Business.jpg);
+  /* background-image: url(https://www.rental-car-rhodes.com/photos/car-hire-tholos-171432.jpg); */
+  /* background-image: url(https://cdn.motor1.com/images/mgl/0N8rm/s1/2014-441058-2015-chevrolet-corvette-z061.jpg); */
+  height: 1050px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 1050px;
+  /* border: 0 5px 5px 5px solid yellow; */
 }
-.in {
-  margin-right: -30px;
-  margin-left: 59px;
+.in1 {
   width: 279px;
-  height: 67px;
+
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+
+  display: inline;
+  outline: none;
+  width: 400px;
+  height: 90px;
+  top: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  color: #333;
+  -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+  margin: 23px;
+  margin-left: 504px;
+  font-size: 20px;
+}
+.in2 {
+  width: 279px;
+
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+
+  display: inline;
+  outline: none;
+  width: 400px;
+  height: 90px;
+  top: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  color: #333;
+  -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+  margin: 23px;
+  font-size: 20px;
 }
 h1 {
-  font: 410 70px/220px Roboto, "Helvetica Neue", sans-serif;
+  font: 412 81px/192px Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
-  margin: 0px 40px 16px;
-  color: darkkhaki;
+  margin: 0px 267px 31px;
+  color: white;
+  text-align: center;
 }
 
 #button {
-  width: 590px;
+  width: 632px;
   background-color: gold;
-  margin-left: 60px;
-  padding: 4px;
-  font-size: 18px;
+  margin-left: 609px;
+  padding: 10px;
+  font-size: 28px;
   font-weight: bolder;
+  margin-top: -23px;
 }
