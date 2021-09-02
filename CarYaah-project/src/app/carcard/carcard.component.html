@@ -37,6 +37,8 @@
       <div class="img" style="background-image: url({{car?.image}});">
       </div>
 
+      <!-- <div class="img" style="background-image: url({{ car?.image }});"></div> -->
+      <app-like-car></app-like-car>
 
       <div class="price">
         <span>{{ car?.price }} TND/DAY</span>
@@ -44,14 +46,12 @@
       <div class="brand">
         <span>{{ car?.brand }}</span>
       </div>
-
-      <!-- <div id="favorite" class="circle" (click)="onClick()"  >
-        <i class='{{like()}}'></i>
-    </div> -->
+  
     <div id="favorite" class="circle" (click)="createFav(car.id)"  >
       <i class='{{like()}}'></i>
   </div>
   <div></div>
+      <app-starrating></app-starrating>
     </div>
   </div>
 </div>

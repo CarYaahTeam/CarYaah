@@ -24,24 +24,13 @@
             id="submitButton"
             type="submit"
             class="btn btn-primary"
-            (click)="
-              login({
-                email: email.value,
-                password: password.value,
-                type: type.value
-              })
-            "
+            (click)="login(email.value, password.value, type.value)"
           >
             Login
           </button>
           <button (click)="To('/register')">
             if you are not registed start here
           </button>
-          <!-- <nav>
-            <a routerLink="/register" routerLinkActive="active"
-              >if you are not registed start here</a
-            >
-          </nav> -->
         </div>
       </div>
     </div>
