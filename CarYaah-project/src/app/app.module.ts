@@ -21,9 +21,6 @@ import { LikeCarComponent } from './like-car/like-car.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 
-
-
-
 import { AdminComponent } from './admin/admin.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 
@@ -55,15 +52,15 @@ import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
     BrowserModule,
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule,
+
     BrowserAnimationsModule,
     MatCardModule,
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule,
+
     MatButtonModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

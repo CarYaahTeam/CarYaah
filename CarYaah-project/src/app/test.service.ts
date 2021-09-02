@@ -22,4 +22,7 @@ export class AddCar {
   deleteCars(id: any) {
     return this.http.delete('http://localhost:3000/owner/delete/:' + id);
   }
+  uploadImg(img: any) {
+    return this.http.post('http://localhost:3000/upload', img);
+  }
 }

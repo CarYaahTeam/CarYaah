@@ -35,11 +35,20 @@
                             </div>
                             <div class="form-group">
                            
+                            </div> <br> <br> <br>
+                            <!-- cloudinary -->
+
+                            <!-- <div>
+                                <form action="" method="post" enctype="multipart/form-data">
+                                    <input type="file">
+                                </form> 
+                                `<input type="file" ng2FileSelect [uploader]="uploader" multiple  />`                         
+                            </div>  -->
+                            <div class="cloud">
+                                <input type="file" (change)="imgUpload($event)">
                             </div>
-                            <img src="" alt="" class="card">
-                            <div>
-                                <input type="file" class="upImg" value="css" >
-                            </div>
+
+                            <!--  -->
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -52,15 +61,12 @@
                                     <option> automatic  </option>
                                 </select>
                                 <br/><br/>
-                                <!-- <select class="form-control">
-                                    <option class="hidden"  selected disabled #option>Please select options</option>
-                                    <option >GPS</option>
-                                    <option>AC </option> -->
+                           
                                     <input type="checkbox" name="GPS" value="GPS">
                                     <label class="gps_Ac" > GPS </label> <br> <br> 
                                     <input type="checkbox" name="AC" value="AC"> 
                                     <label class="gps_Ac"  > AC </label><br>
-                                <!-- </select> -->
+                           
                             </div>
 
                             <input type="submit" class="btnRegister"  value="Up-Date"/>
