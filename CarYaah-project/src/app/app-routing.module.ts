@@ -10,8 +10,10 @@ import { LoginComponent } from './login/login.component';
 import { CarcardComponent } from './carcard/carcard.component'
 import { StarratingComponent } from './starrating/starrating.component'
 import { ClientComponent } from './client/client.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
+  { path: 'admin', component: AdminComponent },
   { path: '', component: TestComponent },
   { path: 'client/profile', component: ClientComponent },
   { path: '', component: CarReservationComponent },
@@ -20,7 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cars', component: CarcardComponent },
   { path: 'stars', component: StarratingComponent },
-  { path: 'cars', component: CarInfoComponent },
+  { path: 'carInfo', component: CarInfoComponent },
 ];
 
 

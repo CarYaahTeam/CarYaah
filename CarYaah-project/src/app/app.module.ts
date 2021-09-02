@@ -18,9 +18,11 @@ import { StarratingComponent } from './starrating/starrating.component'
 import { MatButtonModule } from '@angular/material/button';
 import { ClientComponent } from './client/client.component';
 import { FormsModule } from '@angular/forms'; 
+import { CookieService } from 'ngx-cookie-service'
 
 
 import { LikeCarComponent } from './like-car/like-car.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { LikeCarComponent } from './like-car/like-car.component';
     StarratingComponent,
     ClientComponent,
     LikeCarComponent,
+    AdminComponent,
   ],
   imports: [
     HttpClientModule,
@@ -55,7 +58,7 @@ import { LikeCarComponent } from './like-car/like-car.component';
     MatButtonModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
