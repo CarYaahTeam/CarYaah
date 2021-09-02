@@ -25,12 +25,12 @@
 
     </div>
 
-    <div class="form-group">
-      <select class="form-control" formControlName="transmission" required>
-        <option value="" class="hidden" selected disabled></option>
-        <option>Manual</option>
-        <option>Auto</option>
-      </select>
+    <div class="transmission">
+      <h3 class="title2">Transmission</h3>
+      `<input value="Auto" [(ngModel)]="auto_checkbox" type="radio" (change)="auto($event)">
+      <label class="ac" for="cars"> AUTO</label><br />
+      <input value="Manual" [(ngModel)]="man_checkbox" type="radio" (change)="man($event)">
+      <label class="ac" for="cars">MANUAL</label><br />
     </div>
   </div>
   <div class="card-container">

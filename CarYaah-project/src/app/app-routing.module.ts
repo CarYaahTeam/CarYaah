@@ -14,9 +14,8 @@ import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
-  { path: '', component: TestComponent },
   { path: 'client/profile', component: ClientComponent },
-  { path: '', component: CarReservationComponent },
+  { path: 'home', component: CarReservationComponent },
   { path: 'owner', component: TestComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

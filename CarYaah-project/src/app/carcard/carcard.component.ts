@@ -1,7 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { CarcardService } from '../carcard.service';
 
-
+export interface Car {
+  id: number;
+  brand: string;
+  type: string;
+  AC: boolean;
+  GPS: boolean;
+  AUTOMATIC: boolean;
+  image: string;
+  start_date_av: Date;
+  end_date_av: Date;
+  bail: string;
+  status: string;
+  city: string;
+  rating: string;
+  price: string;
+  registration_number: number;
+  createdAt: Date;
+  updatedAt: Date;
+  ownerId: number;
+}
 
 @Component({
   selector: 'app-carcard',
@@ -10,10 +29,10 @@ import { CarcardService } from '../carcard.service';
 })
 export class CarcardComponent implements OnInit {
   constructor(private carCardService: CarcardService) {}
-  rangevalue=0;
-  cars: any = [];
-  saveCars : any = [];
-  marked: any = []
+  rangevalue = 300;
+  cars: Car[] = [];
+  saveCars: Car[] = [];
+  marked: string[] = [];
 
   sedan_marked = false;
   sedan_checkbox = false;
@@ -27,77 +46,66 @@ export class CarcardComponent implements OnInit {
   ac_checkbox = false;
   gps_marked = false;
   gps_checkbox = false;
+  auto_checkbox = false;
+  auto_checked = false;
+  man_checkbox = false;
+  man_checked = false;
 
   ngOnInit(): void {
     this.getDataFromAPI();
   }
 
-  getDataFromAPI(){
-    this.carCardService.getCars().subscribe((resp)=>{
-      this.cars= resp; 
-      this.saveCars= resp; 
-
-    })    
-  }
-
-  priceChanged(e:any){
-     this.rangevalue = e.target.value;
-    this.cars = this.saveCars
-    var storage = []
-    for(var i = 0 ; i < this.cars.length ; i++){
-      if(this.cars[i].price * 1 < this.rangevalue * 1 ){
-         storage.push(this.cars[i])
-      }
-    }
-    this.cars = storage
-  }
-
-  checkbox(type: string){
-    if (this.marked.includes(type)) {
-      this.marked = this.marked.filter((elem: string) => elem !== type)
-    } else {
-      this.marked.push(type)
-    }
-    const storage: any = []
-    this.marked.forEach((element: string) => {
-      this.saveCars.forEach((car: any) => {
-        car.type.toUpperCase() === element.toUpperCase() ? storage.push(car) : null
-      });
+  filter() {
+    this.cars = this.saveCars.filter((car) => {
+      return (
+        +car.price < this.rangevalue &&
+        (!this.marked.length || this.marked.includes(car.type)) &&
+        (!this.ac_marked || car.AC) &&
+        (!this.gps_marked || car.GPS)&&
+        (!this.ac_marked || car.AC) &&
+        (!this.auto_checked || car.AUTOMATIC)&&
+        (!this.man_checked || !car.AUTOMATIC)
+      );
     });
-    this.cars = this.marked.length ? storage : this.saveCars
   }
 
-  ac(e:any){
-    this.ac_marked=e.target.checked;
-    this.cars = this.saveCars
-    var storage = []
-    for(var i = 0 ; i < this.cars.length ; i++){
-      if(this.cars[i].AC && e.target.checked ){
-        console.log(this.cars[i].AC);
-        
-         storage.push(this.cars[i])
-      }
-      else{
-        storage=this.cars
-      }
-    }
-    this.cars = storage
+  getDataFromAPI() {
+    this.carCardService.getCars().subscribe((cars) => {
+      this.cars = cars;
+      this.saveCars = cars;
+    });
   }
 
-  gps(e:any){
-    this.gps_marked=e.target.checked;
-    this.cars = this.saveCars
-    var storage = []
-    for(var i = 0 ; i < this.cars.length ; i++){
-      if(this.cars[i].GPS && e.target.checked ){
-         storage.push(this.cars[i])
-         console.log(this.cars[i].GPS);
-      }
-      else{
-        storage=this.cars
-        console.log(this.cars[i].GPS);
-      }
+  priceChanged(e: any) {
+    this.rangevalue = e.target.value;
+    this.filter();
+  }
+
+  checkbox(type: string) {
+    const isMarked = !!this.marked.find((mark) => mark === type);
+    if (isMarked) this.marked = this.marked.filter((mark) => mark !== type);
+    else this.marked.push(type);
+
+    this.filter();
+  }
+
+  ac(e: any) {
+    this.ac_marked = e.target.checked;
+    this.filter();
+  }
+
+  gps(e: any) {
+    this.gps_marked = e.target.checked;
+    this.filter();
+  }
+
+  auto(e: any) {
+    this.auto_checked = e.target.checked;
+    this.filter();
+  }
+
+  man(e: any) {
+    this.man_checked = e.target.checked;
+    this.filter();
     }
-    this.cars = storage
-  } 
 }

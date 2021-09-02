@@ -9,20 +9,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { CarInfoComponent } from './car-info/car-info.component';
-// import { HomepageComponent } from './components/homepage/homepage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RentButtonComponent } from './rent-button/rent-button.component';
 import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
-import { StarratingComponent } from './starrating/starrating.component'
+import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
 import { ClientComponent } from './client/client.component';
-import { FormsModule } from '@angular/forms'; 
-import { CookieService } from 'ngx-cookie-service'
-
-
+import { CookieService } from 'ngx-cookie-service';
 import { LikeCarComponent } from './like-car/like-car.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 import { AdminComponent } from './admin/admin.component';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { AdminComponent } from './admin/admin.component';
     CarReservationComponent,
     NavComponent,
     CarInfoComponent,
-    // HomepageComponent
     routingAuth,
     NavComponent,
     RentButtonComponent,
@@ -40,6 +38,8 @@ import { AdminComponent } from './admin/admin.component';
     StarratingComponent,
     ClientComponent,
     LikeCarComponent,
+    HomepageComponent,
+    OpinionCustomerComponent,
     AdminComponent,
   ],
   imports: [
@@ -56,9 +56,9 @@ import { AdminComponent } from './admin/admin.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
