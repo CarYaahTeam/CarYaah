@@ -5,6 +5,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const clientRouter = require("./routers/clientroutes");
 const ownerRouter = require("./routers/ownerrouters");
+const adminRouter = require("./routers/adminrouters");
+
 const CarRouter = require("./routers/carroutes");
 
 const PORT = 3000;
@@ -14,6 +16,7 @@ app.use(cors());
 
 app.use("/client", clientRouter);
 app.use("/owner", ownerRouter);
+app.use("/admin", adminRouter);
 
 app.use("/api/reservation", clientRouter);
 app.use("/cars", CarRouter);
