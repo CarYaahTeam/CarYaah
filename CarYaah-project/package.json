@@ -29,6 +29,7 @@
     "angular-responsive-carousel": "^2.1.2",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.1.0",
     "cloudinary": "^1.26.3",
     "cloudinary_ng": "^1.1.1",
     "dotenv": "^10.0.0",

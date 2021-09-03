@@ -9,7 +9,8 @@ exports.createOwnerCar = async (req, res) => {
       start_date_av: req.body.startDate,
       end_date_av: req.body.endDate,
       price: req.body.price,
-      // id_owner: 1, //TODO: replace with ID from token
+      image: req.body.image,
+      id_owner: 1, //TODO: replace with ID from token
     };
 
     const car = await db.Car.create(ownerCar);
