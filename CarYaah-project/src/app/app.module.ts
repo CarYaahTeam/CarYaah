@@ -18,14 +18,13 @@ import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-import { LikeCarComponent } from './like-car/like-car.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
-
-
-
-
 import { AdminComponent } from './admin/admin.component';
+import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import { LikeCarComponent } from './like-car/like-car.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,6 @@ import { AdminComponent } from './admin/admin.component';
     CarReservationComponent,
     NavComponent,
     CarInfoComponent,
-    // HomepageComponent
     routingAuth,
     NavComponent,
     RentButtonComponent,
@@ -42,9 +40,10 @@ import { AdminComponent } from './admin/admin.component';
     CarcardComponent,
     StarratingComponent,
     LikeCarComponent,
+    AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
-    AdminComponent,
+    DialogOverviewExampleDialogComponent
   ],
   imports: [
     HttpClientModule,
@@ -57,8 +56,11 @@ import { AdminComponent } from './admin/admin.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatDialogModule,
+    AngularFileUploaderModule,
+    FormsModule
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

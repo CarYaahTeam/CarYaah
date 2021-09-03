@@ -8,7 +8,6 @@ const ownerRouter = require("./routers/ownerrouters");
 const adminRouter = require("./routers/adminrouters");
 
 const CarRouter = require("./routers/carroutes");
-
 const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -27,6 +27,7 @@ async function initialize() {
   db.Owner = require("./models/owner")(sequelize);
   db.Rating_car = require("./models/rating_car")(sequelize);
   db.Rating_client = require("./models/rating_client")(sequelize);
+  db.Favourite = require('./models/favourite-car')(sequelize);
 
   db.Owner.hasMany(db.Car);
   db.Car.belongsTo(db.Owner);
@@ -38,6 +39,8 @@ async function initialize() {
   db.Rating_car.belongsTo(db.Car);
   db.Conflict.belongsTo(db.Client);
   db.Conflict.belongsTo(db.Car);
+  db.Favourite.belongsTo(db.Client)
+  db.Favourite.belongsTo(db.Car)
 
   await sequelize.sync();
 }
