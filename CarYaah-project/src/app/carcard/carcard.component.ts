@@ -1,6 +1,6 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CarcardService } from '../carcard.service';
-
+import { Router } from '@angular/router';
 export interface Car {
   id: number;
   brand: string;
@@ -28,7 +28,11 @@ export interface Car {
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
-  constructor(private carCardService: CarcardService) {}
+  constructor(private carCardService: CarcardService,
+              private router: Router) {}
+
+  displayCarInfo=false;
+
   rangevalue = 300;
   cars: Car[] = [];
   saveCars: Car[] = [];
@@ -53,6 +57,13 @@ export class CarcardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDataFromAPI();
+  }
+
+  info(car : Car) : void {
+    this.router.navigate(['/carInfo'], {state: {data: car}});
+    //this.display = true;
+    //To toggle the component
+    // this.displayCarInfo = true;
   }
 
   filter() {
@@ -85,7 +96,6 @@ export class CarcardComponent implements OnInit {
     const isMarked = !!this.marked.find((mark) => mark === type);
     if (isMarked) this.marked = this.marked.filter((mark) => mark !== type);
     else this.marked.push(type);
-
     this.filter();
   }
 
