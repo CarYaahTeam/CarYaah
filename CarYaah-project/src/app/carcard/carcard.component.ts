@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { CarcardService } from '../carcard.service';
 import { Router } from '@angular/router';
+
 export interface Car {
   id: number;
   brand: string;
@@ -21,6 +22,7 @@ export interface Car {
   updatedAt: Date;
   ownerId: number;
 }
+
 
 @Component({
   selector: 'app-carcard',
@@ -119,6 +121,14 @@ export class CarcardComponent implements OnInit {
     this.filter();
 
   }
+=======
+  getDataFromAPI(){
+    this.carCardService.getCars().subscribe((resp)=>{
+      this.cars= resp;
+      console.log(this.cars);
+    })
+  }
+  
   like(){
     if (this.liked){
       return "far fa-heart fa-2x";
