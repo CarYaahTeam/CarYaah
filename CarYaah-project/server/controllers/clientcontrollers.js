@@ -41,12 +41,12 @@ exports.loginClient = async function (req, res) {
       expiresIn: 10,
     });
     delete client.password;
-
     return res.status(200).json({ data: client, auth_token: token });
   } catch (err) {
     res.status(403).json(err.message);
   }
 };
+
 exports.retrieve = function (req, res) {
   client.findAll({}, function (err, result) {
     if (err) {
@@ -78,5 +78,4 @@ exports.retrieveFavorites = async (req, res) => {
     console.log(error)
   }
 }
-
 

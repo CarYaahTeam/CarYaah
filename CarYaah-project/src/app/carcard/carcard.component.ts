@@ -2,20 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { CarcardService } from '../carcard.service';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-carcard',
   templateUrl: './carcard.component.html',
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
+
   liked : boolean=true;
 
   constructor(private carCardService: CarcardService , private route : Router  ) {}
 
   cars: any = [];
- 
 
   ngOnInit(): void {
     this.getDataFromAPI();
@@ -26,6 +24,7 @@ export class CarcardComponent implements OnInit {
       console.log(this.cars);
     })
   }
+  
   like(){
     if (this.liked){
       return "far fa-heart fa-2x";
