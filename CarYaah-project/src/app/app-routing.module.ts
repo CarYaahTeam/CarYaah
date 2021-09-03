@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './test/test.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { CarInfoComponent } from './car-info/car-info.component';
-import { RentButtonComponent } from './rent-button/rent-button.component';
 import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -18,9 +17,9 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'car/card', component: CarcardComponent },
+  { path: 'cars', component: CarcardComponent },
   { path: 'stars', component: StarratingComponent },
-  { path: 'cars', component: CarInfoComponent },
+  { path: 'carInfo', component: CarInfoComponent },
   { path: 'user', component: UserProfileComponent},
   { path: 'admin', component: AdminComponent },
 ];

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarcardService } from '../carcard.service';
 import { Router } from '@angular/router';
-import { CarsServerService } from '../cars-server.service';
-import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -20,13 +19,11 @@ export class CarcardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDataFromAPI();
-  
   }
   getDataFromAPI(){
     this.carCardService.getCars().subscribe((resp)=>{
       this.cars= resp;
-      console.log(resp);
-      
+      console.log(this.cars);
     })
   }
   like(){
