@@ -1,4 +1,26 @@
 var db = require("../db/index");
+//---------- ADMIN LOGIN -----------------------//
+exports.loginAdmin = async function (req, res) {
+  try {
+    const { username, password } = req.body;
+    const admin = await db.Admin.findOne({
+      where: { username },
+    });
+    if (!admin) throw new Error("Invalid username");
+
+    const validPss = await bcrypt.compare(password, admin.password);
+    if (!validPss) throw new Error("Invalid password");
+
+    // create and assign a token
+    const token = jwt.sign({ id: client.id }, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: "24h",
+    });
+
+    return res.status(200).json({ data: admin, auth_token: token });
+  } catch (err) {
+    res.status(403).json(err.message);
+  }
+};
 
 //---------- ADMIN FETCH ALL CLIENTS------------//
 exports.fetchclients = async function (req, res) {

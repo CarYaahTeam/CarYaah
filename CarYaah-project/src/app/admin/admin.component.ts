@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
+import { CookieService } from 'ngx-cookie-service';
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService, private cookies: CookieService
+  ) { }
   clients: any
   owners: any
 
@@ -15,7 +18,12 @@ export class AdminComponent implements OnInit {
     this.getowners()
   }
 
+  login(username: string, password: string) {
+    this.adminService.log(username, password).subscribe((data) => {
+      this.cookies.set("token", data.auth_token)
+    })
 
+  }
   getclients() {
     this.adminService.fetchclients().subscribe((data) => {
       this.clients = data
