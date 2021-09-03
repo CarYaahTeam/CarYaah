@@ -13,6 +13,8 @@ exports.createClient = async function (req, res) {
       password: hachedPass,
       name: req.body.name,
       adress: req.body.adress,
+      isOwner: req.body.isOwner,
+      isClient: req.body.isClient,
       salt: salt,
     });
     res.status(201).send(client);
@@ -39,9 +41,41 @@ exports.loginClient = async function (req, res) {
       expiresIn: 10,
     });
     delete client.password;
-
     return res.status(200).json({ data: client, auth_token: token });
   } catch (err) {
     res.status(403).json(err.message);
   }
 };
+
+exports.retrieve = function (req, res) {
+  client.findAll({}, function (err, result) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(result);
+    }
+  });
+};
+
+//---------------------user profil---------------------------------//
+
+exports.retrievAllUsers = function (req, res) {
+  db.Client.findAll().then((result) => res.json(result)).catch(err => {
+    console.log(err)
+  })
+}
+
+//----------------Favorit Car-------------------------------------//
+
+exports.retrieveFavorites = async (req, res) => {
+  try {
+    const fav = await db.Favourite.findAll({
+      where: { clientId: req.client.id },
+      include: db.Car
+    })
+    return res.status(201).json(fav.map(fav => fav.car))
+  } catch (error) {
+    console.log(error)
+  }
+}
+

@@ -21,6 +21,15 @@
       <label class="ac" for="cars"> AC</label><br />
       <input class="ch1" type="checkbox" name="vehicle2" value="car" />
       <label class="ac" for="cars"> GPS</label><br />
+    </div>
+
+    <div class="form-group">
+      <!-- <select class="form-control" formControlName="transmission" required>
+        <option value="" class="hidden" selected disabled></option>
+        <option>Manuel</option>
+        <option>Auto</option>
+      </select> -->
+=======
       <!-- <input class="ch1" type="checkbox"  name="vehicle3" value="car">
         <label class="ac"  for="cars"> Transmission</label><br> -->
     </div>
@@ -36,14 +45,18 @@
   <div class="card-container">
     <div *ngFor="let car of cars" class="card">
       <!-- <div class="img" style="background-image: url({{ car?.image }});"></div> -->
-      <app-like-car></app-like-car>
-
       <div class="price">
         <span>{{ car?.price }} TND/DAY</span>
       </div>
       <div class="brand">
         <span>{{ car?.brand }}</span>
       </div>
+    <div id="favorite" class="circle" (click)="createFav(car.id)"  >
+      <i class='{{like()}}'></i>
+  </div>
+  
+      <app-starrating></app-starrating>
+=======
 
       <app-starrating></app-starrating>
 
