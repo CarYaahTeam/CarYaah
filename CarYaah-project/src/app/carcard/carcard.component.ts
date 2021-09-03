@@ -13,10 +13,8 @@ export class CarcardComponent implements OnInit {
   liked : boolean=true;
 
   constructor(private carCardService: CarcardService , private route : Router  ) {}
-
   cars: any = [];
- 
-
+  
   ngOnInit(): void {
     this.getDataFromAPI();
   }
@@ -41,6 +39,7 @@ export class CarcardComponent implements OnInit {
   createFav(carId : number){
       this.carCardService.create(carId).subscribe((data:any)=>{
         console.log(data['fav'])
+        this.route.navigateByUrl("/user")
       })
     }
 }

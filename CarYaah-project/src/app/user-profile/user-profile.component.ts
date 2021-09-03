@@ -23,6 +23,7 @@ export class UserProfileComponent implements OnInit {
       console.log(resp)
     })
   }
+
   getData(){
     this.http.getUser().subscribe((resp :any)=>{
       this.client= resp
@@ -30,9 +31,7 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
-  getFavCars(){
 
-}
 openDialog(): void {
   const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
     width: '750px',

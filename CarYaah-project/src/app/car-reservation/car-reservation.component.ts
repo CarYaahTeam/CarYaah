@@ -24,8 +24,6 @@ cars:any;
     console.log("my product", this.cars)
     this.route.navigateByUrl("/filter")
 }
-
-
 }
 
 
