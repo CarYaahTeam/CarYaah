@@ -12,7 +12,7 @@ exports.loginAdmin = async function (req, res) {
     if (!validPss) throw new Error("Invalid password");
 
     // create and assign a token
-    const token = jwt.sign({ id: client.id }, process.env.ACCESS_TOKEN_SECRET, {
+    const token = jwt.sign({ id: admin.id }, process.env.ACCESS_TOKEN_SECRET, {
       expiresIn: "24h",
     });
 

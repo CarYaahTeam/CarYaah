@@ -1,4 +1,4 @@
-<form class="text-center">
+<!-- <form class="text-center">
   <div class="form-group">
     <label for="username" class="fa fa-envelope"></label>
     <input type="username" placeholder="username" #username />
@@ -19,23 +19,22 @@
       Login
     </button>
   </div>
-</form>
-<div class="container">
-  <div class="navbar">nav elements</div>
-  <div class="listofclients">
-    <h3>CLIENTS</h3>
+</form> -->
+<div *ngIf="show" class="container">
+  <div class="listofclients mx-3">
+    <h3 class="head head-info">CLIENTS</h3>
     <ul *ngFor="let client of clients">
       <li>{{ client.username }}</li>
       <p>{{ client.adress }}</p>
-      <button (click)="deleteClient(client.id)">BAN</button>
+      <button class="btn btn-danger">BAN</button>
     </ul>
   </div>
-  <div class="listofowners">
-    <h3>OWNERS</h3>
+  <div class="listofowners mx-3">
+    <h3 class="head head-info">OWNERS</h3>
     <ul *ngFor="let owner of owners">
       <li>{{ owner.username }}</li>
       <p>{{ owner.adress }}</p>
-      <button>BAN</button>
+      <button class="btn btn-danger">BAN</button>
     </ul>
   </div>
 </div>

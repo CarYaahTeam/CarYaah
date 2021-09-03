@@ -8,10 +8,13 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  constructor(private adminService: AdminService, private cookies: CookieService
-  ) { }
   clients: any
   owners: any
+  show: boolean = true;
+
+
+  constructor(private adminService: AdminService, private cookies: CookieService
+  ) { }
 
   ngOnInit(): void {
     this.getclients()
@@ -21,8 +24,11 @@ export class AdminComponent implements OnInit {
   login(username: string, password: string) {
     this.adminService.log(username, password).subscribe((data) => {
       this.cookies.set("token", data.auth_token)
-    })
+      this.show = !this.show
 
+    })
+  }
+  toggle() {
   }
   getclients() {
     this.adminService.fetchclients().subscribe((data) => {

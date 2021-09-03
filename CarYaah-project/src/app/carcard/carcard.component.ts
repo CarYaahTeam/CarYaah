@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarcardService } from '../carcard.service';
 import { Router } from '@angular/router';
 
@@ -31,9 +31,9 @@ export interface Car {
 })
 export class CarcardComponent implements OnInit {
 
-  liked : boolean=true;
+  liked: boolean = true;
 
-  constructor(private carCardService: CarcardService , private route : Router  ) {}
+  constructor(private carCardService: CarcardService, private route: Router) { }
 
   rangevalue = 300;
   cars: Car[] = [];
@@ -61,8 +61,8 @@ export class CarcardComponent implements OnInit {
     this.getDataFromAPI();
   }
 
-  info(car : Car) : void {
-    this.route.navigate(['/carInfo'], {state: {data: car}});
+  info(car: Car): void {
+    this.route.navigate(['/carInfo'], { state: { data: car } });
     //this.display = true;
     //To toggle the component
     // this.displayCarInfo = true;
@@ -74,20 +74,22 @@ export class CarcardComponent implements OnInit {
         +car.price < this.rangevalue &&
         (!this.marked.length || this.marked.includes(car.type)) &&
         (!this.ac_marked || car.AC) &&
-        (!this.gps_marked || car.GPS)&&
+        (!this.gps_marked || car.GPS) &&
         (!this.ac_marked || car.AC) &&
-        (!this.auto_checked || car.AUTOMATIC)&&
+        (!this.auto_checked || car.AUTOMATIC) &&
         (!this.man_checked || !car.AUTOMATIC)
       );
     });
   }
 
+
   getDataFromAPI() {
-    this.carCardService.getCars().subscribe((cars) => {
-      this.cars = cars;
-      this.saveCars = cars;
-    });
+    this.carCardService.getCars().subscribe((resp) => {
+      this.cars = resp;
+      console.log(this.cars);
+    })
   }
+
 
   priceChanged(e: any) {
     this.rangevalue = e.target.value;
@@ -121,31 +123,23 @@ export class CarcardComponent implements OnInit {
     this.filter();
 
   }
-=======
-  getDataFromAPI(){
-    this.carCardService.getCars().subscribe((resp)=>{
-      this.cars= resp;
-      console.log(this.cars);
-    })
-  }
-  
-  like(){
-    if (this.liked){
+
+  like() {
+    if (this.liked) {
       return "far fa-heart fa-2x";
-    }else
-    {
+    } else {
       return "fas fa-heart fa-2x";
     }
   }
 
-  onClick(){
-    this.liked=!this.liked
+  onClick() {
+    this.liked = !this.liked
   }
-  createFav(carId : number){
-      this.carCardService.create(carId).subscribe((data:any)=>{
-        console.log('data',data['fav'])
-      })
-    }
+  createFav(carId: number) {
+    this.carCardService.create(carId).subscribe((data: any) => {
+      console.log('data', data['fav'])
+    })
+  }
 }
 
 
