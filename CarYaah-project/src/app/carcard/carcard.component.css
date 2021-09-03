@@ -7,23 +7,19 @@
 }
 
 .card-container{
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
     margin-left: 300px;
     margin-top: 100px;
-
 }
 
 .card{
     position: relative;
+    display: inline-block;
     width: 300px;
     height: 300px;
     background-color: #f3f3f7;
-    margin: 50px;
+    margin: 40px;
     border-radius: 15px;
     font-family: Quicksand;
-    display: inline-table;
     box-shadow: -0.7em 0 .4em grey;
 }
 
@@ -47,7 +43,7 @@
     font-size: large;
     font-weight: bold;
     box-shadow: whitesmoke;
-    top: -90px;
+    top: -20px;
     left:160px;
     height: 50px;
     justify-content: center;
@@ -61,7 +57,7 @@
     font-weight: bold;
     position: relative;
     left:5px;
-    top:-50px;
+    top:-10px;
     background-color: white;
     width: fit-content;
     border-radius: 15px;
@@ -73,14 +69,13 @@
 
 app-starrating {
     position: relative;
-    top:-40px;
-    left:5px;
+    top: -160px;
+    left: 15px;
 }
 
 
 
 .filter-container{
-   
     box-shadow: 10px 10px 8px 10px #888888;
     box-sizing: content-box;
     font-size: 15px;
@@ -90,8 +85,6 @@ app-starrating {
     margin-top: 100px;
     margin-right: 1450px;
     position: fixed;
-    
-    
 }
 .title{
     margin-left:20px;
@@ -117,7 +110,7 @@ app-starrating {
 .ch1{
     margin-left: 15px;  
 }
-.form-group{
+.transmission{
     margin-left: 15px; 
     margin-top: 20px; 
 }
@@ -148,8 +141,30 @@ app-starrating {
     margin-right: 2px;
     height: 25px;   
 }
-.label{
-    margin-left: 8px;
+
+
+.circle{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background:white;
+    top: -140px;
+    left:240px;
+}
+.circle i{
+position: relative;
+top: calc(50% - 15px);
+left:calc(50% - 15px);
+}
+
+#favorite{
+    /* margin-bottom: 50px; */
+    color: brown;
+    margin-top: 130px;
+    margin-right: 15px;
 }
 
 .circle{

@@ -19,6 +19,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 import { AdminComponent } from './admin/admin.component';
+import { FormsModule } from '@angular/forms'; 
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFileUploaderModule } from "angular-file-uploader";
@@ -57,7 +58,8 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     HttpClientModule,
     MatButtonModule,
     MatDialogModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    FormsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

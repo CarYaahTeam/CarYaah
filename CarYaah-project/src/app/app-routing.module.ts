@@ -13,7 +13,7 @@ import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
-  { path: 'client/profile', component: ClientComponent },
+  { path: 'user', component: UserProfileComponent},
   { path: 'home', component: CarReservationComponent },
   { path: 'owner', component: TestComponent },
   { path: 'register', component: RegisterComponent },
@@ -21,7 +21,6 @@ const routes: Routes = [
   { path: 'cars', component: CarcardComponent },
   { path: 'stars', component: StarratingComponent },
   { path: 'carInfo', component: CarInfoComponent },
-  { path: 'client/profile', component: ClientComponent },
   { path: 'feedback', component: FeedbackClientComponent },
 ];
 
