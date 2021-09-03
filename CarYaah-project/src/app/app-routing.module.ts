@@ -22,6 +22,8 @@ const routes: Routes = [
   { path: 'cars', component: CarcardComponent },
   { path: 'stars', component: StarratingComponent },
   { path: 'carInfo', component: CarInfoComponent },
+  { path: 'client/profile', component: ClientComponent },
+  { path: 'feedback', component: FeedbackClientComponent },
 ];
 
 
