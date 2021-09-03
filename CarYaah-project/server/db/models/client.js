@@ -31,6 +31,7 @@ const Client = (sequelize) =>
       defaultValue: "",
       allowNull: false,
     },
+
   });
 
 module.exports = Client;

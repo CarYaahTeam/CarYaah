@@ -6,7 +6,6 @@ const bodyParser = require("body-parser");
 const clientRouter = require("./routers/clientroutes");
 const ownerRouter = require("./routers/ownerrouters");
 const CarRouter = require("./routers/carroutes");
-
 const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

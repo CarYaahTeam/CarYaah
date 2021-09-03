@@ -3,18 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './test/test.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { CarInfoComponent } from './car-info/car-info.component';
-import { RentButtonComponent } from './rent-button/rent-button.component';
 import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarcardComponent } from './carcard/carcard.component'
 import { StarratingComponent } from './starrating/starrating.component'
-import { ClientComponent } from './client/client.component';
+import {UserProfileComponent} from '../app/user-profile/user-profile.component';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
-  { path: 'client/profile', component: ClientComponent },
+  { path: 'user', component: UserProfileComponent},
   { path: 'home', component: CarReservationComponent },
   { path: 'owner', component: TestComponent },
   { path: 'register', component: RegisterComponent },
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: 'cars', component: CarcardComponent },
   { path: 'stars', component: StarratingComponent },
   { path: 'carInfo', component: CarInfoComponent },
-  { path: 'client/profile', component: ClientComponent },
   { path: 'feedback', component: FeedbackClientComponent },
 ];
 

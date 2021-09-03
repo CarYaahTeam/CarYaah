@@ -15,13 +15,15 @@ import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
 import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
-import { ClientComponent } from './client/client.component';
 import { CookieService } from 'ngx-cookie-service';
-import { LikeCarComponent } from './like-car/like-car.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 import { AdminComponent } from './admin/admin.component';
 import { FormsModule } from '@angular/forms'; 
+import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+
 
 @NgModule({
   declarations: [
@@ -36,11 +38,10 @@ import { FormsModule } from '@angular/forms';
     CarReservationComponent,
     CarcardComponent,
     StarratingComponent,
-    ClientComponent,
-    LikeCarComponent,
+    AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
-    AdminComponent,
+    DialogOverviewExampleDialogComponent
   ],
   imports: [
     HttpClientModule,
@@ -56,9 +57,10 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
-    FormsModule,
+    MatDialogModule,
+    AngularFileUploaderModule
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

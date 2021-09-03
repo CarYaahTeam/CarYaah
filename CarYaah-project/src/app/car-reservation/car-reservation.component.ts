@@ -20,6 +20,8 @@ cars:any;
   findAll(start_date_av : String , end_date_av  : String) {
     const data = {start_date_av , end_date_av}
     // 
+    this.cars=this.rs.cars;
+    console.log("my product", this.cars)
     this.route.navigateByUrl("/filter")
 }
 

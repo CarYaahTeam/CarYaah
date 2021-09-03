@@ -28,10 +28,10 @@ export interface Car {
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
-  constructor(private carCardService: CarcardService,
-              private router: Router) {}
 
-  displayCarInfo=false;
+  liked : boolean=true;
+
+  constructor(private carCardService: CarcardService , private route : Router  ) {}
 
   rangevalue = 300;
   cars: Car[] = [];
@@ -60,7 +60,7 @@ export class CarcardComponent implements OnInit {
   }
 
   info(car : Car) : void {
-    this.router.navigate(['/carInfo'], {state: {data: car}});
+    this.route.navigate(['/carInfo'], {state: {data: car}});
     //this.display = true;
     //To toggle the component
     // this.displayCarInfo = true;
@@ -119,3 +119,5 @@ export class CarcardComponent implements OnInit {
     this.filter();
     }
 }
+
+
