@@ -58,7 +58,8 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     HttpClientModule,
     MatButtonModule,
     MatDialogModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    FormsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

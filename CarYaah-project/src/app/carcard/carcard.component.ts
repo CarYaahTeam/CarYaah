@@ -117,6 +117,24 @@ export class CarcardComponent implements OnInit {
   man(e: any) {
     this.man_checked = e.target.checked;
     this.filter();
+
+  }
+  like(){
+    if (this.liked){
+      return "far fa-heart fa-2x";
+    }else
+    {
+      return "fas fa-heart fa-2x";
+    }
+  }
+
+  onClick(){
+    this.liked=!this.liked
+  }
+  createFav(carId : number){
+      this.carCardService.create(carId).subscribe((data:any)=>{
+        console.log('data',data['fav'])
+      })
     }
 }
 
