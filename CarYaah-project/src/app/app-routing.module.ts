@@ -12,6 +12,7 @@ import { StarratingComponent } from './starrating/starrating.component';
 import { ClientComponent } from './client/client.component';
 import { AdminComponent } from './admin/admin.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
+import { PaiementComponent } from './paiement/paiement.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'stars', component: StarratingComponent },
   { path: 'carinfo', component: CarInfoComponent },
   { path: 'ownerprofile', component: OwnerProfileComponent },
+  { path: 'pay', component: PaiementComponent },
 ];
 
 @NgModule({
