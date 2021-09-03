@@ -25,11 +25,12 @@ exports.AddNewFav = async function (req, res) {
         //        rating:req.body.rating,
         //        price:req.body.price
         //    };
+        console.log(req.client)
         const isFav = (await db.Favourite.findAll({ where: { id: req.client.id, carId: req.params.carId } })).length > 0
         if (isFav) {
             await db.Favourite.destroy({ where: { id: req.client.id, carId: req.params.carId } })
         } else {
-            await db.Favourite.create({ carId: req.params.carId, id: req.client.id });
+            await db.Favourite.create({ carId: req.params.carId, clientId: req.client.id });
         }
         return res.status(201).send()
     } catch (error) {

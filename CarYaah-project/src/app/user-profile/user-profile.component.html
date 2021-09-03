@@ -8,8 +8,10 @@
         <div class="mb-4">
           <img src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
             class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar">
+            
             <input class="profil" type="file"/>
         </div>
+        
     </div>
     <div class="card-body">
       <b> Name   </b> : {{client[0].name}}
@@ -23,9 +25,7 @@
      
       <b>Adress </b> : {{client[0].adress}}
      </div>
-</div>
-<button class="danger" type="button" class="btn btn-danger">Declare accident</button>
-
+</div><button class="danger" type="button" (click)="openDialog()" >Declare accident</button>
 </div>
 
 <div class="card-container">
@@ -41,8 +41,10 @@
     <div class="type">
       <span>{{ car?.type }}</span>
     </div>
-    <div class="type">
-      <span>{{ car?.type }}</span>
+    <div class="city">
+      <span>{{ car?.city }}</span>
     </div>
 </div>
+
 </div>
+

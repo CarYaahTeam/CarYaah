@@ -25,7 +25,7 @@ export class CarcardComponent implements OnInit {
   getDataFromAPI(){
     this.carCardService.getCars().subscribe((resp)=>{
       this.cars= resp;
-      console.log('hello');
+      console.log(resp);
       
     })
   }
@@ -41,13 +41,11 @@ export class CarcardComponent implements OnInit {
   onClick(){
     this.liked=!this.liked
   }
-
   createFav(carId : number){
       this.carCardService.create(carId).subscribe((data:any)=>{
         console.log(data['fav'])
       })
     }
-
 }
 
 

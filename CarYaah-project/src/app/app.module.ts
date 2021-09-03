@@ -9,16 +9,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { CarInfoComponent } from './car-info/car-info.component';
-// import { HomepageComponent } from './components/homepage/homepage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RentButtonComponent } from './rent-button/rent-button.component';
 import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
-import { StarratingComponent } from './starrating/starrating.component'
+import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
-import { CookieService } from 'ngx-cookie-service'
-import { LikeCarComponent } from './like-car/like-car.component';
+import { CookieService } from 'ngx-cookie-service';
+import { HomepageComponent } from './homepage/homepage.component';
+import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 import { AdminComponent } from './admin/admin.component';
+import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,6 @@ import { AdminComponent } from './admin/admin.component';
     CarReservationComponent,
     NavComponent,
     CarInfoComponent,
-    // HomepageComponent
     routingAuth,
     NavComponent,
     RentButtonComponent,
@@ -34,8 +37,10 @@ import { AdminComponent } from './admin/admin.component';
     CarReservationComponent,
     CarcardComponent,
     StarratingComponent,
-    LikeCarComponent,
     AdminComponent,
+    HomepageComponent,
+    OpinionCustomerComponent,
+    DialogOverviewExampleDialogComponent
   ],
   imports: [
     HttpClientModule,
@@ -51,6 +56,8 @@ import { AdminComponent } from './admin/admin.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatDialogModule,
+    AngularFileUploaderModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

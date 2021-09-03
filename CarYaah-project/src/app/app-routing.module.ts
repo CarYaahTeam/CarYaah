@@ -16,14 +16,13 @@ const routes: Routes = [
   { path: 'owner', component: TestComponent },
   { path: 'feedback', component: FeedbackClientComponent },
   { path: 'admin', component: AdminComponent },
-  { path: '', component: TestComponent },
- 
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cars', component: CarcardComponent },
+  { path: 'car/card', component: CarcardComponent },
   { path: 'stars', component: StarratingComponent },
   { path: 'cars', component: CarInfoComponent },
   { path: 'user', component: UserProfileComponent},
+  { path: 'admin', component: AdminComponent },
 ];
 
 

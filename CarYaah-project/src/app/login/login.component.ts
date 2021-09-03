@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   title = 'cookies-angular'
   successMessage: string = "";
   loginForm!: FormGroup;
-
+  d:any
   constructor(
     private clientService: ClientService,
     private ownerService: OwnerService,

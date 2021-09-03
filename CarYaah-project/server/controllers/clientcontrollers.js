@@ -59,19 +59,24 @@ exports.retrieve = function (req, res) {
 
 //---------------------user profil---------------------------------//
 
-exports.retrievAllUsers =function(req, res) {
-  db.Client.findAll().then( (result) => res.json(result)).catch(err=>{
-      console.log(err)
+exports.retrievAllUsers = function (req, res) {
+  db.Client.findAll().then((result) => res.json(result)).catch(err => {
+    console.log(err)
   })
 }
 
+//----------------Favorit Car-------------------------------------//
 
-exports.getFavCars = async (req,res)=>{
+exports.retrieveFavorites = async (req, res) => {
   try {
-      const fav = await db.Favourite.findAll()
-      return res.status(201).json(fav)
-  } catch(error){
-    console.log(error) 
+    const fav = await db.Favourite.findAll({
+      where: { clientId: req.client.id },
+      include: db.Car
+    })
+    return res.status(201).json(fav.map(fav => fav.car))
+  } catch (error) {
+    console.log(error)
   }
 }
+
 

@@ -69,7 +69,7 @@ const Car = (sequelize) =>
     registration_number: {
       type: DataTypes.INTEGER,
       allowNull: true,
-    }
+    },
   });
 
 module.exports = Car;
