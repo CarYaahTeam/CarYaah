@@ -1,4 +1,8 @@
+require("dotenv");
 var db = require("../db/index");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+
 //---------- ADMIN LOGIN -----------------------//
 exports.loginAdmin = async function (req, res) {
   try {
@@ -8,7 +12,8 @@ exports.loginAdmin = async function (req, res) {
     });
     if (!admin) throw new Error("Invalid username");
 
-    const validPss = await bcrypt.compare(password, admin.password);
+    const validPss = password === admin.password;
+    console.log(password, admin.password);
     if (!validPss) throw new Error("Invalid password");
 
     // create and assign a token
@@ -16,7 +21,7 @@ exports.loginAdmin = async function (req, res) {
       expiresIn: "24h",
     });
 
-    return res.status(200).json({ data: admin, auth_token: token });
+    return res.status(200).json({ auth_token: token });
   } catch (err) {
     res.status(403).json(err.message);
   }
@@ -48,14 +53,25 @@ exports.fetchowners = async function (req, res) {
     res.status(500).send(err);
   }
 };
+//---------------ADMIN FETCH ALL CONFLICTS-------//
+exports.fetchconflicts = async function (req, res) {
+  try {
+    const conflicts = await db.Conflict.findAll();
+    res.status(201).send(conflicts);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+};
 //--------------ADMIN DELETE CLIENT--------------//
 exports.deleteClient = async function (req, res) {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
+    console.log(id);
     await db.Client.destroy({
       where: { id },
     });
-    res.status(200).send("client deleted");
+    res.status(200).json({ msg: "client deleted" });
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
@@ -64,10 +80,12 @@ exports.deleteClient = async function (req, res) {
 //------------------ADMIN DELETE AN OWNER----------//
 exports.deleteOwner = async function (req, res) {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
+    console.log(id);
     await db.Owner.destroy({
       where: { id },
     });
+    res.status(200).json({ msg: "owner deleted" });
   } catch (err) {
     console.log(err);
     res.status(500).send(err);

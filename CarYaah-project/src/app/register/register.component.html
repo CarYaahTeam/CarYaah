@@ -4,52 +4,29 @@
       <div>
         <div class="form-group">
           <label for="email" class="fa fa-envelope"></label>
-          <input type="email" #email placeholder="Email Adress" />
+          <input type="email" #email placeholder="Email Address" />
         </div>
         <div class="form-group">
           <label for="password" class="fa fa-lock"></label>
           <input type="password" #password placeholder="Password" />
-          <span class="text-danger"> </span>
         </div>
-        <!-- <div class="form-group">
-          <label for="username" class="fa fa-user"></label>
-          <input type="text" #username placeholder="Enter Your username" />
-        </div>
-
-        <div class="form-group">
-          <label for="name" class="fa fa-user"></label>
-          <input type="text" #name placeholder="Enter Your Full Name" />
-        </div>
-        <div class="form-group">
-          <label for="adress" class="fa fa-location on"></label>
-          <input type="tel" #adress placeholder="Your Address" />
-        </div> -->
         <div class="form-group form-check text-center">
-          <select #type>
+          <select class="select" #type>
             <option>are a car owner ?</option>
             <option>owner</option>
             <option>client</option>
           </select>
           <label class="form-check-label" for="exampleCheck1"></label>
+          <button (click)="To('/login')">LOGIN</button>
         </div>
         <div class="text-center">
           <button
             id="submitButton"
-            (click)="
-              register({
-                email: email.value,
-                password: password.value,
-
-                type: type.value
-              })
-            "
             type="submit"
             class="btn btn-primary"
+            (click)="register(email.value, password.value, type.value)"
           >
             Register
-          </button>
-          <button (click)="To('/login')">
-            if you're registered login here
           </button>
         </div>
       </div>

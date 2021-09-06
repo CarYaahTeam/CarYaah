@@ -27,9 +27,17 @@ export class AdminService {
     const url = "http://localhost:3000/admin/owners"
     return this.http.get(url)
   }
-  deleteclient(data: any) {
-    const url = "http://localhost:3000/admin/delete/client"
-    return this.http.post(url, data)
+  fetchconflicts() {
+    const url = "http://localhost:3000/admin/conflicts"
+    return this.http.get(url)
+  }
+  deleteclient(data: string) {
+    const url = "http://localhost:3000/admin/delete/client/" + data
+    return this.http.delete(url)
+  }
+  deleteowner(data: string) {
+    const url = "http://localhost:3000/admin/delete/owner/" + data
+    return this.http.delete(url)
   }
 
 }

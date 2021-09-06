@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { ClientService } from 'src/app/client.service';
 import { OwnerService } from 'src/app/owner.service';
 import { Router } from '@angular/router';
@@ -36,9 +36,9 @@ export class LoginComponent implements OnInit {
     } else if (type === "client") {
       this.clientService.logClient(email, password).subscribe((data) => {
         this.cookies.set("token", data.auth_token)
+        this.To('/user')
+
       })
-    } else {
-      alert('you are not registered')
     }
   }
 

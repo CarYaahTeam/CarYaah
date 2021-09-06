@@ -28,30 +28,30 @@ export interface Car {
 export class CarInfoComponent implements OnInit {
 
   constructor() { }
-  car:any
+  car: any
   ngOnInit(): void {
-      // console.log('car data ===>',history.state.data);
-      // console.log('hi');
-      
-      this.car=history.state.data
-      if(history.state.data.type==='sedan'){
-        this.car['type']='Sedan';
-      }
-      if(history.state.data.AC){
-        this.car['AC']='AC'
-      }      
-      if(history.state.data.GPS){
-        this.car['GPS']='GPS'
-      }
-      if(history.state.data.AUTOMATIC){
-        this.car['AUTOMATIC']='AUTOMATIC'
-      }
-      if(!history.state.data.AUTOMATIC){
-        this.car['AUTOMATIC']='MANUAL'
-      }
+    // console.log('car data ===>',history.state.data);
+    // console.log('hi');
 
-      console.log(this.car["brand"]);
-      console.log(this.car);      
+    this.car = history.state.data
+    if (history.state.data.type === 'sedan') {
+      this.car['type'] = 'Sedan';
+    }
+    if (history.state.data.AC) {
+      this.car['AC'] = 'AC'
+    }
+    if (history.state.data.GPS) {
+      this.car['GPS'] = 'GPS'
+    }
+    if (history.state.data.AUTOMATIC) {
+      this.car['AUTOMATIC'] = 'AUTOMATIC'
+    }
+    if (!history.state.data.AUTOMATIC) {
+      this.car['AUTOMATIC'] = 'MANUAL'
+    }
+
+    console.log(this.car["brand"]);
+    console.log(this.car);
   }
 
 

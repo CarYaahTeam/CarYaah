@@ -1,40 +1,78 @@
-<!-- <form class="text-center">
-  <div class="form-group">
-    <label for="username" class="fa fa-envelope"></label>
-    <input type="username" placeholder="username" #username />
+<div *ngIf="!show">
+  <div class="form-group text-center">
+    <label for="username" class="fa fa-user-circle"></label>
+    <input type="username" placeholder="Username" #username />
   </div>
 
-  <div class="form-group">
+  <div class="form-group text-center">
     <label for="password" class="fa fa-lock"></label>
     <input type="password" placeholder="Password" #password />
   </div>
-
   <div class="text-center">
-    <button
-      id="submitButton"
-      type="submit"
-      class="btn btn-primary"
-      (click)="login(username.value, password.value)"
-    >
-      Login
-    </button>
+    <button (click)="login(username.value, password.value)">Login</button>
   </div>
-</form> -->
+</div>
+
 <div *ngIf="show" class="container">
-  <div class="listofclients mx-3">
-    <h3 class="head head-info">CLIENTS</h3>
-    <ul *ngFor="let client of clients">
-      <li>{{ client.username }}</li>
-      <p>{{ client.adress }}</p>
-      <button class="btn btn-danger">BAN</button>
-    </ul>
-  </div>
-  <div class="listofowners mx-3">
-    <h3 class="head head-info">OWNERS</h3>
-    <ul *ngFor="let owner of owners">
-      <li>{{ owner.username }}</li>
-      <p>{{ owner.adress }}</p>
-      <button class="btn btn-danger">BAN</button>
-    </ul>
-  </div>
+  <button (click)="logout()">LOGOUT</button>
+  <table class="listofclients mx-3">
+    <thead>
+      <tr class="tr mx-3">
+        <th scope="col">CLIENTS</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">BAN THIS CLIENT</th>
+        <th scope="col">EMAIL THIS CLIENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.username }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.adress }}</td>
+        <button (click)="To('/sendemail')">write</button>
+        <td>
+          <button class="btn btn-danger" (click)="deleteClient(client.id)">
+            BAN
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="listofowners mx-3">
+    <thead>
+      <tr class="tr mx-3">
+        <th scope="col">OWNERS</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">BAN THIS OWNER</th>
+        <th scope="col">EMAIL THIS CLIENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let owner of owners">
+        <td>{{ owner.username }}</td>
+        <td>{{ owner.email }}</td>
+        <td>{{ owner.adress }}</td>
+        <button (click)="To('/sendemail')">write</button>
+        <td>
+          <button class="btn btn-danger" (click)="deleteOwner(owner.id)">
+            BAN
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="conflicts mx-3">
+    <thead>
+      conflicts
+    </thead>
+    <tbody>
+      <tr *ngFor="let conflict of conflicts">
+        <td>{{ conflict.report }}</td>
+        <td>{{ conflict.status }}</td>
+        <button>Mark as resolved</button>
+      </tr>
+    </tbody>
+  </table>
 </div>

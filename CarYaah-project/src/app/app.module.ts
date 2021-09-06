@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import '@angular/compiler';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +24,7 @@ import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { LikeCarComponent } from './like-car/like-car.component';
+import { SendEmailComponent } from './send-email/send-email.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { LikeCarComponent } from './like-car/like-car.component';
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
-    DialogOverviewExampleDialogComponent
+    DialogOverviewExampleDialogComponent,
+    SendEmailComponent
   ],
   imports: [
     HttpClientModule,

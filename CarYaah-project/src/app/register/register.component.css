@@ -1,14 +1,14 @@
 input {
   border: none;
   background-color: rgba(255, 255, 255, 0);
-  border-bottom: solid black;
+  border-bottom: solid gold;
   size: 3px;
   margin-left: 10px;
   width: 85%;
 }
 
 label {
-  color: grey;
+  color: gold;
 }
 .form-group {
   margin-top: 30px;
@@ -18,6 +18,15 @@ form {
 }
 
 #submitButton {
+  background-color: black;
   margin: 25px;
   width: 40%;
+}
+.select {
+  font-size: 1.5rem;
+  padding: 0.5em 0.5em;
+  align-items: center;
+  background: #4d5061;
+  color: gold;
+  appearance: none;
 }
