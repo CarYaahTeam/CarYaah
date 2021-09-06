@@ -22,7 +22,7 @@ cars:any;
     // 
     this.cars=this.rs.cars;
     console.log("my product", this.cars)
-    this.route.navigateByUrl("/filter")
+    this.route.navigateByUrl("/cars")
 }
 
 

@@ -1,12 +1,13 @@
 
 <div>
-    <a *ngFor='let s of ratingArr; index as i'
+    <i *ngFor="let star of stars" [ngClass]="iconClass[star]"></i>
+    <!-- <a *ngFor='let s of ratingArr; index as i'
     (click)="onClick(i)">
     <i class="{{returnStar(i)}}">
         
     </i>
 
-</a>
+</a> -->
 </div>
 
 

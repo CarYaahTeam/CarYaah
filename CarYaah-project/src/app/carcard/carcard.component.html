@@ -1,6 +1,6 @@
 <div class="container">
   <div class="filter-container">
-    <h3 class="title">Filter By Price</h3>
+    <h3 class="ac">Filter By Price</h3>
     <div class="slidecontainer">
       <span>{{rangevalue}}</span>
       <input class="inp" type="range" min='50' max='300' step='10' autocomplete="off" role="slider" value="300"
@@ -26,7 +26,7 @@
 
     </div>
 
-    <div class="transmission">
+    <div class="title1">
       <h3 class="title2">Transmission</h3>
       <input value="Auto" [(ngModel)]="auto_checkbox" type="radio" (change)="auto($event)">
       <label class="ac" for="cars"> AUTO</label><br />
@@ -43,10 +43,10 @@
       <div class="brand">
         <span>{{car?.brand}}</span>
       </div>
-      <div id="favorite" class="circle" (click)="createFav(car.id)">
-        <i class='{{like()}}'></i>
-      </div>
-      <app-starrating></app-starrating>
+      <!-- <div id="favorite" class="circle" (click)="createFav(car.id)">
+      </div> -->
+      <app-like-car [carId]='car.id'></app-like-car>
+      <app-starrating [rating]="car.rating"></app-starrating>
     </div>
   </div>
 </div>
