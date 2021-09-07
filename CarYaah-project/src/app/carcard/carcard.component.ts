@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarcardService } from '../carcard.service';
 import { Router } from '@angular/router';
 
@@ -15,7 +15,7 @@ export interface Car {
   bail: string;
   status: string;
   city: string;
-  rating: string;
+  rating: number;
   price: string;
   registration_number: number;
   createdAt: Date;
@@ -23,17 +23,13 @@ export interface Car {
   ownerId: number;
 }
 
-
 @Component({
   selector: 'app-carcard',
   templateUrl: './carcard.component.html',
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
-
-  liked : boolean=true;
-
-  constructor(private carCardService: CarcardService , private route : Router  ) {}
+  constructor(private carCardService: CarcardService, private route: Router) {}
 
   rangevalue = 300;
   cars: Car[] = [];
@@ -61,8 +57,8 @@ export class CarcardComponent implements OnInit {
     this.getDataFromAPI();
   }
 
-  info(car : Car) : void {
-    this.route.navigate(['/carInfo'], {state: {data: car}});
+  info(car: Car): void {
+    this.route.navigate(['/carInfo'], { state: { data: car } });
     //this.display = true;
     //To toggle the component
     // this.displayCarInfo = true;
@@ -74,9 +70,9 @@ export class CarcardComponent implements OnInit {
         +car.price < this.rangevalue &&
         (!this.marked.length || this.marked.includes(car.type)) &&
         (!this.ac_marked || car.AC) &&
-        (!this.gps_marked || car.GPS)&&
+        (!this.gps_marked || car.GPS) &&
         (!this.ac_marked || car.AC) &&
-        (!this.auto_checked || car.AUTOMATIC)&&
+        (!this.auto_checked || car.AUTOMATIC) &&
         (!this.man_checked || !car.AUTOMATIC)
       );
     });
@@ -94,6 +90,7 @@ export class CarcardComponent implements OnInit {
     this.filter();
   }
 
+  //Type filter
   checkbox(type: string) {
     const isMarked = !!this.marked.find((mark) => mark === type);
     if (isMarked) this.marked = this.marked.filter((mark) => mark !== type);
@@ -104,6 +101,7 @@ export class CarcardComponent implements OnInit {
   ac(e: any) {
     this.ac_marked = e.target.checked;
     this.filter();
+    this.cars[0].rating;
   }
 
   gps(e: any) {
@@ -119,33 +117,5 @@ export class CarcardComponent implements OnInit {
   man(e: any) {
     this.man_checked = e.target.checked;
     this.filter();
-
   }
-=======
-  getDataFromAPI(){
-    this.carCardService.getCars().subscribe((resp)=>{
-      this.cars= resp;
-      console.log(this.cars);
-    })
-  }
-  
-  like(){
-    if (this.liked){
-      return "far fa-heart fa-2x";
-    }else
-    {
-      return "fas fa-heart fa-2x";
-    }
-  }
-
-  onClick(){
-    this.liked=!this.liked
-  }
-  createFav(carId : number){
-      this.carCardService.create(carId).subscribe((data:any)=>{
-        console.log('data',data['fav'])
-      })
-    }
 }
-
-

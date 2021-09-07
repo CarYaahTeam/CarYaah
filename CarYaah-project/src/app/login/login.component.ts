@@ -8,43 +8,36 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  title = 'cookies-angular'
-  successMessage: string = "";
+  title = 'cookies-angular';
+  successMessage: string = '';
   loginForm!: FormGroup;
-  d: any
+  d: any;
 
   constructor(
     private clientService: ClientService,
     private ownerService: OwnerService,
     private route: Router,
     private cookies: CookieService
-  ) { }
-  ngOnInit(): void {
-
-  }
+  ) {}
+  ngOnInit(): void {}
   To(str: string) {
-    this.route.navigateByUrl(str)
+    this.route.navigateByUrl(str);
   }
-  login(email: string, password: string, type: string) {
-    if (type === "owner") {
-      this.ownerService.logOwner(email, password).subscribe((data) => {
-        this.cookies.set("token", data.auth_token)
-      })
-      this.To("/owner/profile")
-    } else if (type === "client") {
-      this.clientService.logClient(email, password).subscribe((data) => {
-        this.cookies.set("token", data.auth_token)
-      })
-      this.To("/client/profile")
+  
+  login(data:any) {
+    if (data.type === 'owner') {
+      this.ownerService.logOwner(data.email, data.password).subscribe((data) => {
+        this.cookies.set('token', data.auth_token);
+      });
+    } else if (data.type === 'client') {
+      this.clientService.logClient(data.email, data.password).subscribe((data) => {
+        this.cookies.set('token', data.auth_token);
+      });
     } else {
-      alert('you are not registered')
+      alert('you are not registered');
     }
   }
-
-
-
-
 }

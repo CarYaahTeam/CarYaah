@@ -30,8 +30,6 @@ export class CarInfoComponent implements OnInit {
   constructor() { }
   car:any
   ngOnInit(): void {
-      // console.log('car data ===>',history.state.data);
-      // console.log('hi');
       
       this.car=history.state.data
       if(history.state.data.type==='sedan'){
@@ -39,9 +37,15 @@ export class CarInfoComponent implements OnInit {
       }
       if(history.state.data.AC){
         this.car['AC']='AC'
-      }      
+      }
+      if(!history.state.data.AC){
+        this.car['AC']=''
+      }
       if(history.state.data.GPS){
         this.car['GPS']='GPS'
+      }
+      if(!history.state.data.GPS){
+        this.car['GPS']=''
       }
       if(history.state.data.AUTOMATIC){
         this.car['AUTOMATIC']='AUTOMATIC'
@@ -53,7 +57,4 @@ export class CarInfoComponent implements OnInit {
       console.log(this.car["brand"]);
       console.log(this.car);      
   }
-
-
-
 }

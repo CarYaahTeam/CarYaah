@@ -23,6 +23,8 @@ import { FormsModule } from '@angular/forms';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { LikeCarComponent } from './like-car/like-car.component';
+import { RateCarComponent } from './rate-car/rate-car.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
-    DialogOverviewExampleDialogComponent
+    DialogOverviewExampleDialogComponent,
+    LikeCarComponent,
+    RateCarComponent
   ],
   imports: [
     HttpClientModule,

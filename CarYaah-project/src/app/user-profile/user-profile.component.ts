@@ -31,6 +31,11 @@ export class UserProfileComponent implements OnInit {
   }
 
   getFavCars(){
+    this.http.getFav().subscribe((resp:any)=>{
+      this.fav=resp
+      console.log(this.fav);
+      
+    })
 
 }
 openDialog(): void {
