@@ -120,17 +120,7 @@ export class CarcardComponent implements OnInit {
     this.man_checked = e.target.checked;
     this.filter();
 
-  }
-
-
-  // createFav(carId : number){
-  //     this.carCardService.create(carId).subscribe((data:any)=>{
-  //       console.log('data',data['fav'])
-  //     })
-  //   }
-
-
-    
+  }    
 }
 
 

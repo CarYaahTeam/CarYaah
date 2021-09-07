@@ -24,7 +24,7 @@
             id="submitButton"
             type="submit"
             class="btn btn-primary"
-            (click)="login(email.value, password.value, type.value)"
+            (click)="login({email:email.value, password:password.value,type: type.value})"
           >
             Login
           </button>

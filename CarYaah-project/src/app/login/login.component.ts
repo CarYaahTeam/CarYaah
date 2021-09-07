@@ -27,13 +27,13 @@ export class LoginComponent implements OnInit {
     this.route.navigateByUrl(str);
   }
   
-  login(email: string, password: string, type: string) {
-    if (type === 'owner') {
-      this.ownerService.logOwner(email, password).subscribe((data) => {
+  login(data:any) {
+    if (data.type === 'owner') {
+      this.ownerService.logOwner(data.email, data.password).subscribe((data) => {
         this.cookies.set('token', data.auth_token);
       });
-    } else if (type === 'client') {
-      this.clientService.logClient(email, password).subscribe((data) => {
+    } else if (data.type === 'client') {
+      this.clientService.logClient(data.email, data.password).subscribe((data) => {
         this.cookies.set('token', data.auth_token);
       });
     } else {
