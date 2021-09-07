@@ -97,6 +97,7 @@ exports.createOwner = async function (req, res) {
   }
 };
 
+
 //---------------------LOGIN ONE OWNER-----------------//
 
 exports.loginOwner = async function (req, res) {

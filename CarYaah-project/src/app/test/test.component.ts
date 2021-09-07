@@ -47,6 +47,7 @@ export class TestComponent implements OnInit {
     };
     this.ac.add(datacar).subscribe((data: any) => {
       console.log(data['car']);
+      alert('done');
     });
   }
 }

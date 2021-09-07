@@ -2,7 +2,7 @@
     <div class="header">
         <div class="row r1">
             <div class="col-md-9 abc">
-                <img class="imgInfo"src="https://lh3.googleusercontent.com/Gpn3mL6DAD6uRq260V1UOGqKFlQxBDi07wYYReTYE95kua_XhB68JK-JaE0vCbHhRxCbJdZ9HPR3dtwTOL1qklSWyU8tFiIt7jwWh8YNjrv5fqzK07Vl36_ZgHvlDpmfrMFeaoVmSC-X7X5aAJPtW9B1FG_YQSJC3Tezx4SGbndBQB2W0nOPPKMh0fXjMqQv2ILPJ7DtVM1qJys3sXRJNWjAOa7Aw51KHSzZyrlSelEIWw0Tg0lXGUJ0GIqZNYh2iYs8VvM1mqzGRwtbp22mGD-vMKB5GkEkiktGiAuBHZymWnzENAIN4CqUN1jcq5lBiRd1PcMxbSwvaAUVwv2SmaAtO0PspQzdfItEdjg_Mah0auvs8m79OSn_c2uqJCPrdwhMgYr3_Cp8vC36fyhgJystTz7SC2wGj8DvArDm_RPLB5U2J7PLvlP3BTn2xcG3OZmDNQkX-l9iMO0UmB8uC6LyVz8qxyp5y4IOCxD1XrjwjnEJSjfrieyMAduXdOPAxboZsr6vA2JzH0IHvA2xXosM3tti3LFP-PSKhVwQM3j_oKV649C05ib-epx54EW1kosEYVO3tIzKUj6PKKstnME_mTC3bt7V56CQLW8KJ--uiCLG5B8bkPbpdMO73kQvonLdgWAy5L6V_TrowyT31yKJkKcVYr599_llHpobvWuLFcQrMaxkJgIGTdMibSAyuQ7av053p_445_hJbW9xZ-zQ=w552-h334-no?authuser=0"/>
+                <!-- <img class="imgInfo"src="https://lh3.googleusercontent.com/Gpn3mL6DAD6uRq260V1UOGqKFlQxBDi07wYYReTYE95kua_XhB68JK-JaE0vCbHhRxCbJdZ9HPR3dtwTOL1qklSWyU8tFiIt7jwWh8YNjrv5fqzK07Vl36_ZgHvlDpmfrMFeaoVmSC-X7X5aAJPtW9B1FG_YQSJC3Tezx4SGbndBQB2W0nOPPKMh0fXjMqQv2ILPJ7DtVM1qJys3sXRJNWjAOa7Aw51KHSzZyrlSelEIWw0Tg0lXGUJ0GIqZNYh2iYs8VvM1mqzGRwtbp22mGD-vMKB5GkEkiktGiAuBHZymWnzENAIN4CqUN1jcq5lBiRd1PcMxbSwvaAUVwv2SmaAtO0PspQzdfItEdjg_Mah0auvs8m79OSn_c2uqJCPrdwhMgYr3_Cp8vC36fyhgJystTz7SC2wGj8DvArDm_RPLB5U2J7PLvlP3BTn2xcG3OZmDNQkX-l9iMO0UmB8uC6LyVz8qxyp5y4IOCxD1XrjwjnEJSjfrieyMAduXdOPAxboZsr6vA2JzH0IHvA2xXosM3tti3LFP-PSKhVwQM3j_oKV649C05ib-epx54EW1kosEYVO3tIzKUj6PKKstnME_mTC3bt7V56CQLW8KJ--uiCLG5B8bkPbpdMO73kQvonLdgWAy5L6V_TrowyT31yKJkKcVYr599_llHpobvWuLFcQrMaxkJgIGTdMibSAyuQ7av053p_445_hJbW9xZ-zQ=w552-h334-no?authuser=0"/> -->
             </div>
             <div class="col-md-3 text-right pqr"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
             <p class="text-right para">Based on 250 Review</p>
@@ -12,16 +12,16 @@
         <div class="row r3">
             <div class="col-md-5 p-0 klo">
                 <ul>
-                    <li><b>Brand: </b> AUDI</li>
-                    <li><b>Type:</b>Type: little Q2  </li>
-                    <li><b>EQUIPMENTS:</b> GPS, AC  </li>
-                    <li><b>TRANSMISSION : </b>7-speed twin-clutch, front-wheel drive</li>
-                    <li><b>START DATE Availablity : </b> 25-08-2021</li>
-                    <li><b>END DATE Availablity : </b>25-09-2021</li>
-                    <li><b>PRICE : </b> $54,500 per day</li>
+                    <li><b>Brand: </b>{{car.brand}}</li>
+                    <li><b>Type:</b>{{car.type}}</li>
+                    <li><b>EQUIPMENTS:</b>{{car.AC}} {{car.GPS}}</li>
+                    <li><b>TRANSMISSION : </b>{{car.AUTOMATIC}}</li>
+                    <li><b>START DATE Availablity : </b>{{car.start_date_av}}</li>
+                    <li><b>END DATE Availablity : </b>{{car.end_date_av}}</li>
+                    <li><b>PRICE : </b>{{car.price}}TND Per Day</li>
                 </ul>
             </div>
-            <div class="col-md-7"> <img src="https://www.autocar.co.nz/_Reviews/Cars/2017%20Audi%20Q2/Audi%20Q2-front%20static_HEADER.jpg" width="90%" height="95%"> </div>
+            <div class="col-md-7"> <img src={{car.image}} width="90%" height="95%"> </div>
         </div>
     </div>
     <div class="footer d-flex flex-column mt-5">

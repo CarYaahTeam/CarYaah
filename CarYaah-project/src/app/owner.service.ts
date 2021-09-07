@@ -17,7 +17,8 @@ export class OwnerService {
   constructor(private http: HttpClient) {}
 
   regOwner(data: object) {
-    const url = 'http://localhost:3000/owner/signup';
+    console.log('hi', data)
+    const url = "http://localhost:3000/owner/signup"
     this.http.post(url, data).subscribe((data) => {
       console.log('there', data);
     });
@@ -35,6 +36,8 @@ export class OwnerService {
   getOwner() {
     return this.http.get('http://localhost:3000/owner/profile');
   }
+ 
+
   getCarOwner(dataCar: any) {
     return this.http.get('http://localhost:3000/owner/getCar');
   }
