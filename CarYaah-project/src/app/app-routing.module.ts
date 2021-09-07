@@ -6,19 +6,17 @@ import { CarInfoComponent } from './car-info/car-info.component';
 import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { CarcardComponent } from './carcard/carcard.component';
-import { StarratingComponent } from './starrating/starrating.component';
-import { ClientComponent } from './client/client.component';
-import {UserProfileComponent} from '../app/user-profile/user-profile.component';
+import { CarcardComponent } from './carcard/carcard.component'
+import { StarratingComponent } from './starrating/starrating.component'
+import { UserProfileComponent } from '../app/user-profile/user-profile.component';
 import { AdminComponent } from './admin/admin.component';
+import { SendEmailComponent } from './send-email/send-email.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { PaiementComponent } from './paiement/paiement.component';
-
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
-  { path: 'test', component: TestComponent },
-  { path: 'client/profile', component: ClientComponent },
-  { path: 'user', component: UserProfileComponent},
+  { path: 'sendemail', component: SendEmailComponent },
+  { path: 'user', component: UserProfileComponent },
   { path: 'home', component: CarReservationComponent },
   { path: 'owner', component: TestComponent },
   { path: 'register', component: RegisterComponent },
@@ -35,5 +33,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const routingAuth = [RegisterComponent, LoginComponent];

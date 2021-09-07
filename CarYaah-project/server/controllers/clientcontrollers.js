@@ -89,10 +89,12 @@ exports.retrieve = function (req, res) {
 //---------------------user profil---------------------------------//
 
 exports.retrievAllUsers = function (req, res) {
-  db.Client.findAll().then((result) => res.json(result)).catch(err => {
-    console.log(err)
-  })
-}
+  db.Client.findAll()
+    .then((result) => res.json(result))
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 //----------------Favorit Car-------------------------------------//
 
@@ -100,13 +102,10 @@ exports.retrieveFavorites = async (req, res) => {
   try {
     const fav = await db.Favourite.findAll({
       where: { clientId: req.client.id },
-      include: db.Car
-    })
-    return res.status(201).json(fav.map(fav => fav.car))
+      include: db.Car,
+    });
+    return res.status(201).json(fav.map((fav) => fav.car));
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
-
-
-
+};

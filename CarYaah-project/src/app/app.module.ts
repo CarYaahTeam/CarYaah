@@ -15,6 +15,7 @@ import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
 import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
@@ -22,11 +23,11 @@ import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.co
 import { AdminComponent } from './admin/admin.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { PaiementComponent } from './paiement/paiement.component';
-import { FormsModule } from '@angular/forms';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { LikeCarComponent } from './like-car/like-car.component';
+import { SendEmailComponent } from './send-email/send-email.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
 
 @NgModule({
@@ -42,6 +43,7 @@ import { RateCarComponent } from './rate-car/rate-car.component';
     CarReservationComponent,
     CarcardComponent,
     StarratingComponent,
+    LikeCarComponent,
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
@@ -49,20 +51,18 @@ import { RateCarComponent } from './rate-car/rate-car.component';
     OwnerProfileComponent,
     PaiementComponent,
     DialogOverviewExampleDialogComponent,
+    SendEmailComponent,
     LikeCarComponent,
     RateCarComponent,
   ],
   imports: [
     HttpClientModule,
-    BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    BrowserModule,
-    BrowserModule,
     ReactiveFormsModule,
 
     BrowserAnimationsModule,
     MatCardModule,
-    BrowserModule,
     ReactiveFormsModule,
 
     MatButtonModule,
@@ -73,4 +73,4 @@ import { RateCarComponent } from './rate-car/rate-car.component';
   providers: [CookieService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

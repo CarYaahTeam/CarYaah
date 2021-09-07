@@ -11,7 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class CarcardService {
-  constructor(private http: HttpClient, private cookie: CookieService) {}
+  constructor(private http: HttpClient, private cookie: CookieService) { }
 
   getCars() {
     return this.http.get<Car[]>('http://localhost:3000/cars');
