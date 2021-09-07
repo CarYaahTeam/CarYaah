@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 export interface Car {
@@ -23,9 +24,10 @@ export interface Car {
 @Component({
   selector: 'app-car-info',
   templateUrl: './car-info.component.html',
-  styleUrls: ['./car-info.component.css']
+  styleUrls: ['./car-info.component.css'],
 })
 export class CarInfoComponent implements OnInit {
+ 
 
   constructor() { }
   car: any

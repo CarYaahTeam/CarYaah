@@ -19,14 +19,16 @@ import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
+
 import { AdminComponent } from './admin/admin.component';
+import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
+import { PaiementComponent } from './paiement/paiement.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AngularFileUploaderModule } from "angular-file-uploader";
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { LikeCarComponent } from './like-car/like-car.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
-
 
 @NgModule({
   declarations: [
@@ -45,27 +47,30 @@ import { RateCarComponent } from './rate-car/rate-car.component';
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
+    AdminComponent,
+    OwnerProfileComponent,
+    PaiementComponent,
     DialogOverviewExampleDialogComponent,
     SendEmailComponent,
     LikeCarComponent,
-    RateCarComponent
+    RateCarComponent,
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
+
     BrowserAnimationsModule,
     MatCardModule,
     ReactiveFormsModule,
-    HttpClientModule,
+
     MatButtonModule,
     MatDialogModule,
     AngularFileUploaderModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

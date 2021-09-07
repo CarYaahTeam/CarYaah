@@ -1,6 +1,7 @@
 require("dotenv");
 var db = require("../db/index");
 const bcrypt = require("bcryptjs");
+const axios = require("axios");
 const jwt = require("jsonwebtoken");
 //---------------REGISTER ONE CLIENT--------------//
 exports.createClient = async function (req, res) {
@@ -47,6 +48,34 @@ exports.loginClient = async function (req, res) {
   }
 };
 
+exports.payClient = async function (req, res) {
+  try {
+    var obj = {
+      receiverWallet: process.env.wallet_id,
+      amount: req.body.amount,
+      selectedPaymentMethod: "gateway",
+      token: "TND",
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phoneNumber: req.body.phoneNumber,
+      email: req.body.email,
+      // orderId: req.body.orderId,
+      webhook: "merchant.tech/api/notification_payment",
+      successUrl: "http://localhost:4200",
+      failUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    };
+    axios
+      .post(
+        "https://api.preprod.konnect.network/api/v1/payments/init-payment",
+        obj
+      )
+      .then((url) => {
+        res.status(201).send(url);
+      });
+  } catch {
+    res.send(err);
+  }
+};
 exports.retrieve = function (req, res) {
   client.findAll({}, function (err, result) {
     if (err) {
