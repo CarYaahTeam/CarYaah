@@ -1,5 +1,8 @@
 .navbar {
   background-color: #000;
+  min-height: 50px;
+  margin-bottom: 0px;
+  border: 1px solid transparent;
 }
 nav {
   height: 130px;
@@ -39,4 +42,15 @@ nav {
   border-radius: 40px 0px 0px 0px;
   border-top: 5px solid yellow;
   border-left: 5px solid yellow;
+}
+
+.fas{
+  color: white;
+  font-size: 40px;
+  margin-left: 350px;
+  position: fixed;
+}
+.drop{
+  margin-right: 150px;
+
 }

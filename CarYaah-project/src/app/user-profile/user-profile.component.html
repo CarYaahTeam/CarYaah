@@ -1,5 +1,4 @@
-
-  <div class="row">
+<!-- <div class="row">
     <div class="col-md-4">
         <div class="card">
     <div class="card-header">
@@ -8,44 +7,94 @@
         <div class="mb-4">
           <img src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
             class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar">
-            
             <input class="profil" type="file"/>
         </div>
-        
-    </div>
-   
-    <div class="card-body">
-      <b> Name   </b> : {{client[0].name}}
-     
-     </div>
-    <div class="card-body">
-     <b> Email </b> : {{client[0].email}}
-    
     </div>
     <div class="card-body">
-     
-      <b>Adress </b> : {{client[0].adress}}
+      <b> Name:   </b>  {{client[0].name}}
      </div>
+    <div class="card-body">
+     <b> Email: </b>  {{client[0].email}}
+    </div>
+    <div class="card-body">
+      <b>Adress: </b>  {{client[0].adress}}
+     </div>
+     
 </div><button class="danger" type="button" (click)="openDialog()" >Declare accident</button>
-</div>
+</div> -->
 
-<div class="card-container">
-  <div *ngFor="let car of " class="card">
-    <div class="img" style="background-image: url({{car?.image}});">
-    </div>
-    <div class="price">
-      <span>{{ car?.price }} TND/DAY</span>
-    </div>
-    <div class="brand">
-      <span>{{ car?.brand }}</span>
-    </div>
-    <div class="type">
-      <span>{{ car?.type }}</span>
-    </div>
-    <div class="city">
-      <span>{{ car?.city }}</span>
-    </div>
-</div>
 
-</div>
+<section  class="all" style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-chat/ava3.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">{{client[0].name}}</h5>
+            <p class="text-muted mb-1">Doctor</p>
+            <p class="text-muted mb-4">{{client[0].adress}}</p>
+            <div class="d-flex justify-content-center mb-2">
+              <!-- <button type="button" class="btn btn-primary">Follow</button>
+              <button type="button" class="btn btn-outline-primary ms-1">Message</button> -->
+            </div>
+          <button class="danger" type="button" (click)="openDialog()" >Declare accident</button>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Ahmed Tounsi</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{client[0].email}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"> 23456780</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Mobile</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"> 97654321</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{client[0].adress}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </div>
+  </div>
+</section>

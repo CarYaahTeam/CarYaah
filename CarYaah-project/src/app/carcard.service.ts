@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import { Car } from './carcard/carcard.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class CarcardService {
   constructor(private http: HttpClient) { }
 
   getCars(){
-    return this.http.get('http://localhost:3000/cars');  
+    return this.http.get<Car[]>('http://localhost:3000/cars');  
   }
 
   getFav(){
@@ -17,6 +19,6 @@ export class CarcardService {
 
   }
   create(carId : number){
-    return this.http.get(`http://localhost:3000/fav/${carId}`)
+    return this.http.get(`http://localhost:3000/fav/${carId}` )
   }
 }

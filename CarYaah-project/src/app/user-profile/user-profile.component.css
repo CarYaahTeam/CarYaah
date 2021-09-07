@@ -1,95 +1,21 @@
-/* .circular--landscape {
-    display: inline-block;
-    position: relative;
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 50%;
-  }
-  
-  .circular--landscape img {
-    width: auto;
-    height: 100%;
-    margin-left: -50px;
-  } */
-  .form-group{
-    /* border: 5px solid; */
-    border-radius: 24px;
-    text-align: center;
-    width: 950px;
-    margin-left: 450px;
-    margin-top: 150px;
-   
-  }
-  .avatar-pic {
-    width: 150px;
-    margin-top: 50px;
-    margin-right: 550px;
-    margin-left: 270px;
-    margin-bottom: 50px;
-    }
-    .container{
-      display: flex;
-    }
-   .form{
-     margin-right: 10px;
-    
-   }
-   .file{
-     margin-left: 0px;
-   }
-  .form1{
-    margin-right: 1250px;
-  }
-  .user1{
-    margin-left: 550px;
-    font-size: large;
-    margin-top: 250px;
-    margin-left: 550px;
-  }
-  #bt{
-    display: flex;
-  }
-  .card{
-    margin-left: 550px;
-    width:750px;
-  }
-
-
-.card{
-  font-size: large;
-  font-weight: 750px;
-  margin-top: 50px;
-  border-radius: 24px;
-  margin-bottom: 50px;
-  margin-left: 575px;
-  height:650px;
+.all{
+  background-image: url(https://wallpaperaccess.com/full/1098290.jpg);
+  height:850px ;
 }
-.file-field{
-  text-align: center;
-}
-h4{
-  text-align: center;
-  font-size: 35px;
-  margin-top: 120px;
-  margin-bottom: 10px;
+
+.danger{
+  color: crimson;
 }
 .card-body{
-  margin-left: 165px;
-  font-size: 30px;
-  margin-top: 10px;
-  width: 70%;
-}
-.danger{
-  width: 250px;
-  text-align: center;
-  margin-left: 250px;
-  height: 40px;
-  background-color: brown;
-}
-.profil{
-  margin-left: 180px;
-  margin-bottom: 20px;
+  height: 350px;
 }
 
-
+.my-3{
+font-size: 20px;
+}
+.mb-1{
+  font-size: 20px; 
+}
+.mb-4{
+  font-size: 20px;  
+}

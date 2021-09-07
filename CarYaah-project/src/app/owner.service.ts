@@ -24,6 +24,7 @@ export class OwnerService {
       console.log('there', data);
     })
   }
+  
   logOwner(email: string, password: string): Observable<{ auth_token: string, data: IOwner }> {
     const url = "http://localhost:3000/owner/signin"
     return this.http.post<{ auth_token: string, data: IOwner }>(url, { email, password })

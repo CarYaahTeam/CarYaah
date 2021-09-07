@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import '@angular/compiler'
+import { AgmCoreModule } from '@agm/core';
+import '@angular/compiler';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingAuth } from './app-routing.module';
@@ -19,10 +20,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 import { AdminComponent } from './admin/admin.component';
+import { FormsModule } from '@angular/forms'; 
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFileUploaderModule } from "angular-file-uploader";
-
+import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
-    DialogOverviewExampleDialogComponent
+    DialogOverviewExampleDialogComponent,
+    FilteredCarsComponent,
+  
   ],
   imports: [
     HttpClientModule,
@@ -57,7 +61,12 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     HttpClientModule,
     MatButtonModule,
     MatDialogModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDfs_1GsvjusAZ9iFb6Qd-gxLU-bWGoJEQ',
+   
+    })
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

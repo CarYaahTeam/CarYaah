@@ -10,18 +10,23 @@ import { CarcardComponent } from './carcard/carcard.component'
 import { StarratingComponent } from './starrating/starrating.component'
 import {UserProfileComponent} from '../app/user-profile/user-profile.component';
 import { AdminComponent } from './admin/admin.component';
+import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
+
+
 const routes: Routes = [
+  { path: 'admin', component: AdminComponent },
+  { path: 'user', component: UserProfileComponent},
   { path: 'home', component: CarReservationComponent },
   { path: 'owner', component: TestComponent },
-  { path: 'feedback', component: FeedbackClientComponent },
-  { path: 'admin', component: AdminComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cars', component: CarcardComponent },
   { path: 'stars', component: StarratingComponent },
   { path: 'carInfo', component: CarInfoComponent },
-  { path: 'user', component: UserProfileComponent},
-  { path: 'admin', component: AdminComponent },
+  { path: 'feedback', component: FeedbackClientComponent },
+  {path:"filteredCars", component: FilteredCarsComponent }
+
+
 ];
 
 

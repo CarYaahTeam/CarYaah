@@ -14,8 +14,6 @@ export class UserProfileComponent implements OnInit {
   fav:any=[];
 
   constructor(private  http : UserService, public dialog: MatDialog) { }
- 
-  
   ngOnInit(): void {
     this.getData();
     this.http.getFav().subscribe((resp)=>{
@@ -30,7 +28,6 @@ export class UserProfileComponent implements OnInit {
       console.log(this.client); 
     })
   }
-
 
 openDialog(): void {
   const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
