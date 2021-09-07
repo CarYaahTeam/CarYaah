@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+
 
 import { Car } from './carcard/carcard.component';
 import { CookieService } from 'ngx-cookie-service';
@@ -8,7 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class CarcardService {
-  constructor(private http: HttpClient, private cookie: CookieService) {}
+  constructor(private http: HttpClient, private cookie: CookieService) { }
 
   getCars() {
     return this.http.get<Car[]>('http://localhost:3000/cars');

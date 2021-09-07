@@ -9,7 +9,8 @@ exports.createOwnerCar = async (req, res) => {
       start_date_av: req.body.startDate,
       end_date_av: req.body.endDate,
       price: req.body.price,
-      // id_owner: 1, //TODO: replace with ID from token
+      image: req.body.image,
+      id_owner: 1, //TODO: replace with ID from token
     };
 
     const car = await db.Car.create(ownerCar);
@@ -46,6 +47,29 @@ exports.updateOwnerCar = async (req, res) => {
     cars.end_date_av = req.body.endDate;
     cars.price = req.body.price;
     await cars.save();
+    return res.status(201).json(cars);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+//____________________________________Owner profile_____________________________________________________________________
+// exports.addOwnerCarProfile = async (req, res) => {
+//   try {
+//     const cars = await db.Car.findOne({ where: { id: req.params.id } });
+//     cars.brand = req.body.brand;
+//     cars.start_date_av = req.body.startDate;
+//     cars.end_date_av = req.body.endDate;
+//     cars.price = req.body.price;
+
+//     return res.status(201).json(cars);
+//   } catch (error) {
+//     return res.status(500).json({ error: error.message });
+//   }
+// };
+
+exports.addOwnerCarProfile = async (req, res) => {
+  try {
+    const cars = await db.Car.findAll();
     return res.status(201).json(cars);
   } catch (error) {
     return res.status(500).json({ error: error.message });
@@ -89,7 +113,7 @@ exports.loginOwner = async function (req, res) {
 
     // create and assign a token
     const token = jwt.sign({ id: owner.id }, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: 10,
+      expiresIn: "24h",
     });
     delete owner.password;
 
@@ -98,4 +122,12 @@ exports.loginOwner = async function (req, res) {
     console.log("dada", err);
     res.status(403).json(err.message);
   }
+};
+
+exports.profileOwner = function (req, res) {
+  db.Owner.findAll()
+    .then((result) => res.json(result))
+    .catch((err) => {
+      console.log(err);
+    });
 };

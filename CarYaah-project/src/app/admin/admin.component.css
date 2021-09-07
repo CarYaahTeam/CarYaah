@@ -1,14 +1,32 @@
-.nav-link {
-  padding: 8px;
-  color: #fff;
-  font-weight: 400;
+.body {
+  display: flex;
+  background-color: black;
 }
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .show > .nav-link {
-  color: #333;
-  background-color: #f0f0f0;
-  border-radius: 8px;
+.listofclients {
+  overflow-y: scroll;
+  position: fixed;
+  align-items: center;
+  flex-direction: row;
+  background-color: #fac63c;
+  top: 30%;
+  left: 0;
+  width: 45%;
+  height: 40%;
+  border-radius: 10px;
 }
-.navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 1);
+.listofowners {
+  overflow-y: scroll;
+  position: fixed;
+  align-items: center;
+  flex-direction: row;
+  background-color: #fac63c;
+  top: 30%;
+  right: 0;
+  width: 45%;
+  height: 40%;
+  border-radius: 10px;
+}
+.btn {
+  background-color: #bd5620;
+  color: aliceblue;
 }
