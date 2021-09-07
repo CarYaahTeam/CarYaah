@@ -1,5 +1,7 @@
 .background {
-  background-color: black;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdnFmBSMXSVnbz6P_ZfLa6fiFFC6bXBg8q83AyUInH67h5uZqYWVrlvWuDZfHxpXn0PIU&usqp=CAU);
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-top: -42px;
   padding: 50px;
 }

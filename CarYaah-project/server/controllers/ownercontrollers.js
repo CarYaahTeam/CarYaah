@@ -52,6 +52,29 @@ exports.updateOwnerCar = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+//____________________________________Owner profile_____________________________________________________________________
+// exports.addOwnerCarProfile = async (req, res) => {
+//   try {
+//     const cars = await db.Car.findOne({ where: { id: req.params.id } });
+//     cars.brand = req.body.brand;
+//     cars.start_date_av = req.body.startDate;
+//     cars.end_date_av = req.body.endDate;
+//     cars.price = req.body.price;
+
+//     return res.status(201).json(cars);
+//   } catch (error) {
+//     return res.status(500).json({ error: error.message });
+//   }
+// };
+
+exports.addOwnerCarProfile = async (req, res) => {
+  try {
+    const cars = await db.Car.findAll();
+    return res.status(201).json(cars);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
 //_________________________________________________________________________________________________________
 
 //---------------REGISTER ONE OWNER--------------//
@@ -98,4 +121,12 @@ exports.loginOwner = async function (req, res) {
     console.log("dada", err);
     res.status(403).json(err.message);
   }
+};
+
+exports.profileOwner = function (req, res) {
+  db.Owner.findAll()
+    .then((result) => res.json(result))
+    .catch((err) => {
+      console.log(err);
+    });
 };

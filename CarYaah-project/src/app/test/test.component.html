@@ -38,12 +38,6 @@
                             </div> <br> <br> <br>
                             <!-- cloudinary -->
 
-                            <!-- <div>
-                                <form action="" method="post" enctype="multipart/form-data">
-                                    <input type="file">
-                                </form> 
-                                `<input type="file" ng2FileSelect [uploader]="uploader" multiple  />`                         
-                            </div>  -->
                             <div class="cloud">
                                 <input type="file" (change)="imgUpload($event)">
                             </div>
@@ -56,7 +50,7 @@
                             </div> <br/>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option class="hidden"  selected disabled >Please select transmission you want </option>
+                                    <option class="hidden"  selected disabled >Please select the transmission you want </option>
                                     <option> manual  </option>
                                     <option> automatic  </option>
                                 </select>
@@ -69,8 +63,8 @@
                            
                             </div>
 
-                            <input type="submit" class="btnRegister"  value="Up-Date"/>
-                            <input type="submit" class="btnRegister"  value="Delete" />
+                            <!-- <input type="submit" class="btnRegister"  value="Up-Date"/>
+                            <input type="submit" class="btnRegister"  value="Delete" /> -->
                         </div>
                         <button
                         (click)="add(brand.value, type.value, startDate.value, endDate.value, price.value)"
