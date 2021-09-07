@@ -25,6 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { LikeCarComponent } from './like-car/like-car.component';
 import { SendEmailComponent } from './send-email/send-email.component';
+import { RateCarComponent } from './rate-car/rate-car.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { SendEmailComponent } from './send-email/send-email.component';
     HomepageComponent,
     OpinionCustomerComponent,
     DialogOverviewExampleDialogComponent,
-    SendEmailComponent
+    SendEmailComponent,
+    LikeCarComponent,
+    RateCarComponent
   ],
   imports: [
     HttpClientModule,

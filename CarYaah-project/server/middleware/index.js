@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { Client } = require("../db");
-const { Onwer } = require("../db");
+const db = require("../db");
 
 exports.authClient = async (req, res, next) => {
   try {
@@ -8,7 +7,7 @@ exports.authClient = async (req, res, next) => {
     if (!token) throw new Error("Access Denied");
 
     const { id } = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    const client = await Client.findOne({ where: { id } });
+    client = await db.Client.findOne({ where: { id } });
 
     if (!client) throw new Error("Access Denied");
     req.client = client.dataValue;
@@ -23,7 +22,7 @@ exports.authOwner = async (req, res, next) => {
     if (!token) throw new Error("Access Denied");
 
     const { id } = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    const owner = await Onwer.findOne({ where: { id } });
+    const owner = await db.Onwer.findOne({ where: { id } });
 
     if (!owner) throw new Error("Access Denied");
     req.owner = owner.dataValue;

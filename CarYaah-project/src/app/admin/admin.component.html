@@ -30,7 +30,9 @@
         <td>{{ client.username }}</td>
         <td>{{ client.email }}</td>
         <td>{{ client.adress }}</td>
-        <button (click)="To('/sendemail')">write</button>
+        <button (click)="To('/sendemail')" client=" client.username">
+          write
+        </button>
         <td>
           <button class="btn btn-danger" (click)="deleteClient(client.id)">
             BAN

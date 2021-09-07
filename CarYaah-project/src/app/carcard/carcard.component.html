@@ -1,6 +1,6 @@
 <div class="container">
   <div class="filter-container">
-    <h3 class="title">Filter By Price</h3>
+    <h3 class="ac">Filter By Price</h3>
     <div class="slidecontainer">
       <span>{{rangevalue}}</span>
       <input class="inp" type="range" min='50' max='300' step='10' autocomplete="off" role="slider" value="300"
@@ -23,57 +23,17 @@
       <label class="ac" for="cars"> AC</label><br />
       <input class="ch1" type="checkbox" [(ngModel)]="gps_checkbox" data-md-icheck (change)="gps($event)" />
       <label class="ac" for="cars"> GPS</label><br />
-
     </div>
-
-    <div class="transmission">
+    <div class="title1">
       <h3 class="title2">Transmission</h3>
       <input value="Auto" [(ngModel)]="auto_checkbox" type="radio" (change)="auto($event)">
       <label class="ac" for="cars"> AUTO</label><br />
       <input value="Manual" [(ngModel)]="man_checkbox" type="radio" (change)="man($event)">
       <label class="ac" for="cars">MANUAL</label><br />
-=======
-      <input class="inp" type="range" min="1" max="100" value="50" />
-    </div>
-    <div class="check">
-      <h3 class="title1">Type</h3>
-      <input class="filter" type="checkbox" name="vehicle1" value="car" />
-      <label class="label" for="cars"> Sedan</label><br />
-      <input type="checkbox" name="vehicle2" value="car" />
-      <label class="label" for="cars"> Van</label><br />
-      <input type="checkbox" name="vehicle3" value="car" />
-      <label class="label" for="cars"> Pickup</label><br />
-      <input type="checkbox" name="vehicle4" value="car" />
-      <label class="label" for="cars">Mini Truck</label><br />
-    </div>
-    <div class="equipment">
-      <h3 class="title2">Equipment</h3>
-      <input class="ch1" type="checkbox" name="vehicle1" value="car" />
-      <label class="ac" for="cars"> AC</label><br />
-      <input class="ch1" type="checkbox" name="vehicle2" value="car" />
-      <label class="ac" for="cars"> GPS</label><br />
-    </div>
-
-    <div class="form-group">
-      <!-- <select class="form-control" formControlName="transmission" required>
-        <option value="" class="hidden" selected disabled></option>
-        <option>Manuel</option>
-        <option>Auto</option>
-      </select> -->
-      <!-- <input class="ch1" type="checkbox"  name="vehicle3" value="car">
-        <label class="ac"  for="cars"> Transmission</label><br> -->
-    </div>
-
-    <div class="form-group">
-      <select class="form-control" formControlName="transmission" required>
-        <option value="" class="hidden" selected disabled></option>
-        <option>Manuel</option>
-        <option>Auto</option>
-      </select>
     </div>
   </div>
   <div class="card-container">
-    <div *ngFor="let car of cars" class="card">
+    <div *ngFor="let car of cars.slice().reverse()"class="card">
       <div class="img" style="background-image: url({{car?.image}});" (click)="info(car)"></div>
       <div class="price">
         <span>{{car?.price}} TND/DAY</span>
@@ -81,10 +41,10 @@
       <div class="brand">
         <span>{{car?.brand}}</span>
       </div>
-      <div id="favorite" class="circle" (click)="createFav(car.id)">
-        <i class='{{like()}}'></i>
-      </div>
-      <app-starrating></app-starrating>
+      <!-- <div id="favorite" class="circle" (click)="createFav(car.id)">
+      </div> -->
+      <app-like-car [carId]='car.id'></app-like-car>
+      <app-starrating [rating]="car.rating"></app-starrating>
     </div>
   </div>
 </div>

@@ -34,15 +34,15 @@ export class RegisterComponent implements OnInit {
   To(str: string) {
     this.route.navigateByUrl(str)
   }
-  register(email: string, password: string, type: string) {
-    console.log(email, password)
-    if (type === "owner") {
-      this.ownerService.regOwner(email, password)
-      console.log('register owner', email, password);
+  register(data: any) {
+    console.log(data.email, data.password)
+    if (data.type === "owner") {
+      this.ownerService.regOwner(data.email, data.password)
+      console.log('register owner', data.email, data.password);
 
-    } else if (type === "client") {
-      this.clientService.regClient(email, password)
-      console.log('register', email, password);
+    } else if (data.type === "client") {
+      this.clientService.regClient(data)
+      console.log('register', data.email, data.password);
       this.To("/user")
 
     }

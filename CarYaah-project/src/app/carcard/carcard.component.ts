@@ -15,7 +15,7 @@ export interface Car {
   bail: string;
   status: string;
   city: string;
-  rating: string;
+  rating: number;
   price: string;
   registration_number: number;
   createdAt: Date;
@@ -23,16 +23,12 @@ export interface Car {
   ownerId: number;
 }
 
-
 @Component({
   selector: 'app-carcard',
   templateUrl: './carcard.component.html',
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
-
-  liked: boolean = true;
-
   constructor(private carCardService: CarcardService, private route: Router) { }
 
   rangevalue = 300;
@@ -96,6 +92,7 @@ export class CarcardComponent implements OnInit {
     this.filter();
   }
 
+  //Type filter
   checkbox(type: string) {
     const isMarked = !!this.marked.find((mark) => mark === type);
     if (isMarked) this.marked = this.marked.filter((mark) => mark !== type);
@@ -106,6 +103,7 @@ export class CarcardComponent implements OnInit {
   ac(e: any) {
     this.ac_marked = e.target.checked;
     this.filter();
+    this.cars[0].rating;
   }
 
   gps(e: any) {
@@ -121,25 +119,5 @@ export class CarcardComponent implements OnInit {
   man(e: any) {
     this.man_checked = e.target.checked;
     this.filter();
-
-  }
-
-  like() {
-    if (this.liked) {
-      return "far fa-heart fa-2x";
-    } else {
-      return "fas fa-heart fa-2x";
-    }
-  }
-
-  onClick() {
-    this.liked = !this.liked
-  }
-  createFav(carId: number) {
-    this.carCardService.create(carId).subscribe((data: any) => {
-      console.log('data', data['fav'])
-    })
   }
 }
-
-

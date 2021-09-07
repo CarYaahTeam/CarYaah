@@ -8,13 +8,13 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  title = 'cookies-angular'
-  successMessage: string = "";
+  title = 'cookies-angular';
+  successMessage: string = '';
   loginForm!: FormGroup;
-  d: any
+  d: any;
 
   constructor(
     private clientService: ClientService,
@@ -22,11 +22,9 @@ export class LoginComponent implements OnInit {
     private route: Router,
     private cookies: CookieService
   ) { }
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
   To(str: string) {
-    this.route.navigateByUrl(str)
+    this.route.navigateByUrl(str);
   }
   login(data: any) {
     if (data.type === "owner") {
@@ -41,8 +39,4 @@ export class LoginComponent implements OnInit {
       })
     }
   }
-
-
-
-
 }

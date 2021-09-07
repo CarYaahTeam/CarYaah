@@ -38,7 +38,7 @@ exports.loginClient = async function (req, res) {
 
     // create and assign a token
     const token = jwt.sign({ id: client.id }, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: "24h",
+      expiresIn: "1d",
     });
     delete client.password;
     return res.status(200).json({ data: client, auth_token: token });
