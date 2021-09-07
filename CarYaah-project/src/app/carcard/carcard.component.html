@@ -41,8 +41,6 @@
       <div class="brand">
         <span>{{car?.brand}}</span>
       </div>
-      <!-- <div id="favorite" class="circle" (click)="createFav(car.id)">
-      </div> -->
       <app-like-car [carId]='car.id'></app-like-car>
       <app-starrating [rating]="car.rating"></app-starrating>
     </div>

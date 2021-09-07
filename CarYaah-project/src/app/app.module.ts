@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import '@angular/compiler'
+import '@angular/compiler';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingAuth } from './app-routing.module';
@@ -18,14 +18,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { CookieService } from 'ngx-cookie-service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
+
 import { AdminComponent } from './admin/admin.component';
-import { FormsModule } from '@angular/forms'; 
+import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
+import { PaiementComponent } from './paiement/paiement.component';
+import { FormsModule } from '@angular/forms';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AngularFileUploaderModule } from "angular-file-uploader";
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { LikeCarComponent } from './like-car/like-car.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
-
 
 @NgModule({
   declarations: [
@@ -43,9 +45,12 @@ import { RateCarComponent } from './rate-car/rate-car.component';
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
+    AdminComponent,
+    OwnerProfileComponent,
+    PaiementComponent,
     DialogOverviewExampleDialogComponent,
     LikeCarComponent,
-    RateCarComponent
+    RateCarComponent,
   ],
   imports: [
     HttpClientModule,
@@ -54,18 +59,18 @@ import { RateCarComponent } from './rate-car/rate-car.component';
     BrowserModule,
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule,
+
     BrowserAnimationsModule,
     MatCardModule,
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule,
+
     MatButtonModule,
     MatDialogModule,
     AngularFileUploaderModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
