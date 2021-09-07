@@ -11,10 +11,11 @@ export class OwnerProfileComponent implements OnInit {
   owner: any = [];
   carOwner: any = [];
 
-  constructor(private http: OwnerService, carOwner: OwnerService) {}
+  constructor(private http: OwnerService) {}
 
   ngOnInit(): void {
     this.getData();
+    this.getCar();
   }
 
   getData() {
@@ -25,9 +26,12 @@ export class OwnerProfileComponent implements OnInit {
   }
 
   getCar() {
-    this.carOwner.getCarOwner().subscribe((res: any) => {
-      this.carOwner = res;
-      console.log(this.owner);
-    });
+    this.http.getCarOwner().subscribe(
+      (res: any) => {
+        this.carOwner = res;
+        console.log('cars:', res);
+      },
+      (err: any) => console.log(err)
+    );
   }
 }
