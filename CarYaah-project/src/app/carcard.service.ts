@@ -7,7 +7,6 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root',
 })
-
 export class CarcardService {
   constructor(private http: HttpClient, private cookie: CookieService) {}
 
@@ -32,5 +31,12 @@ export class CarcardService {
         headers: { authorization: token },
       }
     );
+  }
+
+  getFav() {
+    return this.http.get('http://localhost:3000/cars/id');
+  }
+  create(carId: number) {
+    return this.http.get(`http://localhost:3000/fav/${carId}`);
   }
 }
