@@ -30,7 +30,7 @@
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "angular-file-uploader": "^7.0.3",
     "angular-responsive-carousel": "^2.1.2",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.1.0",
