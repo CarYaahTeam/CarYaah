@@ -29,7 +29,7 @@ export interface Car {
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
-  constructor(private carCardService: CarcardService, private route: Router) { }
+  constructor(private carCardService: CarcardService, private route: Router) {}
 
   rangevalue = 300;
   cars: Car[] = [];
@@ -78,14 +78,11 @@ export class CarcardComponent implements OnInit {
     });
   }
 
-
   getDataFromAPI() {
     this.carCardService.getCars().subscribe((resp) => {
       this.cars = resp;
-      console.log(this.cars);
-    })
+    });
   }
-
 
   priceChanged(e: any) {
     this.rangevalue = e.target.value;

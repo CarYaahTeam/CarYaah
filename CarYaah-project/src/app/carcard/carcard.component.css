@@ -1,15 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-.card-container {
-  right: 20px;
-  margin-left: 300px;
-  margin-top: 100px;
+.container {
+  right: 5%;
+  margin-top: 5%;
+  left: 5%;
 }
 
 .card {
@@ -20,7 +14,7 @@
   width: 300px;
   height: 300px;
   background-color: #f3f3f7;
-  margin: 40px;
+  margin: 4%;
   border-radius: 15px;
   font-family: Quicksand;
   box-shadow: -0.7em 0 0.4em grey;
@@ -71,7 +65,7 @@
 
 app-starrating {
   position: relative;
-  top: -160px;
+  top: -40px;
   left: 15px;
 }
 
@@ -83,60 +77,39 @@ app-starrating {
   width: 250px;
   height: 450px;
   margin-top: 100px;
-  /* margin-right: 1450px; */
   position: fixed;
+  display: inline-block;
+  font-family: Quicksand;
+  margin-left: 1%;
 }
-.title {
+.filter-container span {
   margin-left: 20px;
+  font-weight: bold;
 }
+
 .inp {
   margin-left: 5px;
   width: 100px;
 }
 .check {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.equipment {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.transmission {
+  margin-top: 5px;
   margin-left: 20px;
 }
 .title1 {
-  margin-left: 2px;
+  font-weight: bold;
 }
-.title2 {
-  margin-left: 15px;
-}
-.filter {
-  margin-left: 1.5px;
-}
+
 .ac {
   margin-left: 10px;
 }
 .ch1 {
-  margin-left: 15px;
-}
-.transmission {
-  margin-left: 15px;
-  margin-top: 20px;
-}
-#cal {
-  margin-left: 550px;
-  margin-top: 75px;
-}
-#cal1 {
-  margin-left: 270px;
-}
-.top {
-  width: 100%;
-  background-color: rgb(233, 227, 227);
-  margin-top: 50px;
-  height: 90px;
-}
-#cal2 {
-  margin-bottom: 250px;
-  margin-left: 490px;
-  margin-top: 50px;
-}
-.adress {
-  width: 450px;
-  padding-left: 60px;
-  margin-left: 230px;
-  margin-right: 2px;
-  height: 25px;
+  margin-left: 10px;
 }

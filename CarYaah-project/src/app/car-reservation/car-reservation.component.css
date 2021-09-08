@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 .all {
   background-image: url(https://www.usebusinesstips.com/wp-content/uploads/2018/08/Vehicle-Rental-Business.jpg);
   /* background-image: url(https://www.rental-car-rhodes.com/photos/car-hire-tholos-171432.jpg); */
@@ -5,6 +6,7 @@
   height: 1050px;
   background-repeat: no-repeat;
   background-size: 100% 1050px;
+  font-family: Quicksand;
   /* border: 0 5px 5px 5px solid yellow; */
 }
 .in1 {
@@ -47,7 +49,7 @@
   font-size: 20px;
 }
 h1 {
-  font: 412 81px/192px Roboto, "Helvetica Neue", sans-serif;
+  font: 412 81px/192px Quicksand, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
   margin: 0px 267px 31px;
   color: white;

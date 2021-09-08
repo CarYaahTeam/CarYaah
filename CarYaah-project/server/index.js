@@ -6,7 +6,6 @@ const bodyParser = require("body-parser");
 const clientRouter = require("./routers/clientroutes");
 const ownerRouter = require("./routers/ownerrouters");
 const adminRouter = require("./routers/adminrouters");
-
 const CarRouter = require("./routers/carroutes");
 const multer = require("multer");
 
@@ -28,9 +27,8 @@ app.use(cors());
 app.use("/client", clientRouter);
 app.use("/owner", ownerRouter);
 app.use("/admin", adminRouter);
-
-app.use("/api/reservation", clientRouter);
 app.use("/cars", CarRouter);
+app.use("/api/reservation", clientRouter);
 
 app.post("/upload", upload.any(0), (req, res) => {
   let image = req.files[0].path;
