@@ -16,15 +16,20 @@ import { TestComponent } from './test/test.component';
 import { CarcardComponent } from './carcard/carcard.component';
 import { StarratingComponent } from './starrating/starrating.component';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 import { AdminComponent } from './admin/admin.component';
-import { FormsModule } from '@angular/forms'; 
-import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
+import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
+import { PaiementComponent } from './paiement/paiement.component';
+import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { LikeCarComponent } from './like-car/like-car.component';
+import { SendEmailComponent } from './send-email/send-email.component';
+import { RateCarComponent } from './rate-car/rate-car.component';
 
 @NgModule({
   declarations: [
@@ -39,36 +44,35 @@ import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
     CarReservationComponent,
     CarcardComponent,
     StarratingComponent,
+    LikeCarComponent,
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
     DialogOverviewExampleDialogComponent,
     FilteredCarsComponent,
-  
+    AdminComponent,
+    OwnerProfileComponent,
+    PaiementComponent,
+    SendEmailComponent,
+    LikeCarComponent,
+    RateCarComponent,
   ],
   imports: [
     HttpClientModule,
-    BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    BrowserModule,
-    BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule,
+
     BrowserAnimationsModule,
     MatCardModule,
-    BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule,
+
     MatButtonModule,
     MatDialogModule,
     AngularFileUploaderModule,
     FormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDfs_1GsvjusAZ9iFb6Qd-gxLU-bWGoJEQ',
-   
-    })
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

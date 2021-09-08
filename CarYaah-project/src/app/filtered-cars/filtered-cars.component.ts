@@ -15,7 +15,7 @@ export interface Car {
   bail: string;
   status: string;
   city: string;
-  rating: string;
+  rating: number;
   price: string;
   registration_number: number;
   createdAt: Date;
@@ -50,7 +50,9 @@ auto_checkbox = false;
 auto_checked = false;
 man_checkbox = false;
 man_checked = false;
-  constructor(private carCardService: CarcardService , private route : Router ,private reservationService:ReservationnService) { }
+  constructor(private carCardService: CarcardService ,
+     private route : Router ,
+     private reservationService:ReservationnService) { }
 
   ngOnInit(): void {
     if(this.reservationService.filteredcars!==[]){

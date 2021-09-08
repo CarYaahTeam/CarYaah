@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
 h2 {
   font-size: 45px;
   color: #3e3e3e;
@@ -5,7 +7,7 @@ h2 {
   font-weight: bold;
   padding: 0;
   text-transform: uppercase;
-  font-family: "Righteous", cursive;
+  font-family: Quicksand;
   padding-bottom: 20px;
   text-align: center;
   margin-top: 40px;
@@ -22,9 +24,11 @@ h2 {
   margin-bottom: 20px;
   text-align: center;
   line-height: 38px;
+  font-family: Quicksand;
 }
 b {
   font-weight: bold;
   font-size: 30px;
+  font-family: Quicksand;
 }
 

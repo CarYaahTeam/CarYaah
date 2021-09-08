@@ -17,7 +17,7 @@
             </ul>
             <br/>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div  id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h3 class="register-heading">Please add your car's informations carefully</h3>
                     <div class="row register-form">
                         <div class="col-md-6">
@@ -35,36 +35,32 @@
                             </div>
                             <div class="form-group">
                            
+                            </div> <br> <br> <br>
+                            <!-- cloudinary -->
+
+                            <div class="cloud">
+                                <input type="file" (change)="imgUpload($event)">
                             </div>
-                            <img src="" alt="" class="card">
-                            <div>
-                                <input type="file" class="upImg" value="css" >
-                            </div>
+
+                            <!--  -->
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Price*" value="" #price />
+                                <input type="number" class="form-control" placeholder="Your Price*" value="" #price />
                             </div> <br/>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option class="hidden"  selected disabled >Please select transmission you want </option>
+                                    <option class="hidden"  selected disabled >Please select the transmission you want </option>
                                     <option> manual  </option>
                                     <option> automatic  </option>
                                 </select>
                                 <br/><br/>
-                                <!-- <select class="form-control">
-                                    <option class="hidden"  selected disabled #option>Please select options</option>
-                                    <option >GPS</option>
-                                    <option>AC </option> -->
+                           
                                     <input type="checkbox" name="GPS" value="GPS">
                                     <label class="gps_Ac" > GPS </label> <br> <br> 
                                     <input type="checkbox" name="AC" value="AC"> 
                                     <label class="gps_Ac"  > AC </label><br>
-                                <!-- </select> -->
                             </div>
-
-                            <input type="submit" class="btnRegister"  value="Up-Date"/>
-                            <input type="submit" class="btnRegister"  value="Delete" />
                         </div>
                         <button
                         (click)="add(brand.value, type.value, startDate.value, endDate.value, price.value)"
@@ -77,9 +73,5 @@
             </div>
         </div>
     </div>
-    
-    <!-- <div class="imgOwner">
-        <img src="https://i.ytimg.com/vi/NwmOo1elj5k/maxresdefault.jpg" />
-    </div> -->
 </div>
 </div>

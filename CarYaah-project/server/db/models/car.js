@@ -19,12 +19,12 @@ const Car = (sequelize) =>
     AC: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false,
+      defaultValue: true,
     },
     GPS: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false,
+      defaultValue: true,
     },
     AUTOMATIC: {
       type: DataTypes.BOOLEAN,
