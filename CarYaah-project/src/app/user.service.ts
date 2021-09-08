@@ -18,9 +18,10 @@ console.log();
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjMsImlhdCI6MTYzMDYwNjIxOSwiZXhwIjoxNjMwNjkyNjE5fQ.XGJCpfS8Q2N8AFomjYJf-aqEBuFoUE267qhKNU_zrP0"
+        "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxMDA4MjMzLCJleHAiOjE2MzEwOTQ2MzN9.kAUszd8ZVu54MDFy9fEO4b9Ib0GSJkNtiXx1k_yr6TM"
       })
     };
+    
     return this.http.get('http://localhost:3000/client/fav' ,httpOptions );
   }
 }

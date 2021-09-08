@@ -1,30 +1,22 @@
-
-  <div class="row">
-    <div class="col-md-4">
-        <div class="card">
-    <div class="card-header">
-       <h4><b>Client Profil</b></h4>
-       <div class="file-field">
-        <div class="mb-4">
-          <img src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
-            class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar">
-            
-            <input class="profil" type="file"/>
-        </div> 
-    </div>
-    <div class="card-body">
-      <b> Name   </b> : {{client[0].name}}
-     </div>
-    <div class="card-body">
-     <b> Email </b> : {{client[0].email}}
-    
-    </div>
-    <div class="card-body">
-     
-      <b>Adress </b> : {{client[0].adress}}
-     </div>
-</div><button class="danger" type="button" (click)="openDialog()" >Declare accident</button>
+<div class="card">
+  <h4><b>Client Profil</b></h4>
+  <div class="file-field">
+    <img src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
+      class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar">
+    <input class="profil" type="file" />
+  </div>
+  <div class="card-body">
+    <b> Name </b> : {{client[0].name}}
+  </div>
+  <div class="card-body">
+    <b> Email </b> : {{client[0].email}}
+  </div>
+  <div class="card-body">
+    <b>Adress </b> : {{client[0].adress}}
+  </div>
+  <button class="danger" type="button" (click)="openDialog()">Report An Accident</button>
 </div>
+
 
 <div class="card-container">
   <div *ngFor="let car of " class="card">
@@ -42,7 +34,6 @@
     <div class="city">
       <span>{{ car?.city }}</span>
     </div>
-</div>
+  </div>
 
 </div>
-
