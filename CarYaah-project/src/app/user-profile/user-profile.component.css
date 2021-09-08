@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   font-family: Quicksand;
 }
 
@@ -18,9 +15,19 @@
   height: 650px;
   border: black solid;
 }
-
+.file-field{
+  flex-direction: column;
+  margin-left: 5%;
+}
 .profil {
   position: relative;
+}
+.card-body{
+  margin-left: 5%;
+}
+.danger{
+  width: 50%;
+  justify-content: center;
 }
 
 .avatar-pic {
