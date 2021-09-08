@@ -8,8 +8,21 @@
     <br/>
     <br/>
     <button id="button" type="button" (click)="findAll(startDate.value, endDate.value)">Search</button>
+    <div class="car-item" *ngFor="let car of cars">
+      <div class="img" style="background-image: url({{car?.image}});" ></div>
+      <div class="price">
+        <span>{{car?.price}} TND/DAY</span>
+      </div>
+      <div class="brand">
+        <span>{{car?.brand}}</span>
+      </div>
+      <div class="image">
+        <span>{{car?.image}}</span>
+      </div>
+    </div>
   </div>  
 </div>
  </div>
-
+ 
  <app-homepage></app-homepage>
+ 

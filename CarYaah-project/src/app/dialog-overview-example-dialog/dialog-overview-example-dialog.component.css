@@ -9,4 +9,8 @@
 }
 .form-control{
     border-radius: 24px;
+    height: 50px;
+}
+.upload{
+    width: 85px;
 }
