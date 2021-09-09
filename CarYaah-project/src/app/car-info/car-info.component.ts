@@ -72,8 +72,5 @@ export class CarInfoComponent implements OnInit {
     if (!history.state.data.AUTOMATIC) {
       this.car['AUTOMATIC'] = 'MANUAL'
     }
-
-    console.log(this.car["brand"]);
-    console.log(this.car);
   }
 }

@@ -8,7 +8,7 @@ exports.authClient = async (req, res, next) => {
     if (!token) throw new Error("Access Denied");
 
     const { id } = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    client = await db.Client.findOne({ where: { id } });
+    const client = await db.Client.findOne({ where: { id } });
 
     if (!client) throw new Error("Access Denied client");
     req.client = client;
