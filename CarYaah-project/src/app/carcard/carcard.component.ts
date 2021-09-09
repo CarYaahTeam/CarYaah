@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarcardService } from '../carcard.service';
 import { Router } from '@angular/router';
 import { ReservationnService } from '../reservationn.service';
@@ -29,10 +29,13 @@ export interface Car {
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
+  liked: boolean = true;
 
-  liked : boolean=true;
-
-  constructor(private carCardService: CarcardService , private route : Router ,private reservationService:ReservationnService ) {}
+  constructor(
+    private carCardService: CarcardService,
+    private route: Router,
+    private reservationService: ReservationnService
+  ) {}
 
   rangevalue = 300;
   cars: Car[] = [];
@@ -57,7 +60,6 @@ export class CarcardComponent implements OnInit {
   man_checked = false;
 
   ngOnInit(): void {
-    
     this.getDataFromAPI();
   }
 
