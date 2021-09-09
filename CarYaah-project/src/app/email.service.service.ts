@@ -6,15 +6,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class Email {
 
-  constructor(private httpreq: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  sendMessage(body: any) {
-    let headers = {
-      headers: new HttpHeaders({
-        'content-Type': 'application/json'
-      })
-    }
-    return this.httpreq.post("http://localhost:3000/email", body, headers)
+  sendMessage(data: object) {
+
+    console.log("service", data);
+
+    return this.http.post("http://localhost:3000/admin/email/client", data)
   }
+
 
 }
