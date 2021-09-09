@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     private ownerService: OwnerService,
     private route: Router,
     private cookies: CookieService
-  ) { }
-  ngOnInit(): void { }
+  ) {}
+  ngOnInit(): void {}
   To(str: string) {
     this.route.navigateByUrl(str);
   }
