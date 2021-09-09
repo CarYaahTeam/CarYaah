@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogOverviewExampleDialog2Component } from '../dialog-overview-example2-dialog/dialog-overview-example2-dialog.component';
+import { DialogOverviewExampleDialogComponent } from '../dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { CarcardService } from '../carcard.service';
@@ -76,9 +76,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog2Component, {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
       width: '750px',
-      height: '550px',
+      height: '750px',
       data: null,
     });
     dialogRef.afterClosed().subscribe((result: any) => {

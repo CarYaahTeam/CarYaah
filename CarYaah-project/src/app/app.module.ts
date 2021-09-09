@@ -26,12 +26,12 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { PaiementComponent } from './paiement/paiement.component';
-import { DialogOverviewExampleDialog2Component } from './dialog-overview-example2-dialog/dialog-overview-example2-dialog.component';
 import { LikeCarComponent } from './like-car/like-car.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
 import { CommonModule } from '@angular/common';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 
 @NgModule({
   declarations: [
@@ -54,11 +54,11 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AdminComponent,
     OwnerProfileComponent,
     PaiementComponent,
-    DialogOverviewExampleDialog2Component,
     SendEmailComponent,
     LikeCarComponent,
     RateCarComponent,
     UserProfileComponent,
+    DialogOverviewExampleDialogComponent,
   ],
   imports: [
     HttpClientModule,
