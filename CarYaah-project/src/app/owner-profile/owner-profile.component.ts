@@ -7,6 +7,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-owner-profile',
@@ -17,7 +18,11 @@ export class OwnerProfileComponent implements OnInit {
   owner: any = [];
   carOwner: any = [];
 
-  constructor(private http: OwnerService, public dialog: MatDialog) {}
+  constructor(
+    private http: OwnerService,
+    public dialog: MatDialog,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
     this.getData();
@@ -49,5 +54,9 @@ export class OwnerProfileComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log('The dialog was closed');
     });
+  }
+
+  tohome(str: string) {
+    this.route.navigateByUrl(str);
   }
 }

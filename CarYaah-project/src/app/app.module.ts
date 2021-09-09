@@ -32,6 +32,7 @@ import { DialogOverviewExampleDialog2Component } from './dialog-overview-example
 import { LikeCarComponent } from './like-car/like-car.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
+import { PopupOwnerComponent } from './popup-owner/popup-owner.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { RateCarComponent } from './rate-car/rate-car.component';
     SendEmailComponent,
     LikeCarComponent,
     RateCarComponent,
+    PopupOwnerComponent,
   ],
   imports: [
     HttpClientModule,
