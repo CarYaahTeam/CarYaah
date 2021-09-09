@@ -1,6 +1,6 @@
-import { Component, OnInit} from '@angular/core';
-import { CarcardService } from '../carcard.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CarcardService } from '../carcard.service';
 import { ReservationnService } from '../reservationn.service';
 export interface Car {
   id: number;
@@ -22,47 +22,45 @@ export interface Car {
   updatedAt: Date;
   ownerId: number;
 }
-
 @Component({
-  selector: 'app-carcard',
-  templateUrl: './carcard.component.html',
-  styleUrls: ['./carcard.component.css'],
+  selector: 'app-filtered-cars',
+  templateUrl: './filtered-cars.component.html',
+  styleUrls: ['./filtered-cars.component.css']
 })
-export class CarcardComponent implements OnInit {
-
+export class FilteredCarsComponent implements OnInit {
   liked : boolean=true;
+rangevalue = 300;
+cars: Car[] = [];
+saveCars: Car[] = [];
+marked: string[] = [];
 
-  constructor(private carCardService: CarcardService , private route : Router ,private reservationService:ReservationnService ) {}
-
-  rangevalue = 300;
-  cars: Car[] = [];
-  saveCars: Car[] = [];
-  marked: string[] = [];
-
-  sedan_marked = false;
-  sedan_checkbox = false;
-  van_marked = false;
-  van_checkbox = false;
-  pickup_marked = false;
-  pickup_checkbox = false;
-  minitruck_marked = false;
-  minitruck_checkbox = false;
-  ac_marked = false;
-  ac_checkbox = false;
-  gps_marked = false;
-  gps_checkbox = false;
-  auto_checkbox = false;
-  auto_checked = false;
-  man_checkbox = false;
-  man_checked = false;
+sedan_marked = false;
+sedan_checkbox = false;
+van_marked = false;
+van_checkbox = false;
+pickup_marked = false;
+pickup_checkbox = false;
+minitruck_marked = false;
+minitruck_checkbox = false;
+ac_marked = false;
+ac_checkbox = false;
+gps_marked = false;
+gps_checkbox = false;
+auto_checkbox = false;
+auto_checked = false;
+man_checkbox = false;
+man_checked = false;
+  constructor(private carCardService: CarcardService ,
+     private route : Router ,
+     private reservationService:ReservationnService) { }
 
   ngOnInit(): void {
-    
-    this.getDataFromAPI();
+    if(this.reservationService.filteredcars!==[]){
+      return this.cars=this.reservationService.filteredcars
+    }
   }
-
-  info(car: Car): void {
-    this.route.navigate(['/carInfo'], { state: { data: car } });
+  info(car : Car) : void {
+    this.route.navigate(['/carInfo'], {state: {data: car}});
     //this.display = true;
     //To toggle the component
     // this.displayCarInfo = true;
@@ -74,17 +72,18 @@ export class CarcardComponent implements OnInit {
         +car.price < this.rangevalue &&
         (!this.marked.length || this.marked.includes(car.type)) &&
         (!this.ac_marked || car.AC) &&
-        (!this.gps_marked || car.GPS) &&
+        (!this.gps_marked || car.GPS)&&
         (!this.ac_marked || car.AC) &&
-        (!this.auto_checked || car.AUTOMATIC) &&
+        (!this.auto_checked || car.AUTOMATIC)&&
         (!this.man_checked || !car.AUTOMATIC)
       );
     });
   }
 
   getDataFromAPI() {
-    this.carCardService.getCars().subscribe((resp) => {
-      this.cars = resp;
+    this.carCardService.getCars().subscribe((cars) => {
+      this.cars = cars;
+      this.saveCars = cars;
     });
   }
 
@@ -93,7 +92,6 @@ export class CarcardComponent implements OnInit {
     this.filter();
   }
 
-  //Type filter
   checkbox(type: string) {
     const isMarked = !!this.marked.find((mark) => mark === type);
     if (isMarked) this.marked = this.marked.filter((mark) => mark !== type);
@@ -104,7 +102,6 @@ export class CarcardComponent implements OnInit {
   ac(e: any) {
     this.ac_marked = e.target.checked;
     this.filter();
-    this.cars[0].rating;
   }
 
   gps(e: any) {
@@ -120,5 +117,24 @@ export class CarcardComponent implements OnInit {
   man(e: any) {
     this.man_checked = e.target.checked;
     this.filter();
+
   }
+  
+  like(){
+    if (this.liked){
+      return "far fa-heart fa-2x";
+    }else
+    {
+      return "fas fa-heart fa-2x";
+    }
+  }
+
+  onClick(){
+    this.liked=!this.liked
+  }
+  createFav(carId : number){
+      this.carCardService.create(carId).subscribe((data:any)=>{
+        console.log('data',data['fav'])
+      })
+    }
 }

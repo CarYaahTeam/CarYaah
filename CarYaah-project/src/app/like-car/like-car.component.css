@@ -12,7 +12,7 @@
 
 .circle i {
   position: relative;
-  top: calc(50% - 15px);
+  top: calc(50% - 14px);
   left: calc(50% - 15px);
   color: rgb(235, 14, 14);
 }

@@ -30,8 +30,7 @@ const Client = (sequelize) =>
       type: DataTypes.STRING,
       defaultValue: "",
       allowNull: false,
-    },
-
+    }
   });
 
 module.exports = Client;

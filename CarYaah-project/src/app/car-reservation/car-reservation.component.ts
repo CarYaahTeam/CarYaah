@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { Car } from '../car-info/car-info.component';
+
+
+
 import { ReservationnService } from '../reservationn.service';
 @Component({
   selector: 'app-car-reservation',
@@ -7,24 +11,24 @@ import { ReservationnService } from '../reservationn.service';
   styleUrls: ['./car-reservation.component.css']
 })
 export class CarReservationComponent implements OnInit {
-cars:any;
-  constructor(private rs:ReservationnService, private route : Router )  {}
+cars:Car[] = []
+  constructor(private reservationnService:ReservationnService, private router : Router )  {}
   date:any= [];
   ngOnInit(): void {
-    this.rs.findAll().subscribe(data=>{
-      this.cars=data
-      this.rs.cars=data;
-    }) //this
   }
-  findAll(start_date_av : String , end_date_av  : String) {
-    const data = {start_date_av , end_date_av} 
-    this.cars=this.rs.cars;
-    console.log("my product", this.cars)
-    this.route.navigateByUrl("/cars")
+  
+  findAll(start_date_av : string , end_date_av  : string) {
+    this.reservationnService.findAll(start_date_av,end_date_av).subscribe((cars) => {
+      console.log(cars)
+      this.cars = cars
+      this.reservationnService.filteredcars=cars
+     this.router.navigateByUrl("/filteredCars"); 
+    }
+      )}
+     
+  
 }
 
-
-}
 
 
 

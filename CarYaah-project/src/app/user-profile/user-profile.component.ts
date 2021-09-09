@@ -15,9 +15,8 @@ import {
 export class UserProfileComponent implements OnInit {
   client: any = [];
   fav: any = [];
-
-  constructor(private http: UserService, public dialog: MatDialog) {}
-
+  
+  constructor(private  http : UserService, public dialog: MatDialog) { }
   ngOnInit(): void {
     this.getData();
     this.http.getFav().subscribe((resp) => {
