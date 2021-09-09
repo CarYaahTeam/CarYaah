@@ -1,5 +1,22 @@
-<div class="container-fluid text-center">
-  <div class="row text-center">
+<div class="container-fluid">
+  <div class="title">
+    <div class="rows">
+      <svg viewBox="0 0 960 300">
+        <symbol id="s-text">
+          <text text-anchor="middle" x="50%" y="80%">Log In</text>
+        </symbol>
+
+        <g class="g-ants">
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-12">
       <div>
         <div class="form-group">
@@ -10,30 +27,35 @@
           <label for="password" class="fa fa-lock"></label>
           <input type="password" placeholder="Password" #password />
         </div>
-        <div class="form-group form-check text-center">
+        <div class="form-group form-check">
           <select class="select" #type>
-            <option>are a car owner ?</option>
-            <option>owner</option>
-            <option>client</option>
+            <option>Client or Owner?</option>
+            <option>i am a CLIENT.</option>
+            <option>i am an OWNER.</option>
           </select>
           <label class="form-check-label" for="exampleCheck1"></label>
-          <button (click)="To('/register')">SIGN UP</button>
-        </div>
-        <div class="text-center">
-          <button
-            id="submitButton"
-            type="submit"
-            class="btn btn-primary"
-            (click)="
-              login({
-                email: email.value,
-                password: password.value,
-                type: type.value
-              })
-            "
-          >
-            Login
-          </button>
+
+          <div class="text-center">
+            <button
+              id="submitButton"
+              type="submit"
+              class="btn btn-primary"
+              (click)="
+                login({
+                  email: email.value,
+                  password: password.value,
+                  type: type.value
+                })
+              "
+            >
+              Log In
+            </button>
+          </div>
+          <div class="text-center">
+            <button class="btngosignup" (click)="To('/register')">
+              you are new here
+            </button>
+          </div>
         </div>
       </div>
     </div>

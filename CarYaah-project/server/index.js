@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
-var nodemailer = require("nodemailer");
 const db = require("./db/index.js");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const clientRouter = require("./routers/clientroutes");
 const ownerRouter = require("./routers/ownerrouters");
 const adminRouter = require("./routers/adminrouters");
+const nodemailer = require("nodemailer");
 const CarRouter = require("./routers/carroutes");
 const multer = require("multer");
 
@@ -16,9 +16,9 @@ const axios = require("axios");
 
 const cloudinary = require("cloudinary").v2;
 cloudinary.config({
-  cloud_name: "rbk-ana",
-  api_key: "444788329552162",
-  api_secret: "i-I7UpawmIm_J-8jnKoaLvots5E",
+  cloud_name: "djbt0tykw",
+  api_key: "116372917184415",
+  api_secret: "SUf8fKjp-CkZCZOY48c1epAIj6I",
 });
 
 const PORT = 3000;

@@ -1,0 +1,21 @@
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Name :</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="your name">
+  </div>
+  <br/>
+<div class="mb-3">
+  <label id="label" class="form-label" style="height:50px; width: 400px; background-color:white; font-size:22px">Message :</label>
+  <br/>
+  <br/>
+  <textarea class="msg"></textarea>
+</div>
+  <br/>
+       <!-- cloudinary -->
+
+       <div class="cloud">
+        <input type="file" (change)="imgUpload($event)">
+      
+    </div>
+  <br/>
+  <button id="submit" type="button" class="btn btn-success">Submit</button>
+
