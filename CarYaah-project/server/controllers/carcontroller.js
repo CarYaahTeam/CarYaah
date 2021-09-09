@@ -1,7 +1,7 @@
+const { Op } = require("sequelize");
 var db = require("../db/index");
 
 exports.retrievAllCars = async (req, res) => {
-
     try {
         const cars = await db.Car.findAll();
         return res.status(201).json(cars);
@@ -26,6 +26,26 @@ exports.updateFavourite = async function (req, res) {
     }
 }
 
+//-------------------Search available car by date---------------//
+exports.searchByTimeFrame = async function (req, res) {
+    try {
+        const { start_date_av, end_date_av } = req.query
+        console.log({ start_date_av, end_date_av })
+        const result = await db.Car.findAll({
+            where: {
+                start_date_av: {
+                    [Op.lte]: new Date(start_date_av)
+                },
+                end_date_av: {
+                    [Op.gte]: new Date(end_date_av)
+                }
+            }
+        })
+        res.send(result)
+    } catch (error) {
+        console.log(error)
+    }
+}
 exports.isFavourite = async function (req, res) {
     try {
         const isFav = (await db.Favourite.findAll({ where: { clientId: req.client.id, carId: req.params.carId } })).length > 0

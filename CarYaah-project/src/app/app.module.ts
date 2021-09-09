@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AgmCoreModule } from '@agm/core';
 import '@angular/compiler';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,11 +22,13 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 
 import { AdminComponent } from './admin/admin.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { DialogOverviewExampleDialog2Component } from './dialog-overview-example2-dialog/dialog-overview-example2-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { AngularFileUploaderModule } from 'angular-file-uploader';
+
 import { LikeCarComponent } from './like-car/like-car.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
@@ -47,6 +50,8 @@ import { RateCarComponent } from './rate-car/rate-car.component';
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
+
+    FilteredCarsComponent,
     AdminComponent,
     OwnerProfileComponent,
     PaiementComponent,
