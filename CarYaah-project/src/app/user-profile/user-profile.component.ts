@@ -40,7 +40,7 @@ export class UserProfileComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
       width: '750px',
-      height: '550px',
+      height: '750px',
       data: null,
     });
     dialogRef.afterClosed().subscribe((result: any) => {
