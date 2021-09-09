@@ -21,22 +21,25 @@ export class LoginComponent implements OnInit {
     private ownerService: OwnerService,
     private route: Router,
     private cookies: CookieService
-  ) { }
-  ngOnInit(): void { }
+  ) {}
+  ngOnInit(): void {}
   To(str: string) {
     this.route.navigateByUrl(str);
   }
   login(data: any) {
-    if (data.type === "owner") {
-      this.ownerService.logOwner(data.email, data.password).subscribe((data) => {
-        this.cookies.set("token", data.auth_token)
-      })
-    } else if (data.type === "client") {
-      this.clientService.logClient(data.email, data.password).subscribe((data) => {
-        this.cookies.set("token", data.auth_token)
-        this.To('/user')
-
-      })
+    if (data.type === 'I am an OWNER.') {
+      this.ownerService
+        .logOwner(data.email, data.password)
+        .subscribe((data) => {
+          this.cookies.set('token', data.auth_token);
+        });
+    } else if (data.type === 'I am a CLIENT.') {
+      this.clientService
+        .logClient(data.email, data.password)
+        .subscribe((data) => {
+          this.cookies.set('token', data.auth_token);
+          this.To('/user');
+        });
     }
   }
 }
