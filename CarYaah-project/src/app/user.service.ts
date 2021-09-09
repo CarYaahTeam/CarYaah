@@ -1,28 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-
+import { CookieService } from 'ngx-cookie-service';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
-  constructor(private http: HttpClient) { }
-  
-  getUser(){
+  getUser() {
     return this.http.get('http://localhost:3000/client/retrieve');
-console.log();
- 
+    console.log();
   }
-  getFav(){
+  getFav() {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxMDA4MjMzLCJleHAiOjE2MzEwOTQ2MzN9.kAUszd8ZVu54MDFy9fEO4b9Ib0GSJkNtiXx1k_yr6TM"
+        'Content-Type': 'application/json',
+        authorization: this.cookieService.get('token'),
+      }),
+    };
+
+    return this.http.get('http://localhost:3000/client/fav', httpOptions);
+  }
+
+  getBooking(){
+    const httpOptions={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        authorization: this.cookieService.get('token'),
       })
     };
-    
-    return this.http.get('http://localhost:3000/client/fav' ,httpOptions );
+    return this.http.get('http://localhost:3000/client/bookings', httpOptions)
   }
   sendMsg(data:any){
     return this.http.post('http://localhost:3000/client/msgClient' ,data)

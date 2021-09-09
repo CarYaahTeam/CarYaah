@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
+var nodemailer = require("nodemailer");
 const db = require("./db/index.js");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const clientRouter = require("./routers/clientroutes");
 const ownerRouter = require("./routers/ownerrouters");
 const adminRouter = require("./routers/adminrouters");
+const nodemailer = require("nodemailer");
 const CarRouter = require("./routers/carroutes");
 const multer = require("multer");
 
@@ -19,6 +21,7 @@ cloudinary.config({
   api_key: "116372917184415",
   api_secret: "SUf8fKjp-CkZCZOY48c1epAIj6I",
 });
+
 const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,6 +30,8 @@ app.use(cors());
 app.use("/client", clientRouter);
 app.use("/owner", ownerRouter);
 app.use("/admin", adminRouter);
+
+app.use("/api/reservation", clientRouter);
 app.use("/cars", CarRouter);
 app.use("/api/reservation", clientRouter);
 
@@ -55,18 +60,17 @@ app.post("/payment", (req, res) => {
     email: req.body.email,
     // orderId: req.body.orderId,
     webhook: "merchant.tech/api/notification_payment",
-    successUrl: "http://localhost:4200",
-    failUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    successUrl: "http://localhost:4200/carInfo",
+    failUrl: "http://localhost:4200",
   };
+  console.log(obj);
   axios
-    .post(
-      "https://api.preprod.konnect.network/api/v1/payments/init-payment",
-      obj
-    )
+    .post("https://api.konnect.network/api/v1/payments/init-payment", obj)
     .then((data) => {
       res.json(data.data.payUrl);
     });
 });
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });

@@ -39,5 +39,16 @@ export class AdminService {
     const url = "http://localhost:3000/admin/delete/owner/" + data
     return this.http.delete(url)
   }
+  emailClient(data: object) {
+    const url = "http://localhost:3000/admin/email/client"
+    return this.http.post(url, data).subscribe(() => {
+      console.log('data in servie',);
+
+    })
+  }
+  emailOwner(data: object) {
+    const url = "http://localhost:3000/admin/email/owner"
+    return this.http.post(url, data);
+  }
 
 }

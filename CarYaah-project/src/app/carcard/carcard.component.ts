@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarcardService } from '../carcard.service';
 import { Router } from '@angular/router';
 import { ReservationnService } from '../reservationn.service';
@@ -29,10 +29,13 @@ export interface Car {
   styleUrls: ['./carcard.component.css'],
 })
 export class CarcardComponent implements OnInit {
+  liked: boolean = true;
 
-  liked : boolean=true;
-
-  constructor(private carCardService: CarcardService , private route : Router ,private reservationService:ReservationnService ) {}
+  constructor(
+    private carCardService: CarcardService,
+    private route: Router,
+    private reservationService: ReservationnService
+  ) {}
 
   rangevalue = 300;
   cars: Car[] = [];
@@ -57,7 +60,6 @@ export class CarcardComponent implements OnInit {
   man_checked = false;
 
   ngOnInit(): void {
-    
     this.getDataFromAPI();
   }
 
@@ -71,13 +73,14 @@ export class CarcardComponent implements OnInit {
   filter() {
     this.cars = this.saveCars.filter((car) => {
       return (
-        +car.price < this.rangevalue &&
-        (!this.marked.length || this.marked.includes(car.type)) &&
-        (!this.ac_marked || car.AC) &&
-        (!this.gps_marked || car.GPS) &&
-        (!this.ac_marked || car.AC) &&
-        (!this.auto_checked || car.AUTOMATIC) &&
-        (!this.man_checked || !car.AUTOMATIC)
+        (+car.price < this.rangevalue &&
+          (!this.marked.length || this.marked.includes(car.type)) &&
+          (!this.ac_marked || car.AC) &&
+          (!this.gps_marked || car.GPS) &&
+          (!this.ac_marked || car.AC) &&
+          (!this.auto_checked || car.AUTOMATIC)) ||
+        !this.man_checked ||
+        !car.AUTOMATIC
       );
     });
   }
@@ -104,7 +107,6 @@ export class CarcardComponent implements OnInit {
   ac(e: any) {
     this.ac_marked = e.target.checked;
     this.filter();
-    this.cars[0].rating;
   }
 
   gps(e: any) {

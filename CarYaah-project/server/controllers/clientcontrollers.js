@@ -105,6 +105,7 @@ exports.retrieveFavorites = async (req, res) => {
       where: { clientId: req.client.id },
       include: db.Car,
     });
+    
     return res.status(201).json(fav.map((fav) => fav.car));
   } catch (error) {
     console.log(error);
@@ -163,3 +164,15 @@ exports.createConflict = async (req, res) => {
 //     return res.status(500).json({ error: error.message });
 //   }
 // };
+//---------------Bookings-------//
+exports.retrieBookings= async(req, res)=>{
+  try{
+    const bookings= await db.Booking.findAll({
+      where:{clientId: req.client.id},
+    });
+    
+    return res.status(201).json(bookings.map((bookings)=>bookings));
+  } catch(error){
+    console.log(error);
+  }
+};
