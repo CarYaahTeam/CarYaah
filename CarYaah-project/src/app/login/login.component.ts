@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { ClientService } from 'src/app/client.service';
 import { OwnerService } from 'src/app/owner.service';
 import { Router } from '@angular/router';
@@ -21,23 +21,22 @@ export class LoginComponent implements OnInit {
     private ownerService: OwnerService,
     private route: Router,
     private cookies: CookieService
-  ) {}
-  ngOnInit(): void {}
+  ) { }
+  ngOnInit(): void { }
   To(str: string) {
     this.route.navigateByUrl(str);
   }
-  
-  login(data:any) {
-    if (data.type === 'owner') {
+  login(data: any) {
+    if (data.type === "owner") {
       this.ownerService.logOwner(data.email, data.password).subscribe((data) => {
-        this.cookies.set('token', data.auth_token);
-      });
-    } else if (data.type === 'client') {
+        this.cookies.set("token", data.auth_token)
+      })
+    } else if (data.type === "client") {
       this.clientService.logClient(data.email, data.password).subscribe((data) => {
-        this.cookies.set('token', data.auth_token);
-      });
-    } else {
-      alert('you are not registered');
+        this.cookies.set("token", data.auth_token)
+        this.To('/user')
+
+      })
     }
   }
 }

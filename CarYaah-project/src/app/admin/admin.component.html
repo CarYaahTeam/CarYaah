@@ -1,40 +1,80 @@
-<p>admin works!</p>
-<div class="container">
-  <div class="navbar">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">Customer Manager</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="nav navbar-nav menu">
-          <li class="nav-item">
-            <a class="nav-link active" href="#."
-              >Customers <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#.">Orders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#.">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#.">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+<div *ngIf="!show">
+  <div class="form-group text-center">
+    <label for="username" class="fa fa-user-circle"></label>
+    <input type="username" placeholder="Username" #username />
   </div>
-  <div class="listofclients"></div>
-  <div class="listofowners"></div>
+
+  <div class="form-group text-center">
+    <label for="password" class="fa fa-lock"></label>
+    <input type="password" placeholder="Password" #password />
+  </div>
+  <div class="text-center">
+    <button (click)="login(username.value, password.value)">Login</button>
+  </div>
+</div>
+
+<div *ngIf="show" class="container">
+  <button (click)="logout()">LOGOUT</button>
+  <table class="listofclients mx-3">
+    <thead>
+      <tr class="tr mx-3">
+        <th scope="col">CLIENTS</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">BAN THIS CLIENT</th>
+        <th scope="col">EMAIL THIS CLIENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.username }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.adress }}</td>
+        <button (click)="To('/sendemail')" client=" client.username">
+          write
+        </button>
+        <td>
+          <button class="btn btn-danger" (click)="deleteClient(client.id)">
+            BAN
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="listofowners mx-3">
+    <thead>
+      <tr class="tr mx-3">
+        <th scope="col">OWNERS</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">BAN THIS OWNER</th>
+        <th scope="col">EMAIL THIS CLIENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let owner of owners">
+        <td>{{ owner.username }}</td>
+        <td>{{ owner.email }}</td>
+        <td>{{ owner.adress }}</td>
+        <button (click)="To('/sendemail')">write</button>
+        <td>
+          <button class="btn btn-danger" (click)="deleteOwner(owner.id)">
+            BAN
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="conflicts mx-3">
+    <thead>
+      conflicts
+    </thead>
+    <tbody>
+      <tr *ngFor="let conflict of conflicts">
+        <td>{{ conflict.report }}</td>
+        <td>{{ conflict.status }}</td>
+        <button>Mark as resolved</button>
+      </tr>
+    </tbody>
+  </table>
 </div>

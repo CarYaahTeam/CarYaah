@@ -1,6 +1,8 @@
 const db = require("../db");
+var nodemailer = require("nodemailer");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+//_____________________________________________________
 exports.createOwnerCar = async (req, res) => {
   try {
     const ownerCar = {
@@ -97,7 +99,6 @@ exports.createOwner = async function (req, res) {
   }
 };
 
-
 //---------------------LOGIN ONE OWNER-----------------//
 
 exports.loginOwner = async function (req, res) {
@@ -113,7 +114,7 @@ exports.loginOwner = async function (req, res) {
 
     // create and assign a token
     const token = jwt.sign({ id: owner.id }, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: 10,
+      expiresIn: "24h",
     });
     delete owner.password;
 
@@ -130,4 +131,33 @@ exports.profileOwner = function (req, res) {
     .catch((err) => {
       console.log(err);
     });
+};
+// ------------------------------Gmail---------------------------------------------------------------
+exports.emailO = async function (req, res) {
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "testikhtibar@gmail.com",
+      pass: "0123Ikhtibar",
+    },
+  });
+
+  var mailOptions = {
+    from: "testikhtibar@gmail.com",
+    to: req.body.email,
+    subject: "CarYaah from owner to admin",
+    text: req.body.message,
+    // firstName: req.body.firstName,
+    // lastName: req.body.lastName,
+    // email: req.body.email,
+    // message: req.body.message,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
 };

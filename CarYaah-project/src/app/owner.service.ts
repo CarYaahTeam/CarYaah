@@ -16,10 +16,10 @@ interface IOwner {
 export class OwnerService {
   constructor(private http: HttpClient) {}
 
-  regOwner(data: object) {
-    console.log('hi', data);
+  regOwner(email: string, password: string) {
+    console.log('hi', email, password);
     const url = 'http://localhost:3000/owner/signup';
-    this.http.post(url, data).subscribe((data) => {
+    this.http.post(url, { email, password }).subscribe((data) => {
       console.log('there', data);
     });
   }
@@ -39,5 +39,8 @@ export class OwnerService {
 
   getCarOwner() {
     return this.http.get('http://localhost:3000/owner/getCar');
+  }
+  sendMsg(data: any) {
+    return this.http.post('http://localhost:3000/owner/msg', data);
   }
 }

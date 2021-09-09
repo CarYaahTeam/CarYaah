@@ -11,7 +11,7 @@ export class PaiementComponent implements OnInit {
   ngOnInit(): void {}
   pay(data: any) {
     this.paymentService.ppp(data).subscribe((url: any) => {
-      window.open(url, 'fyghj');
+      window.location.replace(url);
       console.log(url);
     });
   }

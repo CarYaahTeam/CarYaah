@@ -1,0 +1,20 @@
+
+<div class="container" style=" height:95%; padding:4px; background-image:url(https://freedesignfile.com/upload/2019/06/Black-yellow-circles-glow-background-vector.jpg);  background-repeat: no-repeat; background-size: cover;">
+
+<form class="text-center border border-light p-5" >
+
+  <p class="h4 mb-4" style="  font-size:32px; font-weight:bold;color:gold" >Contact us</p>
+  <!-- Name -->
+  <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="FirstName " style="height:50px; width: 510px; background-color:rgba(255, 255, 255, 0.481); font-size:22px; " #firstname >
+  <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="LastName "  style="height:50px; width: 510px;font-size:22px ; background-color:rgba(255, 255, 255, 0.481)" #lastname>
+
+  <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail" style="height:50px; width: 510px; font-size:22px ; background-color:rgba(255, 255, 255, 0.481)" #email>
+ 
+
+  <div class="form-group">
+      <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message" style="height:200px; width: 510px; background-color: yellow; font-size:22px ; color:black" #message></textarea>
+  </div>
+  <button class="btn btn-info btn-block" type="submit" style="background-color:black; color:yellow; width:150px; font-size:22px; font-weight:bold;" (click)="sendMsg({firstname:firstname.value, lastname:lastname.value,email:email.value,message:message.value})">Send</button>
+
+</form>
+</div>
