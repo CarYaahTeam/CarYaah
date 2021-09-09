@@ -3,6 +3,7 @@ var db = require("../db/index");
 const bcrypt = require("bcryptjs");
 const axios = require("axios");
 const jwt = require("jsonwebtoken");
+var nodemailer = require('nodemailer');
 //---------------REGISTER ONE CLIENT--------------//
 exports.createClient = async function (req, res) {
   try {
@@ -111,6 +112,58 @@ exports.retrieveFavorites = async (req, res) => {
   }
 };
 
+//----------------send email from client to admin-------------------------------------//
+exports.emailClient = async function(req,res){
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'testikhtibar@gmail.com',
+    pass: '0123Ikhtibar'
+  }
+});
+var mailOptions = {
+  from: 'testikhtibar@gmail.com',
+  to: req.body.email,
+  subject: 'From the client to the admin',
+  text: req.body.message
+};
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+}
+//----------------conflict-------------------------------------//
+exports.createConflict = async (req, res) => {
+  try {
+    const declaration = {
+      conflict_report: req.body.conflict_report
+    };
+
+    const conflict = await db.Conflict.create(declaration);
+    return res.status(201).json({ conflict });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+// exports.FeedBackClient = async (req, res) => {
+//   try {
+//     const feedBack = {
+//       name: req.body.name,
+//       lastName: req.body.lastName,
+//       email: req.body.email,
+//       message: req.body.message,
+  
+//     };
+
+//     const client = await db..create(FeedBackClient);
+//     return res.status(201).json({ client });
+//   } catch (error) {
+//     return res.status(500).json({ error: error.message });
+//   }
+// };
 //---------------Bookings-------//
 exports.retrieBookings= async(req, res)=>{
   try{

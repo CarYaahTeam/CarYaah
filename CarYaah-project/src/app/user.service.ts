@@ -32,5 +32,8 @@ export class UserService {
     };
     return this.http.get('http://localhost:3000/client/bookings', httpOptions)
   }
+  sendMsg(data:any){
+    return this.http.post('http://localhost:3000/client/msgClient' ,data)
+  }
 
 }

@@ -1,29 +1,37 @@
-<div class="form-control">
+<!-- <div class="form-control">
 <h4>PROVIDE US WITH YOUR FEEDBACK</h4>
 <label id="label">Name :</label>
-<input class="feedback" type="text" placeholder="your name"/>
+<input class="feedback" type="text" placeholder="your name" #firstName/>
 <br/>
 <br/>
 <br/>
 <label id="label">Last Name :</label>
-<input class="feedback1" type="text" placeholder="your lastName"/>
+<input class="feedback1" type="text" placeholder="your lastName" #lastName/>
 <br/>
 <br/>
 <br/>
 <label id="label">Email :</label>
-<input class="feedback2" type="email" placeholder="caryaah@gmail.com"/>
+<input class="feedback2" type="email" placeholder="caryaah@gmail.com" #email/>
 <br/>
 <br/>
 <br/>
 <label id="label1">Message :</label>
-<textarea id="feed"></textarea>
+<textarea id="feed" #message></textarea>
 
-<button class="btn">Send</button>
-</div>
-
-<!-- <div>
-<label>Name</label>
-<input type="text"/>
-<label>Name</label>
-<input type="text"/>
+<button class="btn"  (click)="sendMessage({firstName:firstName.value, lastName:lastName.value, email:email.value,message:message.value})">Send</button>
 </div> -->
+
+<div class="container" style=" height:95%; padding:4px; ">
+    <form class="text-center border border-light p-5" action="#!">
+      <p class="h4 mb-4" style="  font-size:32px; font-weight:bold; margin-left: 270px;" >PROVIDE US WITH YOUR FEEDBACK</p>
+      <!-- Name -->
+      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="firstName " style="height:50px; width: 400px; background-color:white; font-size:22px" #firstName/>
+      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="lastName "  style="height:50px; width: 400px;font-size:22px" #lastName/>
+      <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder=" email" style="height:50px; width: 400px; font-size:22px"  #email>
+      <div class="form-group">
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="message" style="height:200px; width: 400px; font-size:22px ; color:black" #message></textarea>
+      </div>
+      <button class="btn"  (click)="sendMessage({firstName:firstName.value, lastName:lastName.value, email:email.value,message:message.value})">Send</button>
+    </form>
+    </div>
+
