@@ -35,8 +35,8 @@ export class AdminComponent implements OnInit {
       this.show = !this.show
     })
   }
-  To(str: string) {
-    this.route.navigateByUrl(str)
+  To(data: object) {
+    this.route.navigateByUrl('/sendemail', { state: { data: data } })
   }
   logout() {
     this.cookies.delete("token")
@@ -77,7 +77,6 @@ export class AdminComponent implements OnInit {
       console.log('conflicts ts', this.conflicts);
     })
   }
-
 
 }
 

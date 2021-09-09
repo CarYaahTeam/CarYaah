@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const clientRouter = require("./routers/clientroutes");
 const ownerRouter = require("./routers/ownerrouters");
 const adminRouter = require("./routers/adminrouters");
+const nodemailer = require("nodemailer");
 const CarRouter = require("./routers/carroutes");
 const multer = require("multer");
 

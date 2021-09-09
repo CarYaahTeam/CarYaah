@@ -1,4 +1,21 @@
 <div class="container-fluid">
+  <div class="title">
+    <div class="rows">
+      <svg viewBox="0 0 960 300">
+        <symbol id="s-text">
+          <text text-anchor="middle" x="50%" y="80%">Sign Up</text>
+        </symbol>
+
+        <g class="g-ants">
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+          <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+      </svg>
+    </div>
+  </div>
   <div class="row">
     <div class="col-12">
       <div>
@@ -12,28 +29,33 @@
         </div>
         <div class="form-group form-check text-center">
           <select class="select" #type>
-            <option>are a car owner ?</option>
-            <option>owner</option>
-            <option>client</option>
+            <option>Client or Owner?</option>
+            <option>i am a CLIENT.</option>
+            <option>i am an OWNER.</option>
           </select>
           <label class="form-check-label" for="exampleCheck1"></label>
-          <button (click)="To('/login')">LOGIN</button>
-        </div>
-        <div class="text-center">
-          <button
-            id="submitButton"
-            type="submit"
-            class="btn btn-primary"
-            (click)="
-              register({
-                email: email.value,
-                password: password.value,
-                type: type.value
-              })
-            "
-          >
-            Register
-          </button>
+
+          <div class="text-center">
+            <button
+              id="submitButton"
+              type="submit"
+              class="btn btn-primary"
+              (click)="
+                register({
+                  email: email.value,
+                  password: password.value,
+                  type: type.value
+                })
+              "
+            >
+              SIGN UP
+            </button>
+          </div>
+          <div class="text-center">
+            <button class="btngologin" (click)="To('/login')">
+              You are a member
+            </button>
+          </div>
         </div>
       </div>
     </div>

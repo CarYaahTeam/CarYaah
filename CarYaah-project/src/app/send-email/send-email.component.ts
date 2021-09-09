@@ -19,16 +19,15 @@ export class SendEmailComponent implements OnInit {
     this.nodeMailForm = this.formBuilder.group({
       email: [null, [Validators.required]]
     });
+    const user = [history.state.data]
+    console.log(user);
+
   }
   To(str: string) {
     this.route.navigateByUrl(str)
   }
-  sendMail() {
-    let email = this.nodeMailForm.value.email;
-    let reqObj = {
-      email: email
-    }
-    this.emailService.sendMessage(reqObj).subscribe((data) => {
+  sendMail(data: object) {
+    this.emailService.sendMessage(data).subscribe((data) => {
       console.log(data);
 
     })

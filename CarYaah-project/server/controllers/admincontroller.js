@@ -1,7 +1,7 @@
 require("dotenv");
 var db = require("../db/index");
-const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer");
 
 //---------- ADMIN LOGIN -----------------------//
 exports.loginAdmin = async function (req, res) {
@@ -90,4 +90,55 @@ exports.deleteOwner = async function (req, res) {
     console.log(err);
     res.status(500).send(err);
   }
+};
+//---------ADMIN SEND EMAIL TO CLIENT----------------//
+exports.emailClient = async function (req, res) {
+  console.log(req.body);
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "testikhtibar@gmail.com",
+      pass: "0123Ikhtibar",
+    },
+  });
+
+  var mailOptions = {
+    from: "testikhtibar@gmail.com",
+    to: req.body.email,
+    subject: "Sending Email using Node.js",
+    text: req.body.message,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+};
+//---------ADMIN SEND EMAIL TO OWNER----------------//
+exports.emailOwner = async function (req, res) {
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "testikhtibar@gmail.com",
+      pass: "0123Ikhtibar",
+    },
+  });
+
+  var mailOptions = {
+    from: "testikhtibar@gmail.com",
+    to: req.body.email,
+    subject: "Sending Email using Node.js",
+    text: req.body.message,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
 };
