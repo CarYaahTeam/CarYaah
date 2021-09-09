@@ -32,9 +32,10 @@ const routes: Routes = [
   { path: 'filteredCars', component: FilteredCarsComponent },
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const routingAuth = [RegisterComponent, LoginComponent];

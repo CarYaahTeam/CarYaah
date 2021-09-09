@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SendEmailComponent implements OnInit {
   nodeMailForm !: FormGroup;
+  show!: boolean
   constructor(
     private formBuilder: FormBuilder,
     private emailService: Email,
