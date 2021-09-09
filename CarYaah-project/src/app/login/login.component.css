@@ -1,8 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html,
+body {
+  height: 100%;
+  font-weight: 800;
+}
+
+body {
+  background: #030321;
+  font-family: Arial;
+}
+
+svg {
+  display: block;
+  font: 10.5em "Montserrat";
+  width: 960px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: black;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #28241d;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: gold;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #efd69d;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: goldenrod;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+/*______________*/
 .row {
-  background: #fbf1de;
-  width: 50%;
+  text-align: center;
+  position: relative;
+  margin-left: 30%;
+  margin-top: 0%;
+  width: 40%;
   height: auto;
+  background-image: url("../../assets/loginPic.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
   box-shadow: black;
+}
+.col-12 {
+  position: relative;
+  background-color: rgba(159, 166, 169, 0.59);
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 input {
   border: none;
@@ -23,8 +101,19 @@ label {
 form {
   padding: 12px;
 }
+.btngosignup {
+  background-color: goldenrod;
+  border-radius: 10px;
+  border: none;
+  margin: 25px;
+  width: 20%;
+  height: 50%;
+  font-size: large;
+  color: black;
+}
 #submitButton {
   background-color: black;
+  border-radius: 10px;
   border: none;
   margin: 25px;
   width: 20%;
@@ -35,8 +124,9 @@ form {
 .select {
   font-size: 1.5rem;
   padding: 0.5em 0.5em;
+  border-radius: 10px;
   align-items: center;
-  background: #4d5061;
+  background: black;
   color: gold;
   appearance: none;
 }

@@ -19,14 +19,14 @@
   <div class="wrapper animated bounceInLeft">
     <div class="contact">
       <h3>Email this person</h3>
-      <form method="POST" action="send">
+      <div>
         <p>
           <label>Name</label>
           <input type="text" name="name" />
         </p>
         <p>
           <label>Email Address</label>
-          <input type="email" name="email" />
+          <input type="email" name="email" #email + />
         </p>
         <p>
           <label>Phone Number</label>
@@ -34,13 +34,18 @@
         </p>
         <p class="full">
           <label>Message</label>
-          <textarea name="message" rows="5"></textarea>
+          <textarea name="message" rows="5" #message></textarea>
         </p>
         <p class="full">
-          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            (click)="sendMail({ email: email.value, message: message.value })"
+          >
+            Submit
+          </button>
         </p>
         <i class="far fa-caret-square-left" (click)="To('/admin')"></i>
-      </form>
+      </div>
     </div>
   </div>
 </div>
