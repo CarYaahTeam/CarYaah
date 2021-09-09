@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogOverviewExampleDialogComponent } from '../dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { DialogOverviewExampleDialog2Component } from '../dialog-overview-example2-dialog/dialog-overview-example2-dialog.component';
 import { UserService } from '../user.service';
 import {
   MatDialog,
@@ -38,7 +38,7 @@ export class UserProfileComponent implements OnInit {
     });
   }
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog2Component, {
       width: '750px',
       height: '550px',
       data: null,
