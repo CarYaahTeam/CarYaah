@@ -32,4 +32,5 @@ export class UserService {
     };
     return this.http.get('http://localhost:3000/client/bookings', httpOptions)
   }
+
 }

@@ -22,17 +22,16 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
 import { AdminComponent } from './admin/admin.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AngularFileUploaderModule } from "angular-file-uploader";
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { PaiementComponent } from './paiement/paiement.component';
-import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { DialogOverviewExampleDialog2Component } from './dialog-overview-example2-dialog/dialog-overview-example2-dialog.component';
 import { LikeCarComponent } from './like-car/like-car.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
 import { CommonModule } from '@angular/common';
-import {UserProfileComponent} from './user-profile/user-profile.component'
-
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -51,16 +50,15 @@ import {UserProfileComponent} from './user-profile/user-profile.component'
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
-    DialogOverviewExampleDialogComponent,
     FilteredCarsComponent,
     AdminComponent,
     OwnerProfileComponent,
     PaiementComponent,
+    DialogOverviewExampleDialog2Component,
     SendEmailComponent,
     LikeCarComponent,
     RateCarComponent,
     UserProfileComponent,
-  
   ],
   imports: [
     HttpClientModule,
@@ -76,9 +74,9 @@ import {UserProfileComponent} from './user-profile/user-profile.component'
     FormsModule,
     BrowserModule,
     AgmCoreModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

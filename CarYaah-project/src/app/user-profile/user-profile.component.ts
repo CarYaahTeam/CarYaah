@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogOverviewExampleDialogComponent } from '../dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { DialogOverviewExampleDialog2Component } from '../dialog-overview-example2-dialog/dialog-overview-example2-dialog.component';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import {CarcardService} from '../carcard.service'
+import { CarcardService } from '../carcard.service';
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
-
 
 export interface Car {
   id: number;
@@ -39,16 +38,18 @@ export interface Car {
 export class UserProfileComponent implements OnInit {
   client: any = [];
   fav: Car[] = [];
-  bookings: any=[]
-  cars: Car[]=[]
+  bookings: any = [];
+  cars: Car[] = [];
 
   showBookings = false;
-  showFavourites=true;
+  showFavourites = true;
 
-  constructor(private UserService: UserService,
-              private route : Router,
-              public dialog: MatDialog,
-              private CarService: CarcardService ) {}
+  constructor(
+    private UserService: UserService,
+    private route: Router,
+    public dialog: MatDialog,
+    private CarService: CarcardService
+  ) {}
   ngOnInit(): void {
     this.getData();
     this.getFavCars();
@@ -63,20 +64,19 @@ export class UserProfileComponent implements OnInit {
 
   getFavCars() {
     this.UserService.getFav().subscribe((resp: any) => {
-     this.fav= resp;
-      console.log('fav',this.fav);
-      
+      this.fav = resp;
+      console.log('fav', this.fav);
     });
   }
 
-  getBookings(){
-    this.UserService.getBooking().subscribe((resp:any)=>{
-      this.bookings=resp;
+  getBookings() {
+    this.UserService.getBooking().subscribe((resp: any) => {
+      this.bookings = resp;
       console.log('bookings', this.bookings);
-    })
+    });
   }
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog2Component, {
       width: '750px',
       height: '550px',
       data: null,
@@ -93,21 +93,20 @@ export class UserProfileComponent implements OnInit {
     // this.displayCarInfo = true;
   }
 
-  getCars(){
-    this.CarService.getCars().subscribe((resp: any)=>{
-      this.cars=resp;
+  getCars() {
+    this.CarService.getCars().subscribe((resp: any) => {
+      this.cars = resp;
       console.log('cars', this.cars);
-    })
+    });
   }
 
   toggleBookings() {
     this.showBookings = !this.showBookings;
-    this.showFavourites=false;
-    }
-  
-  toggleFavourites(){
-    this.showFavourites=!this.showFavourites;
-    this.showBookings = false;
+    this.showFavourites = false;
+  }
 
+  toggleFavourites() {
+    this.showFavourites = !this.showFavourites;
+    this.showBookings = false;
   }
 }

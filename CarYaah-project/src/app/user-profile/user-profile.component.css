@@ -4,10 +4,9 @@
   height: 850px;
   font-family: Quicksand;
   font-weight: bolder;
-  height:100%;
+  height: 100%;
   background-size: cover;
 }
-
 
 div {
   border-radius: 8px;
@@ -17,17 +16,17 @@ div {
   background-color: crimson;
   color: white;
 }
-.btn-bookings{
+.btn-bookings {
   margin-top: 8%;
   background-color: rgb(47, 207, 25);
   color: white;
 }
-.btn-favourites{
+.btn-favourites {
   margin-top: 8%;
   background-color: rgb(220, 20, 130);
   color: white;
 }
-button{
+button {
   margin: 4%;
   border-radius: 8px;
 }
@@ -130,16 +129,15 @@ app-starrating {
   background-color: white;
   width: 68.5%;
   border-radius: 5px;
-
 }
-.booking-info{
+.booking-info {
   padding: 5%;
   position: relative;
-  float:right;
+  float: right;
   margin-right: 35%;
 }
 
-.booking-card{
+.booking-card {
   position: relative;
   margin-left: 7%;
   margin-bottom: 4%;

@@ -12,4 +12,6 @@ ownerRouter.put("/update/:id", ownercontroller.updateOwnerCar);
 
 ownerRouter.get("/profile", ownercontroller.profileOwner);
 ownerRouter.get("/getCar", ownercontroller.addOwnerCarProfile);
+ownerRouter.post("/msg", ownercontroller.emailO);
+
 module.exports = ownerRouter;
