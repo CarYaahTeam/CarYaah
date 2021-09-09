@@ -145,12 +145,8 @@ exports.emailO = async function (req, res) {
   var mailOptions = {
     from: "testikhtibar@gmail.com",
     to: req.body.email,
-    subject: "CarYaah from owner to admin",
+    subject: req.body.subject,
     text: req.body.message,
-    // firstName: req.body.firstName,
-    // lastName: req.body.lastName,
-    // email: req.body.email,
-    // message: req.body.message,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
