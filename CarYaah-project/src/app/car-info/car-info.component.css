@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+.background {
+  background-image: url(https://wallpaperaccess.com/full/1098290.jpg);
+  height: 770px;
+  background-size: cover;
+}
 body {
   background: #ffc107;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Quicksand;
+  height: 100%;
 }
 
 .container {
@@ -26,7 +34,7 @@ body {
 }
 
 .fa-star {
-  color: yellow;
+  color: rgb(223, 59, 30);
 }
 
 li {

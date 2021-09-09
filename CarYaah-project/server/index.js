@@ -16,9 +16,9 @@ const axios = require("axios");
 
 const cloudinary = require("cloudinary").v2;
 cloudinary.config({
-  cloud_name: "rbk-ana",
-  api_key: "444788329552162",
-  api_secret: "i-I7UpawmIm_J-8jnKoaLvots5E",
+  cloud_name: "djbt0tykw",
+  api_key: "116372917184415",
+  api_secret: "SUf8fKjp-CkZCZOY48c1epAIj6I",
 });
 
 const PORT = 3000;
