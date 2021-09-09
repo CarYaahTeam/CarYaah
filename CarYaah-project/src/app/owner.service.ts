@@ -36,8 +36,7 @@ export class OwnerService {
   getOwner() {
     return this.http.get('http://localhost:3000/owner/profile');
   }
-
-
+  
   getCarOwner(dataCar: any) {
     return this.http.get('http://localhost:3000/owner/getCar');
   }

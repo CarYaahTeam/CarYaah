@@ -1,39 +1,152 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
-* {
+.all {
+  background-image: url(https://wallpaperaccess.com/full/1098290.jpg);
+  height: 850px;
   font-family: Quicksand;
+  font-weight: bolder;
+  height:100%;
+  background-size: cover;
 }
 
-.card {
-  justify-content: center;
-  left: 5%;
-  width: 350px;
+
+div {
+  border-radius: 8px;
+}
+.btn-danger {
+  margin-top: 8%;
+  background-color: crimson;
+  color: white;
+}
+.btn-bookings{
+  margin-top: 8%;
+  background-color: rgb(47, 207, 25);
+  color: white;
+}
+.btn-favourites{
+  margin-top: 8%;
+  background-color: rgb(220, 20, 130);
+  color: white;
+}
+button{
+  margin: 4%;
+  border-radius: 8px;
+}
+.card-body {
+  padding: 6%;
+  height: 350px;
+  border-radius: 5px;
+}
+.my-3 {
+  font-size: 20px;
+}
+.mb-1 {
+  font-size: 20px;
+}
+.mb-4 {
+  font-size: 20px;
+}
+
+.fav-container {
+  left: 16%;
+  position: relative;
+  background-color: white;
+  width: 68.5%;
+  border-radius: 5px;
+}
+
+h1 {
+  font-family: Quicksand;
+  font-weight: bolder;
+  position: relative;
+  padding: 1%;
+  margin-left: 40%;
+}
+
+.fav-card {
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  background-color: #f3f3f7;
+  border-radius: 15px;
+  font-family: Quicksand;
+  box-shadow: -0.7em 0 0.4em grey;
+  margin-left: 7%;
+  margin-bottom: 2%;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+}
+
+.img {
+  height: 150px;
+  width: 300px;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.price {
+  position: relative;
+  background-color: white;
+  width: fit-content;
   font-size: large;
-  font-weight: 750px;
-  margin-top: 50px;
-  border-radius: 24px;
-  margin-bottom: 50px;
-  height: 650px;
-  border: black solid;
-}
-.file-field{
-  flex-direction: column;
-  margin-left: 5%;
-}
-.profil {
-  position: relative;
-}
-.card-body{
-  margin-left: 5%;
-}
-.danger{
-  width: 50%;
+  font-weight: bold;
+  box-shadow: whitesmoke;
+  top: -20px;
+  left: 160px;
+  height: 50px;
   justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+}
+.brand {
+  text-transform: capitalize;
+  font-size: large;
+  font-weight: bold;
+  position: relative;
+  left: 5px;
+  top: -10px;
+  background-color: white;
+  width: fit-content;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: large;
+  box-shadow: whitesmoke;
+}
+app-starrating {
+  position: relative;
+  top: -10px;
+  left: 15px;
+}
+.booking-container {
+  left: 16%;
+  position: relative;
+  background-color: white;
+  width: 68.5%;
+  border-radius: 5px;
+
+}
+.booking-info{
+  padding: 5%;
+  position: relative;
+  float:right;
+  margin-right: 35%;
 }
 
-.avatar-pic {
+.booking-card{
   position: relative;
-  width: 150px;
-  margin-top: 5%;
-  left: 28%;
-  margin-bottom: 50px;
+  margin-left: 7%;
+  margin-bottom: 4%;
+  background-color: #f3f3f7;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  font-family: Quicksand;
+  box-shadow: -0.7em 0 0.4em grey;
 }

@@ -47,3 +47,14 @@ nav {
   border-top: 5px solid yellow;
   border-left: 5px solid yellow;
 }
+
+.fas{
+  color: white;
+  font-size: 40px;
+  margin-left: 350px;
+  position: fixed;
+}
+.drop{
+  margin-right: 150px;
+
+}

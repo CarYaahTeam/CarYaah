@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AgmCoreModule } from '@agm/core';
 import '@angular/compiler';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,16 +20,19 @@ import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { OpinionCustomerComponent } from './opinion-customer/opinion-customer.component';
-
 import { AdminComponent } from './admin/admin.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { LikeCarComponent } from './like-car/like-car.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
+import { CommonModule } from '@angular/common';
+import {UserProfileComponent} from './user-profile/user-profile.component'
+
 
 @NgModule({
   declarations: [
@@ -47,28 +51,32 @@ import { RateCarComponent } from './rate-car/rate-car.component';
     AdminComponent,
     HomepageComponent,
     OpinionCustomerComponent,
+    DialogOverviewExampleDialogComponent,
+    FilteredCarsComponent,
     AdminComponent,
     OwnerProfileComponent,
     PaiementComponent,
-    DialogOverviewExampleDialogComponent,
     SendEmailComponent,
     LikeCarComponent,
     RateCarComponent,
+    UserProfileComponent,
+  
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-
     BrowserAnimationsModule,
     MatCardModule,
     ReactiveFormsModule,
-
     MatButtonModule,
     MatDialogModule,
     AngularFileUploaderModule,
     FormsModule,
+    BrowserModule,
+    AgmCoreModule,
+    CommonModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
