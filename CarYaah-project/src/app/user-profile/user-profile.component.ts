@@ -43,12 +43,15 @@ export class UserProfileComponent implements OnInit {
 
   showBookings = false;
   showFavourites = true;
+  
 
   constructor(
     private UserService: UserService,
     private route: Router,
     public dialog: MatDialog,
-    private CarService: CarcardService
+    private CarService: CarcardService,
+    private msg:UserService,
+    private router : Router
   ) {}
   ngOnInit(): void {
     this.getData();
@@ -109,4 +112,17 @@ export class UserProfileComponent implements OnInit {
     this.showFavourites = !this.showFavourites;
     this.showBookings = false;
   }
+  // toggleFeedBack(){
+  //   this.showFeedBack = !this.showFeedBack;
+  //   this.showBookings = false;
+  //   this.router.navigateByUrl("/feedback");
+  // }
+  showFeedBack(){
+    this.router.navigateByUrl("/feedback")
+  }
+  sendMessage(data:object){
+    this.msg.sendMsg(data).subscribe((data)=>{
+      console.log(data)
+    })
+    }
 }
