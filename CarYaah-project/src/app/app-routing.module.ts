@@ -34,9 +34,10 @@ const routes: Routes = [
   { path: 'msg', component: PopupOwnerComponent },
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const routingAuth = [RegisterComponent, LoginComponent];
