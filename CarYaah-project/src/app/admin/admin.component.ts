@@ -35,8 +35,8 @@ export class AdminComponent implements OnInit {
       this.show = !this.show
     })
   }
-  To(data: object) {
-    this.route.navigateByUrl('/sendemail', { state: { data: data } })
+  To() {
+    this.route.navigateByUrl('/sendemail')
   }
   logout() {
     this.cookies.delete("token")

@@ -6,11 +6,10 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   getUser() {
     return this.http.get('http://localhost:3000/client/retrieve');
-    console.log();
   }
   getFav() {
     const httpOptions = {
@@ -23,8 +22,8 @@ export class UserService {
     return this.http.get('http://localhost:3000/client/fav', httpOptions);
   }
 
-  getBooking(){
-    const httpOptions={
+  getBooking() {
+    const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         authorization: this.cookieService.get('token'),
@@ -32,8 +31,8 @@ export class UserService {
     };
     return this.http.get('http://localhost:3000/client/bookings', httpOptions)
   }
-  sendMsg(data:any){
-    return this.http.post('http://localhost:3000/client/msgClient' ,data)
+  sendMsg(data: any) {
+    return this.http.post('http://localhost:3000/client/msgClient', data)
   }
 
 }

@@ -7,7 +7,7 @@
   position: fixed;
   align-items: center;
   flex-direction: row;
-  background-color: #fac63c;
+  background-color: #fbf1de;
   top: 30%;
   left: 0;
   width: 45%;
@@ -19,7 +19,7 @@
   position: fixed;
   align-items: center;
   flex-direction: row;
-  background-color: #fac63c;
+  background-color: #fbf1de;
   top: 30%;
   right: 0;
   width: 45%;
@@ -27,6 +27,40 @@
   border-radius: 10px;
 }
 .btn {
-  background-color: #bd5620;
-  color: aliceblue;
+  background-color: red;
+  color: #fac63c;
+}
+.logout {
+  border: none;
+  border-radius: 10px;
+  color: #fac63c;
+  background-color: black;
+}
+.login {
+  border-radius: 10px;
+  border: none;
+  color: #fac63c;
+  background-color: black;
+}
+.inputs {
+  width: 40%;
+  height: 40%;
+  font-size: large;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: solid gold;
+  size: 3px;
+  margin-left: 10px;
+}
+label {
+  color: gold;
+}
+.write {
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: #fac63c;
+  padding: 2px;
+  padding-left: 2px;
+  margin: 2px;
 }
