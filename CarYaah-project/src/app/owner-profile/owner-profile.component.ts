@@ -16,8 +16,9 @@ export class OwnerProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getData();
     this.getCar();
+  
   }
-
+  
   getData() {
     this.http.getOwner().subscribe((res: any) => {
       this.owner = res;
