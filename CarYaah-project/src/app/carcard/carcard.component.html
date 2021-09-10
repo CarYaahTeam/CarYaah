@@ -1,49 +1,49 @@
-  <div class="filter-container">
-    <h3 class="ac">Filter By Price</h3>
-    <div class="slidecontainer">
-      <span>{{rangevalue}} Dinars</span>
-      <input class="inp" type="range" min='50' max='300' step='10' autocomplete="off" role="slider" value="300"
-        (input)='priceChanged($event)' />
-    </div>
-    <div class="check">
-      <h3 class="title1">Type</h3>
-      <input class="filter" type="checkbox" [(ngModel)]="sedan_checkbox" data-md-icheck (change)="checkbox('sedan')" />
-      <label class="ac" for="cars"> Sedan</label><br />
-      <input type="checkbox" [(ngModel)]="van_checkbox" data-md-icheck (change)="checkbox('van')" />
-      <label class="ac" for="cars"> Van</label><br />
-      <input type="checkbox" [(ngModel)]="pickup_checkbox" data-md-icheck (change)="checkbox('pickup')" />
-      <label class="ac" for="cars"> Pickup</label><br />
-      <input type="checkbox" [(ngModel)]="minitruck_checkbox" data-md-icheck (change)="checkbox('minitruck')" />
-      <label class="ac" for="cars">Mini Truck</label><br />
-    </div>
-    <div class="equipment">
-      <h3 class="title1">Equipment</h3>
-      <input class="ch1" type="checkbox" [(ngModel)]="ac_checkbox" data-md-icheck (change)="ac($event)" />
-      <label class="ac" for="cars"> AC</label><br />
-      <input class="ch1" type="checkbox" [(ngModel)]="gps_checkbox" data-md-icheck (change)="gps($event)" />
-      <label class="ac" for="cars"> GPS</label><br />
-    </div>
-    <div class="transmission">
-      <h3 class="title1">Transmission</h3>
-      <input value="Auto" [(ngModel)]="auto_checkbox" type="radio" (change)="auto($event)">
-      <label class="ac" for="cars"> AUTO</label><br />
-      <input value="Manual" [(ngModel)]="man_checkbox" type="radio" (change)="man($event)">
-      <label class="ac" for="cars">MANUAL</label><br />
-    </div>
+<div class="filter-container">
+  <h3 class="ac">Filter By Price</h3>
+  <div class="slidecontainer">
+    <span>{{rangevalue}} Dinars</span>
+    <input class="inp" type="range" min='50' max='300' step='10' autocomplete="off" role="slider" value="300"
+      (input)='priceChanged($event)' />
   </div>
+  <div class="check">
+    <h3 class="title1">Type</h3>
+    <input class="filter" type="checkbox" [(ngModel)]="sedan_checkbox" data-md-icheck (change)="checkbox('sedan')" />
+    <label class="ac" for="cars"> Sedan</label><br />
+    <input type="checkbox" [(ngModel)]="van_checkbox" data-md-icheck (change)="checkbox('van')" />
+    <label class="ac" for="cars"> Van</label><br />
+    <input type="checkbox" [(ngModel)]="pickup_checkbox" data-md-icheck (change)="checkbox('pickup')" />
+    <label class="ac" for="cars"> Pickup</label><br />
+    <input type="checkbox" [(ngModel)]="minitruck_checkbox" data-md-icheck (change)="checkbox('minitruck')" />
+    <label class="ac" for="cars">Mini Truck</label><br />
+  </div>
+  <div class="equipment">
+    <h3 class="title1">Equipment</h3>
+    <input class="ch1" type="checkbox" [(ngModel)]="ac_checkbox" data-md-icheck (change)="ac($event)" />
+    <label class="ac" for="cars"> AC</label><br />
+    <input class="ch1" type="checkbox" [(ngModel)]="gps_checkbox" data-md-icheck (change)="gps($event)" />
+    <label class="ac" for="cars"> GPS</label><br />
+  </div>
+  <div class="transmission">
+    <h3 class="title1">Transmission</h3>
+    <input value="Auto" [(ngModel)]="auto_checkbox" type="radio" (change)="auto($event)">
+    <label class="ac" for="cars"> AUTO</label><br />
+    <input value="Manual" [(ngModel)]="man_checkbox" type="radio" (change)="man($event)">
+    <label class="ac" for="cars">MANUAL</label><br />
+  </div>
+</div>
 
-  <div class="container">
-  <div class="card-container">
-    <div *ngFor="let car of cars.slice().reverse()" class="card">
-      <div class="img" style="background-image: url({{car?.image}});" (click)="info(car)"></div>
-      <div class="price">
-        <span>{{car?.price}} TND/DAY</span>
-      </div>
-      <div class="brand">
-        <span>{{car?.brand}}</span>
-      </div>
-      <app-like-car [carId]='car.id'></app-like-car>
-      <app-starrating [rating]="car.rating"></app-starrating>
+<div class="container">
+<div class="card-container">
+  <div *ngFor="let car of cars.slice().reverse()" class="card">
+    <div class="img" style="background-image: url({{car?.image}});" (click)="info(car)"></div>
+    <div class="price">
+      <span>{{car?.price}} TND/DAY</span>
     </div>
+    <div class="brand">
+      <span>{{car?.brand}}</span>
+    </div>
+    <app-like-car [carId]='car.id'></app-like-car>
+    <app-starrating [rating]="car.rating"></app-starrating>
   </div>
+</div>
 </div>

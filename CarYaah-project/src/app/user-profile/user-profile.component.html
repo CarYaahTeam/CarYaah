@@ -58,9 +58,10 @@
                 <p class="text-muted mb-0">{{client[0].adress}}</p>
               </div>
             </div>
-            <button class='btn-favourites' (click)='toggleFavourites()'>Show Favourite Cars</button>
+            <button class='btn-favourites' (click)='toggleFavourites()'> Favourite Cars</button>
             <button class='btn-bookings' (click)='toggleBookings()'>Show Bookings</button>
             <button class="btn-danger" type="button" (click)="openDialog()" >Report An Accident</button>
+            <button class="btn-feedback" type="button" (click)="showFeedBack()"  > show feedback</button>
           </div>
         </div>
       </div>
@@ -115,4 +116,17 @@
 
     </div>
   </div>
+  <!-- <div class="container" style=" height:95%; padding:4px; width: 850px; ">
+    <form class="text-center border border-light p-5" action="#!" style="margin-left: 260px;">
+      <p class="h4 mb-4" style="  font-size:32px; font-weight:bold; margin-left: 120px;" >PROVIDE US WITH YOUR FEEDBACK</p>
+     
+      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="firstName " style="height:50px; width: 400px; background-color:white; font-size:22px" #firstName/>
+      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="lastName "  style="height:50px; width: 400px;font-size:22px" #lastName/>
+      <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder=" email" style="height:50px; width: 400px; font-size:22px"  #email>
+      <div class="form-group">
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="message" style="height:200px; width: 400px; font-size:22px ; color:black" #message></textarea>
+      </div>
+      <button class="btn"  (click)="sendMessage({firstName:firstName.value, lastName:lastName.value, email:email.value,message:message.value})">Send</button>
+    </form>
+    </div> -->
 </section>
