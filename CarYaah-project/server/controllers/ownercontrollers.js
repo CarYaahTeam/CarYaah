@@ -114,7 +114,7 @@ exports.loginOwner = async function (req, res) {
 
     // create and assign a token
     const token = jwt.sign({ id: owner.id }, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: "24h",
+      expiresIn: "1d",
     });
     delete owner.password;
 
@@ -145,7 +145,7 @@ exports.emailO = async function (req, res) {
   var mailOptions = {
     from: "testikhtibar@gmail.com",
     to: req.body.email,
-    subject: req.body.subject,
+    subject: "send msg",
     text: req.body.message,
   };
 
