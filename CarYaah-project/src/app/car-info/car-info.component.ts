@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 export interface Car {
   id: number;
   brand: string;
@@ -27,50 +28,57 @@ export interface Car {
   styleUrls: ['./car-info.component.css'],
 })
 export class CarInfoComponent implements OnInit {
- 
-
-  constructor() { }
-  car: any
+  constructor(private route: Router, private cookie: CookieService) {}
+  car: any;
   ngOnInit(): void {
-
-    this.car = history.state.data
+    this.car = history.state.data;
     if (history.state.data.type === 'sedan') {
       this.car['type'] = 'Sedan';
     }
     if (history.state.data.AC) {
-      this.car['AC'] = 'AC'
+      this.car['AC'] = 'AC';
     }
     if (!history.state.data.AC) {
-      this.car['AC'] = ''
+      this.car['AC'] = '';
     }
     if (history.state.data.GPS) {
-      this.car['GPS'] = 'GPS'
+      this.car['GPS'] = 'GPS';
     }
     if (!history.state.data.GPS) {
-      this.car['GPS'] = ''
+      this.car['GPS'] = '';
     }
     if (history.state.data.AUTOMATIC) {
-      this.car['AUTOMATIC'] = 'AUTOMATIC'
+      this.car['AUTOMATIC'] = 'AUTOMATIC';
     }
     if (!history.state.data.AUTOMATIC) {
-      this.car['AUTOMATIC'] = 'MANUAL'
+      this.car['AUTOMATIC'] = 'MANUAL';
     }
 
-    this.car = history.state.data
+    this.car = history.state.data;
     if (history.state.data.type === 'sedan') {
       this.car['type'] = 'Sedan';
     }
     if (history.state.data.AC) {
-      this.car['AC'] = 'AC'
+      this.car['AC'] = 'AC';
     }
     if (history.state.data.GPS) {
-      this.car['GPS'] = 'GPS'
+      this.car['GPS'] = 'GPS';
     }
     if (history.state.data.AUTOMATIC) {
-      this.car['AUTOMATIC'] = 'AUTOMATIC'
+      this.car['AUTOMATIC'] = 'AUTOMATIC';
     }
     if (!history.state.data.AUTOMATIC) {
-      this.car['AUTOMATIC'] = 'MANUAL'
+      this.car['AUTOMATIC'] = 'MANUAL';
+    }
+  }
+  toRegister() {
+    const tkn = this.cookie.get('token');
+    if (tkn) {
+      console.log(tkn);
+
+      this.route.navigateByUrl('/pay');
+    } else {
+      this.route.navigateByUrl('/register');
     }
   }
 }

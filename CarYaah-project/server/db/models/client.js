@@ -8,11 +8,6 @@ const Client = (sequelize) =>
       autoIncrement: true,
       primaryKey: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      defaultValue: "",
-      allowNull: false,
-    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -20,7 +15,7 @@ const Client = (sequelize) =>
     name: {
       type: DataTypes.STRING,
       defaultValue: "",
-      allowNull: false,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -29,7 +24,12 @@ const Client = (sequelize) =>
     adress: {
       type: DataTypes.STRING,
       defaultValue: "",
-      allowNull: false,
+      allowNull: true,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: "",
     }
   });
 

@@ -29,6 +29,8 @@ export class RegisterComponent implements OnInit {
     console.log(data.email, data.password);
     if (data.type === 'I am an OWNER.') {
       this.ownerService.regOwner(data.email, data.password);
+      this.To('/user');
+
       console.log('register owner', data.email, data.password);
     } else if (data.type === 'I am a CLIENT.') {
       this.clientService.regClient(data);
