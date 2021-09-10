@@ -31,11 +31,7 @@ export interface Car {
 export class CarcardComponent implements OnInit {
   liked: boolean = true;
 
-  constructor(
-    private carCardService: CarcardService,
-    private route: Router,
-    private reservationService: ReservationnService
-  ) {}
+  constructor(private carCardService: CarcardService, private route: Router) {}
 
   rangevalue = 300;
   cars: Car[] = [];
@@ -73,20 +69,21 @@ export class CarcardComponent implements OnInit {
   filter() {
     this.cars = this.saveCars.filter((car) => {
       return (
-        (+car.price < this.rangevalue &&
-          (!this.marked.length || this.marked.includes(car.type)) &&
-          (!this.ac_marked || car.AC) &&
-          (!this.gps_marked || car.GPS) &&
-          (!this.ac_marked || car.AC) &&
-          (!this.auto_checked || car.AUTOMATIC)) ||
-        !this.man_checked ||
-        !car.AUTOMATIC
+        +car.price < this.rangevalue &&
+        (!this.marked.length || this.marked.includes(car.type)) &&
+        (!this.ac_marked || car.AC) &&
+        (!this.gps_marked || car.GPS) &&
+        (!this.ac_marked || car.AC) &&
+        (!this.auto_checked || car.AUTOMATIC) &&
+        ((this.man_checked && !car.AUTOMATIC) ||
+          (this.auto_checked && car.AUTOMATIC))
       );
     });
   }
 
   getDataFromAPI() {
     this.carCardService.getCars().subscribe((resp) => {
+      this.saveCars = resp;
       this.cars = resp;
     });
   }
@@ -114,13 +111,15 @@ export class CarcardComponent implements OnInit {
     this.filter();
   }
 
-  auto(e: any) {
-    this.auto_checked = e.target.checked;
+  auto() {
+    this.auto_checked = !this.auto_checked;
+    this.man_checked = false;
     this.filter();
   }
 
-  man(e: any) {
-    this.man_checked = e.target.checked;
+  man() {
+    this.man_checked = !this.man_checked;
+    this.auto_checked = false;
     this.filter();
   }
 }

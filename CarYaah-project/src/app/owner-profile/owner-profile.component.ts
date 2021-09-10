@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { log } from 'console';
 import { OwnerService } from '../owner.service';
-// import { DialogOverviewExampleDialog2Component } from '../dialog-overview-example2-dialog/dialog-overview-example2-dialog.component';
-// import {
-//   MatDialog,
-//   MatDialogRef,
-//   MAT_DIALOG_DATA,
-// } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-owner-profile',
@@ -17,13 +11,14 @@ export class OwnerProfileComponent implements OnInit {
   owner: any = [];
   carOwner: any = [];
 
-  constructor(private http: OwnerService) {}
+  constructor(private http: OwnerService, private route: Router) {}
 
   ngOnInit(): void {
     this.getData();
     this.getCar();
+  
   }
-
+  
   getData() {
     this.http.getOwner().subscribe((res: any) => {
       this.owner = res;
@@ -39,5 +34,9 @@ export class OwnerProfileComponent implements OnInit {
       },
       (err: any) => console.log(err)
     );
+  }
+
+  tohome(str: string) {
+    this.route.navigateByUrl(str);
   }
 }
