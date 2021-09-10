@@ -34,6 +34,8 @@ cars: Car[] = [];
 saveCars: Car[] = [];
 marked: string[] = [];
 
+
+
 sedan_marked = false;
 sedan_checkbox = false;
 van_marked = false;
@@ -58,6 +60,7 @@ man_checked = false;
     if(this.reservationService.filteredcars!==[]){
       return this.cars=this.reservationService.filteredcars
     }
+    
   }
   info(car : Car) : void {
     this.route.navigate(['/carInfo'], {state: {data: car}});
@@ -86,6 +89,15 @@ man_checked = false;
       this.saveCars = cars;
     });
   }
+//   onlyonecar (data: object){
+// for(let car of this.saveCars){
+//   if(car=== data){
+//  this.carinfo.push(car)
+//  console.log(this.carinfo);
+ 
+//   }
+// }
+// }
 
   priceChanged(e: any) {
     this.rangevalue = e.target.value;
@@ -137,4 +149,5 @@ man_checked = false;
         console.log('data',data['fav'])
       })
     }
+
 }
