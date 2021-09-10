@@ -2,7 +2,7 @@
 .navbar {
   background-color: #000;
   min-height: 50px;
-  margin-bottom: 0px;
+
   border: 1px solid transparent;
   font-family: Quicksand;
   font-weight: bold;
@@ -48,13 +48,12 @@ nav {
   border-left: 5px solid yellow;
 }
 
-.fas{
+.fas {
   color: white;
   font-size: 40px;
   margin-left: 350px;
   position: fixed;
 }
-.drop{
+.drop {
   margin-right: 150px;
-
 }
