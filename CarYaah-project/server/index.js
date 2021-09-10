@@ -50,7 +50,7 @@ app.post("/upload", upload.any(0), (req, res) => {
 app.post("/payment", (req, res) => {
   var obj = {
     receiverWallet: process.env.wallet_id,
-    amount: 1000,
+    amount: 250000,
     selectedPaymentMethod: "gateway",
     token: "TND",
     firstName: req.body.firstName,

@@ -14,6 +14,7 @@ import { FilteredCarsComponent } from './filtered-cars/filtered-cars.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { PaiementComponent } from './paiement/paiement.component';
+import { PopupOwnerComponent } from './popup-owner/popup-owner.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'carInfo', component: CarInfoComponent },
   { path: 'feedback', component: FeedbackClientComponent },
   { path: 'filteredCars', component: FilteredCarsComponent },
+  { path: 'msg', component: PopupOwnerComponent },
 ];
 
 @NgModule({
