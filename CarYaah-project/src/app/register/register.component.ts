@@ -4,20 +4,14 @@ import { ClientService } from 'src/app/client.service';
 import { OwnerService } from 'src/app/owner.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
-
-
 export class RegisterComponent implements OnInit {
-
   // data: object = {}
-  successMessage: string = ""
-
-
+  successMessage: string = '';
 
   constructor(
     private formData: FormBuilder,
@@ -26,13 +20,10 @@ export class RegisterComponent implements OnInit {
     private route: Router
   ) { }
 
-  ngOnInit(): void {
-
-
-  }
+  ngOnInit(): void { }
 
   To(str: string) {
-    this.route.navigateByUrl(str)
+    this.route.navigateByUrl(str);
   }
   register(data: any) {
     console.log(data.email, data.password)
@@ -45,9 +36,7 @@ export class RegisterComponent implements OnInit {
     } else if (data.type === "I am a CLIENT.") {
       this.clientService.regClient(data)
       console.log('register', data.email, data.password);
-      this.To("/user")
-
+      this.To('/user');
     }
   }
-
 }

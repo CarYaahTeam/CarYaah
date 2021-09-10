@@ -29,6 +29,7 @@ import { PaiementComponent } from './paiement/paiement.component';
 import { LikeCarComponent } from './like-car/like-car.component';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { RateCarComponent } from './rate-car/rate-car.component';
+import { PopupOwnerComponent } from './popup-owner/popup-owner.component';
 import { CommonModule } from '@angular/common';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
@@ -57,6 +58,7 @@ import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-
     SendEmailComponent,
     LikeCarComponent,
     RateCarComponent,
+    PopupOwnerComponent,
     UserProfileComponent,
     DialogOverviewExampleDialogComponent,
   ],
