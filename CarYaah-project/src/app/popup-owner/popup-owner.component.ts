@@ -14,6 +14,7 @@ export class PopupOwnerComponent implements OnInit {
   ngOnInit(): void {}
   sendMsg(data: object) {
     this.msg.sendMsg(data).subscribe((data) => {
+      alert('Msg sended');
       console.log(data);
     });
   }
