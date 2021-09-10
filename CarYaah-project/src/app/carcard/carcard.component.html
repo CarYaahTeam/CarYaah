@@ -25,16 +25,16 @@
     </div>
     <div class="transmission">
       <h3 class="title1">Transmission</h3>
-      <input value="Auto" [(ngModel)]="auto_checkbox" type="radio" (change)="auto($event)">
+      <input value="Auto" [(ngModel)]="auto_checkbox" type="radio" (change)="auto()">
       <label class="ac" for="cars"> AUTO</label><br />
-      <input value="Manual" [(ngModel)]="man_checkbox" type="radio" (change)="man($event)">
+      <input value="Manual" [(ngModel)]="man_checkbox" type="radio" (change)="man()">
       <label class="ac" for="cars">MANUAL</label><br />
     </div>
   </div>
 
   <div class="container">
   <div class="card-container">
-    <div *ngFor="let car of cars.slice().reverse()" class="card">
+    <div *ngFor="let car of cars.reverse()" class="card">
       <div class="img" style="background-image: url({{car?.image}});" (click)="info(car)"></div>
       <div class="price">
         <span>{{car?.price}} TND/DAY</span>
@@ -47,3 +47,4 @@
     </div>
   </div>
 </div>
+
