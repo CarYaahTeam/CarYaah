@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     private ownerService: OwnerService,
     private route: Router,
     private cookies: CookieService
-  ) {}
-  ngOnInit(): void {}
+  ) { }
+  ngOnInit(): void { }
   To(str: string) {
     this.route.navigateByUrl(str);
   }
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         .subscribe((data) => {
           this.cookies.set('token', data.auth_token);
           this.To('/ownerprofile');
-          
+
         });
     } else if (data.type === 'I am a CLIENT.') {
       this.clientService

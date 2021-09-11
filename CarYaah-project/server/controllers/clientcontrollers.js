@@ -148,22 +148,7 @@ exports.createConflict = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-// exports.FeedBackClient = async (req, res) => {
-//   try {
-//     const feedBack = {
-//       name: req.body.name,
-//       lastName: req.body.lastName,
-//       email: req.body.email,
-//       message: req.body.message,
-  
-//     };
 
-//     const client = await db..create(FeedBackClient);
-//     return res.status(201).json({ client });
-//   } catch (error) {
-//     return res.status(500).json({ error: error.message });
-//   }
-// };
 //---------------Bookings-------//
 exports.retrieBookings= async(req, res)=>{
   try{

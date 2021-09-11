@@ -18,22 +18,23 @@ export class RegisterComponent implements OnInit {
     private clientService: ClientService,
     private ownerService: OwnerService,
     private route: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   To(str: string) {
     this.route.navigateByUrl(str);
   }
   register(data: any) {
-    console.log(data.email, data.password);
-    if (data.type === 'I am an OWNER.') {
-      this.ownerService.regOwner(data.email, data.password);
-      this.To('/user');
-
+    console.log(data.email, data.password)
+    if (data.type === "I am an OWNER.") {
+      this.ownerService.regOwner(data.email, data.password)
       console.log('register owner', data.email, data.password);
-    } else if (data.type === 'I am a CLIENT.') {
-      this.clientService.regClient(data);
+      this.To("/ownerprofile")
+
+
+    } else if (data.type === "I am a CLIENT.") {
+      this.clientService.regClient(data)
       console.log('register', data.email, data.password);
       this.To('/user');
     }
