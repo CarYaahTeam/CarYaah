@@ -161,3 +161,22 @@ exports.retrieBookings= async(req, res)=>{
     console.log(error);
   }
 };
+
+//-------UpdateClientInfos------//
+exports.updateClientInfos = async (req, res) => {
+  try {
+    const client = await db.Client.update({ 
+      name : req.body.name,
+      email : req.body.email,
+      phone: req.body.phone,
+      adress : req.body.adress,
+      image: req.body.image,
+     },
+     {where : {id: 1}});
+     return res.status(201).send({
+       status:200
+     });
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+};

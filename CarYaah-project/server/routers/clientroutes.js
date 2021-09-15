@@ -10,5 +10,6 @@ clientRouter.route("/fav").get(verifyToken.authClient,clientcontroller.retrieveF
 clientRouter.route("/conflict").post(clientcontroller.createConflict);
 clientRouter.route("/msgClient").post(clientcontroller.emailClient);
 clientRouter.route("/bookings").get(verifyToken.authClient,clientcontroller.retrieBookings);
+clientRouter.put("/update/:id", clientcontroller.updateClientInfos);
 
 module.exports = clientRouter;

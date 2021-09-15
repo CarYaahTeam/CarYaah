@@ -30,6 +30,7 @@ export class SendEmailComponent implements OnInit {
   sendMail(data: object) {
     this.emailService.sendMessage(data).subscribe((data) => {
       console.log(data);
+      alert('Message Sent !')
 
     })
   }

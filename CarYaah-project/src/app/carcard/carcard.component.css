@@ -15,7 +15,7 @@
   margin: 4%;
   border-radius: 15px;
   font-family: Quicksand;
-  box-shadow: -0.7em 0 0.4em grey;
+  box-shadow: -0.4em 0 0.2em rgb(211, 211, 211);
 }
 .card:hover {
   cursor: pointer;
@@ -63,7 +63,7 @@ app-starrating {
   left: 15px;
 }
 .filter-container {
-  box-shadow: 10px 10px 8px 10px #888888;
+  box-shadow: 10px 10px 8px 10px #ececec;
   box-sizing: content-box;
   font-size: 15px;
   border: 1px solid;

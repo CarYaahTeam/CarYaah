@@ -33,6 +33,10 @@ import { PopupOwnerComponent } from './popup-owner/popup-owner.component';
 import { CommonModule } from '@angular/common';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { UpdateClientInfosComponent } from './update-client-infos/update-client-infos.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -61,6 +65,7 @@ import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-
     PopupOwnerComponent,
     UserProfileComponent,
     DialogOverviewExampleDialogComponent,
+    UpdateClientInfosComponent,
   ],
   imports: [
     HttpClientModule,
@@ -77,8 +82,12 @@ import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-
     BrowserModule,
     AgmCoreModule,
     CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatToolbarModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
+  entryComponents: [UpdateClientInfosComponent],
 })
 export class AppModule {}

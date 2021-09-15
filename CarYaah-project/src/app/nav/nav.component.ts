@@ -7,15 +7,15 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-  boo=false;
+  boo = false;
   constructor(private route: Router, private cookie: CookieService) {}
 
   ngOnInit(): void {
     const tkn = this.cookie.get('token');
     if (tkn) {
       this.boo = true;
+    }
   }
-}
   To(str: string) {
     this.route.navigateByUrl(str);
   }
@@ -30,7 +30,7 @@ export class NavComponent implements OnInit {
     }
   }
 
-  toProfile(){
+  toProfile() {
     this.route.navigateByUrl('/ownerprofile');
   }
 }

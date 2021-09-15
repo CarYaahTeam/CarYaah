@@ -12,7 +12,9 @@ interface IClient {
   providedIn: 'root',
 })
 export class ClientService {
-  constructor(private http: HttpClient) { }
+  loggedin = false;
+
+  constructor(private http: HttpClient) {}
   regClient(data: object) {
     console.log('hi', data);
     const url = 'http://localhost:3000/client/signup';

@@ -3,6 +3,7 @@ import { DialogOverviewExampleDialogComponent } from '../dialog-overview-example
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { CarcardService } from '../carcard.service';
+import { UpdateClientInfosComponent } from '../update-client-infos/update-client-infos.component';
 import {
   MatDialog,
   MatDialogRef,
@@ -43,15 +44,14 @@ export class UserProfileComponent implements OnInit {
 
   showBookings = false;
   showFavourites = true;
-  
 
   constructor(
     private UserService: UserService,
     private route: Router,
     public dialog: MatDialog,
     private CarService: CarcardService,
-    private msg:UserService,
-    private router : Router
+    private msg: UserService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.getData();
@@ -99,7 +99,6 @@ export class UserProfileComponent implements OnInit {
   getCars() {
     this.CarService.getCars().subscribe((resp: any) => {
       this.cars = resp;
-      console.log('cars', this.cars);
     });
   }
 
@@ -117,12 +116,16 @@ export class UserProfileComponent implements OnInit {
   //   this.showBookings = false;
   //   this.router.navigateByUrl("/feedback");
   // }
-  showFeedBack(){
-    this.router.navigateByUrl("/feedback")
+  showFeedBack() {
+    this.router.navigateByUrl('/feedback');
   }
-  sendMessage(data:object){
-    this.msg.sendMsg(data).subscribe((data)=>{
-      console.log(data)
-    })
-    }
+  sendMessage(data: object) {
+    this.msg.sendMsg(data).subscribe((data) => {
+      console.log(data);
+    });
+  }
+
+  updateInfosDialog() {
+    this.dialog.open(UpdateClientInfosComponent);
+  }
 }

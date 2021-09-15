@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Update My Infos</h2>
+<mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput value="" #name>
+</mat-form-field><br>
+<mat-form-field>
+    <mat-label>E-mail</mat-label>
+    <input type="email" matInput value="" #email>
+</mat-form-field><br>
+<mat-form-field>
+    <mat-label>Phone</mat-label>
+    <input matInput value="" #phone>
+</mat-form-field><br>
+<mat-form-field>
+    <mat-label>Adress</mat-label>
+    <input matInput value="" #adress>
+</mat-form-field><br>
+<input style="display: none" type="file" (change)=' onUpload($event)' #fileinput>
+<button mat-raised-button (click)='fileinput.click()'>Pick a Photo</button>
+<button mat-raised-button (click)='update(name.value, email.value, phone.value, adress.value)'>Update</button>

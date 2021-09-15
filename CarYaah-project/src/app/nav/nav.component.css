@@ -33,6 +33,7 @@ li i {
   color: white;
   padding: 16px;
   border: none;
+  position: absolute;
 }
 
 li i:hover {
@@ -66,6 +67,7 @@ li i:hover {
   height: 30px;
   background-color: #000;
   position: relative;
+  margin-top: -22px;
 }
 .box-1 {
   width: 50%;

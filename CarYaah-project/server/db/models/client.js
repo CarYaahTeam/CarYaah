@@ -26,7 +26,17 @@ const Client = (sequelize) =>
       defaultValue: "",
       allowNull: true,
     },
+    phone: {
+      type: DataTypes.STRING,
+      defaultValue: "",
+      allowNull: true,
+    },
     image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: "",
+    },
+    drvlicense: {
       type: DataTypes.STRING,
       allowNull: true,
       defaultValue: "",
