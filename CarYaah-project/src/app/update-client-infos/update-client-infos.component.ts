@@ -18,15 +18,26 @@ export class UpdateClientInfosComponent implements OnInit {
   ) {}
 
   imageUrl: any;
+  drvLicenseUrl: any;
   ngOnInit(): void {}
 
-  onUpload(img: any) {
+  uploadClientImg(img: any) {
     console.log('IMG FROM VER==> ', img.target.files[0]);
     var formData = new FormData();
     formData.append('img', img.target.files[0]);
     this.updateClient.uploadImg(formData).subscribe((resp: any) => {
       console.log('RESP====> ', resp['msg'].url);
       this.imageUrl = resp['msg'].url;
+    });
+  }
+
+  uploadDrvLicense(img: any) {
+    console.log('IMG FROM VER==> ', img.target.files[0]);
+    var formData = new FormData();
+    formData.append('img', img.target.files[0]);
+    this.updateClient.uploadImg(formData).subscribe((resp: any) => {
+      console.log('RESP====> ', resp['msg'].url);
+      this.drvLicenseUrl = resp['msg'].url;
     });
   }
   update(name: string, email: string, phone: string, adress: string) {
@@ -36,6 +47,7 @@ export class UpdateClientInfosComponent implements OnInit {
       phone,
       adress,
       image: this.imageUrl,
+      drvlicense: this.drvLicenseUrl,
     };
     this.updateClient.updateClient(dataClient).subscribe((data: any) => {
       console.log(data);

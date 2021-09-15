@@ -1,4 +1,5 @@
-<h2 mat-dialog-title>Update My Infos</h2>
+<div class="container">
+    <h2 mat-dialog-title>Update My Infos</h2>
 <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput value="" #name>
@@ -15,6 +16,20 @@
     <mat-label>Adress</mat-label>
     <input matInput value="" #adress>
 </mat-form-field><br>
-<input style="display: none" type="file" (change)=' onUpload($event)' #fileinput>
-<button mat-raised-button (click)='fileinput.click()'>Pick a Photo</button>
-<button mat-raised-button (click)='update(name.value, email.value, phone.value, adress.value)'>Update</button>
+<input style="display: none" type="file" (change)='uploadClientImg($event)' #photoinput>
+<input style="display: none" type="file" (change)='uploadDrvLicense($event)' #drvlicense>
+<button style="background-color: rgb(70, 204, 238);" mat-raised-button (click)='photoinput.click()'>Pick a Photo</button>
+<button style="background-color: rgb(241, 243, 130);" mat-raised-button (click)='drvlicense.click()'>Driving License</button>
+<button style="background-color: rgba(59, 216, 20, 0.411);" mat-raised-button (click)='update(name.value, email.value, phone.value, adress.value)'>Update</button><br>
+<figure *ngIf="imageUrl">
+    <img width="20%" height="20%"  [src]="imageUrl" class="image">
+    <figcaption>Profile Photo</figcaption>
+</figure>
+<figure *ngIf="drvLicenseUrl">
+<img width="20%" height="20%"  [src]="drvLicenseUrl" class="image">
+<figcaption>Driving License</figcaption>
+</figure>
+</div>
+
+
+

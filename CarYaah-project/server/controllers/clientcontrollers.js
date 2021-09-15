@@ -171,6 +171,7 @@ exports.updateClientInfos = async (req, res) => {
       phone: req.body.phone,
       adress : req.body.adress,
       image: req.body.image,
+      drvlicense: req.body.drvlicense,
      },
      {where : {id: 1}});
      return res.status(201).send({
