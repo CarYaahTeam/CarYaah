@@ -1,6 +1,4 @@
-
-  <p class="h4 mb-4" style="  font-size:32px; font-weight:bold; margin-left: 0px; color: white;">PROVIDE US WITH YOUR
-    FEEDBACK</p>
+<h2 mat-dialog-title>Provide Us With Your Feedback</h2>
   <mat-form-field>
     <input matInput type="text" placeholder="Name "
       style="height:50px; width: 400px; background-color:white; font-size:22px" #Name />
@@ -12,5 +10,4 @@
     <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Your message here"
       style="height:200px; width: 400px; font-size:22px ; color:black" #message></textarea>
   </div>
-  <button mat-raised-button class="btn"
-    (click)="sendMessage({Name:Name.value, email:email.value,message:message.value})">Send</button>
+  <button mat-raised-button (click)="sendMessage({Name:Name.value, email:email.value,message:message.value})">Send</button>

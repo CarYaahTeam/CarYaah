@@ -139,7 +139,9 @@ transporter.sendMail(mailOptions, function(error, info){
 exports.createConflict = async (req, res) => {
   try {
     const declaration = {
-      conflict_report: req.body.conflict_report
+      conflict_report: req.body.conflictreport,
+      clientId: 1,
+      carId: 1
     };
 
     const conflict = await db.Conflict.create(declaration);

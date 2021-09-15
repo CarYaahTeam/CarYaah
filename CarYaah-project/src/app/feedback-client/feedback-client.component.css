@@ -1,7 +1,8 @@
 button {
   background-color: rgb(70, 204, 238);
   font-size: medium;
-  font-weight: bold;
+  font-weight: 700;
+  color: white;
 }
 
 mat-form-field {

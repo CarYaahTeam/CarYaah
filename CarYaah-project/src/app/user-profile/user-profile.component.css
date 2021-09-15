@@ -12,23 +12,23 @@ div {
 }
 .btn-danger {
   margin-top: 8%;
-  background-color: crimson;
+  background-color: rgb(221, 115, 115);
   color: white;
 }
 .btn-bookings {
   margin-top: 8%;
-  background-color: rgb(47, 207, 25);
+  background-color: rgb(115, 224, 101);
   color: white;
   width: 120px;
 }
 .btn-favourites {
   margin-top: 8%;
-  background-color: rgb(220, 20, 130);
+  background-color: rgb(221, 96, 165);
   color: white;
   width: 120px;
 }
 .btn-feedback {
-  background-color: rgb(195, 207, 25);
+  background-color: rgb(171, 180, 35);
   color: white;
   width: 120px;
 }

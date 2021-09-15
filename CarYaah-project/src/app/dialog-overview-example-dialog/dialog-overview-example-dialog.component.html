@@ -1,20 +1,27 @@
 <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Name :</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="your name">
-  </div>
-  <br/>
-<div class="mb-3">
-  <label id="label" class="form-label" style="height:50px; width: 400px; background-color:white; font-size:22px">Message :</label>
-  <br/>
-  <br/>
-  <textarea class="msg"></textarea>
+  <h2 mat-dialog-title>Report An Accident</h2><br>
+  <mat-form-field>
+    <mat-label for="exampleFormControlInput1">E-mail :</mat-label>
+    <input matInput type="text" #email>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label for="exampleFormControlInput1">Registration number of the car :</mat-label>
+    <input matInput type="text" #regist>
+  </mat-form-field>
+  <h3 mat-dialog-title>Message</h3>
 </div>
-  <br/>
-       <!-- cloudinary -->
-       <div class="cloud">
-         <label for="">Upload Accident Report Here</label>
-        <input type="file" (change)="imgUpload($event)">
-    </div>
-  <br/>
-  <button id="submit" type="button" class="btn btn-success">Submit</button>
+
+<textarea class="msg" #msg></textarea>
+
+<!-- cloudinary -->
+<input style="display: none" type="file" (change)="imgUpload($event)" #report>
+<button style="background-color: rgb(112, 176, 228);" mat-raised-button (click)='report.click()'>Select Report</button>
+<button style="background-color: rgb(108, 224, 108);" mat-raised-button (click)='submitRport(email.value, regist.value, msg.value)' >Submit</button><br>
+<figure *ngIf="imageUrl">
+  <img width="15%" height="15%"  [src]="imageUrl" class="image">
+  <figcaption>Your accident report</figcaption>
+</figure>
+
+
 
