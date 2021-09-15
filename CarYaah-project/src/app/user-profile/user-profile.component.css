@@ -15,28 +15,26 @@ div {
   margin-top: 8%;
   background-color: crimson;
   color: white;
-  width: 120px;
 }
 .btn-bookings {
   margin-top: 8%;
   background-color: rgb(47, 207, 25);
   color: white;
-  width: 120px;
 }
 .btn-favourites {
   margin-top: 8%;
   background-color: rgb(220, 20, 130);
   color: white;
-  width: 120px;
 }
-.btn-feedback{
+.btn-feedback {
   background-color: rgb(195, 207, 25);
   color: white;
-  width: 120px;
 }
 button {
-  margin: 4%;
+  margin: 2%;
   border-radius: 8px;
+  font-size: medium;
+  width: fit-content;
 }
 .card-body {
   padding: 6%;
@@ -156,15 +154,15 @@ app-starrating {
   font-family: Quicksand;
   box-shadow: -0.7em 0 0.4em grey;
 }
-#defaultContactFormName{
+#defaultContactFormName {
   margin-left: 100px;
 }
-#defaultContactFormEmail{
+#defaultContactFormEmail {
   margin-left: 100px;
 }
-#exampleFormControlTextarea2{
+#exampleFormControlTextarea2 {
   margin-left: 100px;
 }
-.btn{
+.btn {
   background-color: rgb(197, 197, 8);
 }

@@ -4,6 +4,7 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { CarcardService } from '../carcard.service';
 import { UpdateClientInfosComponent } from '../update-client-infos/update-client-infos.component';
+import { FeedbackClientComponent } from '../feedback-client/feedback-client.component';
 import {
   MatDialog,
   MatDialogRef,
@@ -127,5 +128,9 @@ export class UserProfileComponent implements OnInit {
 
   updateInfosDialog() {
     this.dialog.open(UpdateClientInfosComponent);
+  }
+
+  sendFeedbackDialog() {
+    this.dialog.open(FeedbackClientComponent);
   }
 }

@@ -1,13 +1,16 @@
-<div class="container" style=" height:95%; padding:4px; ">
-    <form class="text-center border border-light p-5" action="#!">
-      <p class="h4 mb-4" style="  font-size:32px; font-weight:bold; margin-left: 0px; color: white;" >PROVIDE US WITH YOUR FEEDBACK</p>
-      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="firstName " style="height:50px; width: 400px; background-color:white; font-size:22px" #firstName/>
-      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="lastName "  style="height:50px; width: 400px;font-size:22px" #lastName/>
-      <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder=" email" style="height:50px; width: 400px; font-size:22px"  #email>
-      <div class="form-group">
-          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="your message" style="height:200px; width: 400px; font-size:22px ; color:black" #message></textarea>
-      </div>
-      <button class="btn"  (click)="sendMessage({firstName:firstName.value, lastName:lastName.value, email:email.value,message:message.value})">Send</button>
-    </form>
-    </div>
 
+  <p class="h4 mb-4" style="  font-size:32px; font-weight:bold; margin-left: 0px; color: white;">PROVIDE US WITH YOUR
+    FEEDBACK</p>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Name "
+      style="height:50px; width: 400px; background-color:white; font-size:22px" #Name />
+  </mat-form-field><br>
+  <mat-form-field>
+    <input matInput type="email" placeholder=" email" style="height:50px; width: 400px; font-size:22px" #email>
+  </mat-form-field>
+  <div class="form-group">
+    <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Your message here"
+      style="height:200px; width: 400px; font-size:22px ; color:black" #message></textarea>
+  </div>
+  <button mat-raised-button class="btn"
+    (click)="sendMessage({Name:Name.value, email:email.value,message:message.value})">Send</button>

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UpdateClientInfosService } from 'src/app/update-client-infos.service';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -11,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class UpdateClientInfosComponent implements OnInit {
   constructor(
-    private http: HttpClient,
     private router: Router,
     private updateClient: UpdateClientInfosService,
     public dialogRef: MatDialogRef<UpdateClientInfosComponent>

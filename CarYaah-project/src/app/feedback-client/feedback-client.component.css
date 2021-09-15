@@ -1,78 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
-.form-control{
-   width: 650px;
-   margin-top: 50px;
-   height: 580px;
-   margin-left: 550px;
-
-}
-.feedback{
-    margin-left: 85px;
-    width:350px;
-    border-radius: 24px;
-    height: 35px;
-}
-.feedback1{
-    margin-left:32px;
-    width: 350px;
-    border-radius: 24px;
-    height: 35px;
-}
-.feedback2{
-    margin-left: 85px;
-    width: 350px;
-    border-radius: 24px;
-    height: 35px;
-}
-.feedback3{
-    margin-left: 30px;
-    width: 360px;
-    border-radius: 24px;
-}
-.btn{
-   margin-left: 250px;
-   background-color: rgb(197, 197, 8);
-   margin-bottom: 450px;
-   margin-left:450px ;
-   width: 120px;
-   border-radius: 24px;
+button {
+  background-color: rgb(70, 204, 238);
+  font-size: medium;
+  font-weight: bold;
 }
 
-#label{
-   font-size: 25px;   
+mat-form-field {
+  width: 60%;
 }
-#feed{
-    height: 120px;
-    width: 350px;
-    margin-left: 45px;
-}
-#label1{
-    margin-bottom: 150px;
-    font-size: 25px; 
-}
-h4{
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 600px;
-}
-.container{
-    background-image: url(https://wallpaperaccess.com/full/1098290.jpg);
-    width: 7500px;
-}
-#defaultContactFormName{
-    margin-left: 400px;
-  }
-  #defaultContactFormEmail{
-    margin-left: 400px;
-  }
-  #exampleFormControlTextarea2{
-    margin-left: 400px;
-  }
-  .btn{
-    background-color: rgb(197, 197, 8);
-    margin-left: 230px;
-    height: 35px;
-    font-size: 15px;
-    font-weight: bold;
-  }

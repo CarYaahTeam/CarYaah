@@ -37,6 +37,7 @@ import { UpdateClientInfosComponent } from './update-client-infos/update-client-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     UserProfileComponent,
     DialogOverviewExampleDialogComponent,
     UpdateClientInfosComponent,
+    FeedbackClientComponent,
   ],
   imports: [
     HttpClientModule,
