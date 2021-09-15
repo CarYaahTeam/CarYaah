@@ -5,12 +5,7 @@ import { Router } from '@angular/router';
 import { CarcardService } from '../carcard.service';
 import { UpdateClientInfosComponent } from '../update-client-infos/update-client-infos.component';
 import { FeedbackClientComponent } from '../feedback-client/feedback-client.component';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
-
+import { MatDialog } from '@angular/material/dialog';
 export interface Car {
   id: number;
   brand: string;
@@ -92,9 +87,6 @@ export class UserProfileComponent implements OnInit {
 
   info(car: Car): void {
     this.route.navigate(['/carInfo'], { state: { data: car } });
-    //this.display = true;
-    //To toggle the component
-    // this.displayCarInfo = true;
   }
 
   getCars() {
@@ -112,14 +104,7 @@ export class UserProfileComponent implements OnInit {
     this.showFavourites = !this.showFavourites;
     this.showBookings = false;
   }
-  // toggleFeedBack(){
-  //   this.showFeedBack = !this.showFeedBack;
-  //   this.showBookings = false;
-  //   this.router.navigateByUrl("/feedback");
-  // }
-  showFeedBack() {
-    this.router.navigateByUrl('/feedback');
-  }
+
   sendMessage(data: object) {
     this.msg.sendMsg(data).subscribe((data) => {
       console.log(data);

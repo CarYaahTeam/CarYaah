@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 .all {
-  background-image: url(https://wallpaperaccess.com/full/1098290.jpg);
   height: 850px;
   font-family: Quicksand;
   font-weight: bolder;
@@ -20,21 +19,23 @@ div {
   margin-top: 8%;
   background-color: rgb(47, 207, 25);
   color: white;
+  width: 120px;
 }
 .btn-favourites {
   margin-top: 8%;
   background-color: rgb(220, 20, 130);
   color: white;
+  width: 120px;
 }
 .btn-feedback {
   background-color: rgb(195, 207, 25);
   color: white;
+  width: 120px;
 }
 button {
-  margin: 2%;
+  margin: 4%;
   border-radius: 8px;
-  font-size: medium;
-  width: fit-content;
+  justify-content: center;
 }
 .card-body {
   padding: 6%;
@@ -80,6 +81,7 @@ h1 {
   box-shadow: -0.7em 0 0.4em grey;
   margin-left: 7%;
   margin-bottom: 2%;
+  border: solid black;
 }
 
 .card:hover {
@@ -135,6 +137,7 @@ app-starrating {
   background-color: white;
   width: 68.5%;
   border-radius: 5px;
+  height: 600px;
 }
 .booking-info {
   padding: 5%;
@@ -153,6 +156,7 @@ app-starrating {
   border-radius: 15px;
   font-family: Quicksand;
   box-shadow: -0.7em 0 0.4em grey;
+  border: solid black;
 }
 #defaultContactFormName {
   margin-left: 100px;
