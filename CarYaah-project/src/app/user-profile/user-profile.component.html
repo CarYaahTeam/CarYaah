@@ -4,7 +4,7 @@
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-chat/ava3.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+            <img src={{client[0].image}} alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
             <h5 class="my-3">{{client[0].name}}</h5>
             <button mat-raised-button (click)='updateInfosDialog()'>Update My Infos</button>
           </div>

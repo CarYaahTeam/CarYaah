@@ -12,6 +12,6 @@ export class UpdateClientInfosService {
   }
 
   uploadImg(img: any) {
-    return this.http.post('http://localhost:3000/client/upload', img);
+    return this.http.post('http://localhost:3000/upload', img);
   }
 }

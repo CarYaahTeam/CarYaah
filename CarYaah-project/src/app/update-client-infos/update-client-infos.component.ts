@@ -18,7 +18,6 @@ export class UpdateClientInfosComponent implements OnInit {
   ) {}
 
   imageUrl: any;
-  currentRouter = this.router.url;
   ngOnInit(): void {}
 
   onUpload(img: any) {
