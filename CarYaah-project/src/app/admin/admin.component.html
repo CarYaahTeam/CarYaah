@@ -1,73 +1,73 @@
-<div *ngIf="!show">
-  <div class="form-group text-center">
-    <label for="username" class="fa fa-user-circle"></label>
-    <input class="inputs" type="username" placeholder="Username" #username />
+<div class="container-fluid">
+  <div *ngIf="!show">
+    <div class="form-group text-center">
+      <label for="username" class="fa fa-user-circle"></label>
+      <input class="inputs" type="username" placeholder="Username" #username />
+    </div>
+  
+    <div class="form-group text-center">
+      <label for="password" class="fa fa-lock"></label>
+      <input class="inputs" type="password" placeholder="Password" #password />
+    </div>
+    <div class="text-center">
+      <button mat-raised-button class="login" (click)="login(username.value, password.value)">
+        Login
+      </button>
+    </div>
   </div>
-
-  <div class="form-group text-center">
-    <label for="password" class="fa fa-lock"></label>
-    <input class="inputs" type="password" placeholder="Password" #password />
-  </div>
-  <div class="text-center">
-    <button class="login" (click)="login(username.value, password.value)">
-      Login
-    </button>
-  </div>
-</div>
-
-<div *ngIf="show" class="container">
-  <button class="logout" (click)="logout()">LOGOUT</button>
-  <table class="listofclients mx-3">
-    <thead>
-      <tr class="tr mx-3">
-        <th scope="col">CLIENTS</th>
-        <th scope="col">EMAIL</th>
-        <th scope="col">ADDRESS</th>
-        <th scope="col">BAN THIS CLIENT</th>
-        <th scope="col">EMAIL THIS CLIENT</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let client of clients">
-        <td>{{ client.username }}</td>
-        <td>{{ client.email }}</td>
-        <td>{{ client.adress }}</td>
-        <td>
-          <button class="write" (click)="To()">write</button>
-        </td>
-
-        <td>
-          <button class="btn btn-danger" (click)="deleteClient(client.id)">
-            BAN
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <table class="listofowners mx-3">
-    <thead>
-      <tr class="tr mx-3">
-        <th scope="col">OWNERS</th>
-        <th scope="col">EMAIL</th>
-        <th scope="col">ADDRESS</th>
-        <th scope="col">BAN THIS OWNER</th>
-        <th scope="col">EMAIL THIS CLIENT</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let owner of owners">
-        <td>{{ owner.username }}</td>
-        <td>{{ owner.email }}</td>
-        <td>{{ owner.adress }}</td>
-        <td>
-          <button class="write" (click)="To()">write</button>
-        </td>
-        <td>
-          <button class="btn btn-danger" (click)="deleteOwner(owner.id)">
-            BAN
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div *ngIf="show">
+    <button mat-raised-button class="logout" (click)="logout()">LOGOUT</button>
+  </div>  
+    <table class="listofclients mx-3">
+      <thead>
+        <h1>List Of Clients</h1>
+        <tr class="tr mx-3">
+          <th scope="col">CLIENTS</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">ADDRESS</th>
+          <th scope="col">PHONE</th>
+          <th scope="col">EMAIL THIS CLIENT</th>
+          <th scope="col">BAN THIS CLIENT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients">
+          <td>{{ client.name }}</td>
+          <td>{{ client.email }}</td>
+          <td>{{ client.adress }}</td>
+          <td>{{ client.phone }}</td>
+          <td>
+            <button mat-raised-button class="write" (click)="emailDialog()">WRITE MSG</button>
+          </td>
+          <td>
+            <button mat-raised-button class="ban"(click)="deleteClient(client.id)">BAN</button>
+          </td>
+        </tr>
+      </tbody>
+    </table> 
+    <table class="listofowners mx-3">
+      <thead>
+        <h1>List Of Owners</h1>
+        <tr class="tr mx-3">
+          <th scope="col">OWNERS</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">ADDRESS</th>
+          <th scope="col">EMAIL THIS CLIENT</th>
+          <th scope="col">BAN THIS OWNER</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let owner of owners">
+          <td>{{ owner.username }}</td>
+          <td>{{ owner.email }}</td>
+          <td>{{ owner.adress }}</td>
+          <td>
+            <button class='btntable' mat-raised-button class="write" (click)="emailDialog()">WRITE MSG</button>
+          </td>
+          <td>
+            <button class='btntable' mat-raised-button class="ban" (click)="deleteOwner(owner.id)">BAN</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 </div>

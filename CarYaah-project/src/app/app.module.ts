@@ -38,6 +38,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FeedbackClientComponent } from './feedback-client/feedback-client.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,6 @@ import { FeedbackClientComponent } from './feedback-client/feedback-client.compo
     HomepageComponent,
     OpinionCustomerComponent,
     FilteredCarsComponent,
-    AdminComponent,
     OwnerProfileComponent,
     PaiementComponent,
     SendEmailComponent,
@@ -87,6 +88,8 @@ import { FeedbackClientComponent } from './feedback-client/feedback-client.compo
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
+    MatIconModule,
+    MatTableModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],

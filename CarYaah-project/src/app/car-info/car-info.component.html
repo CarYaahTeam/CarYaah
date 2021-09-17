@@ -11,13 +11,13 @@
         <div class="row r3">
           <div class="col-md-5 p-0 klo">
             <ul>
-              <li><b>Brand: </b>{{ car.brand }}</li>
-              <li><b>Type:</b>{{ car.type }}</li>
-              <li><b>EQUIPMENTS:</b>{{ car.AC }} {{ car.GPS }}</li>
-              <li><b>TRANSMISSION : </b>{{ car.AUTOMATIC }}</li>
-              <li><b>START DATE Availablity : </b>{{ car.start_date_av }}</li>
-              <li><b>END DATE Availablity : </b>{{ car.end_date_av }}</li>
-              <li><b>PRICE : </b>{{ car.price }}TND Per Day</li>
+              <li><b>Brand: </b><span>{{ car.brand }}</span></li>
+              <li><b>Type:</b><span>{{ car.type }}</span></li>
+              <li><b>EQUIPMENTS:</b><span>{{ car.AC }} {{ car.GPS }}</span></li>
+              <li><b>TRANSMISSION : </b><span>{{ car.AUTOMATIC }}</span></li>
+              <li><b>START DATE Availablity : </b><span>{{ car.start_date_av }}</span></li>
+              <li><b>END DATE Availablity : </b><span>{{ car.end_date_av }}</span></li>
+              <li><b>PRICE : </b><span>{{ car.price }}TND Per Day</span></li>
             </ul>
           </div>
           <div class="col-md-7">
@@ -27,12 +27,13 @@
       </div>
       <div class="footer d-flex flex-column mt-5">
           <div class="row r4">
-              
-              <div class="col-md-2 myt "><a href="#">Review</a></div>
-              <div class="col-md-2 mio offset-md-4"><a href="#">ADD TO CART</a></div>
+              <div class="col-md-2 myt ">
+                <button class="btn btn-outline-warning" routerLink="/cars">BACK</button>
+              </div>
+             
               <div class="col-md-2 myt ">
   
-                  <button type="button" class="btn btn-outline-warning" (click)='toRegister()'>BOOK NOW</button></div>
+              <button type="button" class="btn btn-outline-warning" (click)='toRegister()'>BOOK NOW</button></div>
           </div>
         </div>
       </div>

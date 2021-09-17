@@ -1,3 +1,6 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
 <div class="mb-3">
   <h2 mat-dialog-title>Report An Accident</h2><br>
   <mat-form-field>
@@ -16,8 +19,8 @@
 
 <!-- cloudinary -->
 <input style="display: none" type="file" (change)="imgUpload($event)" #report>
-<button style="background-color: rgb(112, 176, 228);" mat-raised-button (click)='report.click()'>Select Report</button>
-<button style="background-color: rgb(108, 224, 108);" mat-raised-button (click)='submitRport(email.value, regist.value, msg.value)' >Submit</button><br>
+<button class="button" style="background-color: rgb(112, 176, 228);" mat-raised-button (click)='report.click()'>Select Report</button>
+<button class="button" style="background-color: rgb(108, 224, 108);" mat-raised-button (click)='submitRport(email.value, regist.value, msg.value)' >Submit</button><br>
 <figure *ngIf="imageUrl">
   <img width="15%" height="15%"  [src]="imageUrl" class="image">
   <figcaption>Your accident report</figcaption>

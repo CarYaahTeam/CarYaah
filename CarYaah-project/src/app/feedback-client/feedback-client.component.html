@@ -1,3 +1,6 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
 <h2 mat-dialog-title>Provide Us With Your Feedback</h2>
   <mat-form-field>
     <input matInput type="text" placeholder="Name "
@@ -10,4 +13,4 @@
     <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Your message here"
       style="height:200px; width: 400px; font-size:22px ; color:black" #message></textarea>
   </div>
-  <button mat-raised-button (click)="sendMessage({Name:Name.value, email:email.value,message:message.value})">Send</button>
+  <button style="background-color: rgb(70, 204, 238);" mat-raised-button (click)="sendMessage({Name:Name.value, email:email.value,message:message.value})">Send</button>
