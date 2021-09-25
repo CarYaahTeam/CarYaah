@@ -7,15 +7,17 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-  boo=false;
+  show = false;
   constructor(private route: Router, private cookie: CookieService) {}
 
   ngOnInit(): void {
-    const tkn = this.cookie.get('token');
-    if (tkn) {
-      this.boo = true;
+    const token = this.cookie.get('token');
+    if (token) {
+      this.show = true;
+    } else {
+      this.show = false;
+    }
   }
-}
   To(str: string) {
     this.route.navigateByUrl(str);
   }
@@ -30,7 +32,22 @@ export class NavComponent implements OnInit {
     }
   }
 
-  toProfile(){
+  toProfile() {
     this.route.navigateByUrl('/ownerprofile');
+  }
+
+  logout() {
+    this.cookie.delete('token');
+    let currentUrl = this.route.url;
+    this.route.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.route.navigate(['/']);
+      console.log(currentUrl);
+      const token = this.cookie.get('token');
+      if (token) {
+        this.show = true;
+      } else {
+        this.show = false;
+      }
+    });
   }
 }

@@ -139,7 +139,9 @@ transporter.sendMail(mailOptions, function(error, info){
 exports.createConflict = async (req, res) => {
   try {
     const declaration = {
-      conflict_report: req.body.conflict_report
+      conflict_report: req.body.conflictreport,
+      clientId: 1,
+      carId: 1
     };
 
     const conflict = await db.Conflict.create(declaration);
@@ -159,5 +161,25 @@ exports.retrieBookings= async(req, res)=>{
     return res.status(201).json(bookings.map((bookings)=>bookings));
   } catch(error){
     console.log(error);
+  }
+};
+
+//-------UpdateClientInfos------//
+exports.updateClientInfos = async (req, res) => {
+  try {
+    const client = await db.Client.update({ 
+      name : req.body.name,
+      email : req.body.email,
+      phone: req.body.phone,
+      adress : req.body.adress,
+      image: req.body.image,
+      drvlicense: req.body.drvlicense,
+     },
+     {where : {id: 1}});
+     return res.status(201).send({
+       status:200
+     });
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
   }
 };

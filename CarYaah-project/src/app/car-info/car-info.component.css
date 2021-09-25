@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
 .background {
-  background-image: url(https://wallpaperaccess.com/full/1098290.jpg);
-  height: 770px;
+  height: 780px;
   background-size: cover;
+  background-color: #f3f3f7;
 }
 body {
-  background: #ffc107;
+  background: white#ffc107;
   font-family: Quicksand;
   height: 100%;
 }
 
 .container {
-  background: rgb(255 253 189) !important;
+  background: white !important;
   border: none;
   border-radius: none;
 }
@@ -42,6 +42,14 @@ li {
   line-height: 50px;
   color: #000;
   font-size: 18px;
+  font-family: Quicksand;
+  font-weight: bolder;
+}
+span {
+  margin-left: 5px;
+}
+b {
+  font-weight: bolder;
 }
 
 .col-md-2 {
@@ -76,7 +84,6 @@ li {
 
 .btn-outline-warning {
   border-radius: 0;
-  border: 2px solid yellow;
   color: #000;
   font-size: 18px;
   font-weight: bold;

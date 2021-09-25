@@ -61,9 +61,6 @@ export class CarcardComponent implements OnInit {
 
   info(car: Car): void {
     this.route.navigate(['/carInfo'], { state: { data: car } });
-    //this.display = true;
-    //To toggle the component
-    // this.displayCarInfo = true;
   }
 
   filter() {

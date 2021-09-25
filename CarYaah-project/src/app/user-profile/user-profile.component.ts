@@ -3,12 +3,9 @@ import { DialogOverviewExampleDialogComponent } from '../dialog-overview-example
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { CarcardService } from '../carcard.service';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
-
+import { UpdateClientInfosComponent } from '../update-client-infos/update-client-infos.component';
+import { FeedbackClientComponent } from '../feedback-client/feedback-client.component';
+import { MatDialog } from '@angular/material/dialog';
 export interface Car {
   id: number;
   brand: string;
@@ -43,15 +40,14 @@ export class UserProfileComponent implements OnInit {
 
   showBookings = false;
   showFavourites = true;
-  
 
   constructor(
     private UserService: UserService,
     private route: Router,
     public dialog: MatDialog,
     private CarService: CarcardService,
-    private msg:UserService,
-    private router : Router
+    private msg: UserService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.getData();
@@ -91,15 +87,11 @@ export class UserProfileComponent implements OnInit {
 
   info(car: Car): void {
     this.route.navigate(['/carInfo'], { state: { data: car } });
-    //this.display = true;
-    //To toggle the component
-    // this.displayCarInfo = true;
   }
 
   getCars() {
     this.CarService.getCars().subscribe((resp: any) => {
       this.cars = resp;
-      console.log('cars', this.cars);
     });
   }
 
@@ -112,17 +104,18 @@ export class UserProfileComponent implements OnInit {
     this.showFavourites = !this.showFavourites;
     this.showBookings = false;
   }
-  // toggleFeedBack(){
-  //   this.showFeedBack = !this.showFeedBack;
-  //   this.showBookings = false;
-  //   this.router.navigateByUrl("/feedback");
-  // }
-  showFeedBack(){
-    this.router.navigateByUrl("/feedback")
+
+  sendMessage(data: object) {
+    this.msg.sendMsg(data).subscribe((data) => {
+      console.log(data);
+    });
   }
-  sendMessage(data:object){
-    this.msg.sendMsg(data).subscribe((data)=>{
-      console.log(data)
-    })
-    }
+
+  updateInfosDialog() {
+    this.dialog.open(UpdateClientInfosComponent);
+  }
+
+  sendFeedbackDialog() {
+    this.dialog.open(FeedbackClientComponent);
+  }
 }

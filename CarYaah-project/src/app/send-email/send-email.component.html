@@ -1,51 +1,25 @@
-<!-- <p>send-email works!</p>
-<div>
-  <form [formGroup]="nodeMailForm">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter The email id you wich to send mail to:</mat-label>
-      <input
-        matInput
-        #email
-        placeholder="provide email id here"
-        formControlName="email"
-        type="email"
-      />
-    </mat-form-field>
-    <br />
-    <button mat-raised-button color="accent" type="submit">send</button>
-  </form>
-</div> -->
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
 <div class="container">
-  <div class="wrapper animated bounceInLeft">
-    <div class="contact">
-      <h3>Email this person</h3>
-      <div>
-        <p>
-          <label>Name</label>
-          <input type="text" name="name" />
-        </p>
-        <p>
-          <label>Email Address</label>
-          <input type="email" name="email" #email />
-        </p>
-        <p>
-          <label>Phone Number</label>
-          <input type="text" name="phone" />
-        </p>
-        <p class="full">
-          <label>Message</label>
-          <textarea name="message" rows="5" #message></textarea>
-        </p>
-        <p class="full">
-          <button
+      <h3 mat-dialog-title>Email this person</h3>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput type="text" name="name" />
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-label>Email Address</mat-label>
+          <input matInput type="email" name="email" #email />
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-label>Phone Number</mat-label>
+          <input matInput type="text" name="phone" />
+        </mat-form-field><br>
+          <mat-label>Message</mat-label><br>
+          <textarea name="message" rows="5" #message></textarea><br>
+          <button mat-raised-button
             type="submit"
-            (click)="sendMail({ email: email.value, message: message.value })"
-          >
+            (click)="sendMail({ email: email.value, message: message.value })">
             Submit
           </button>
-        </p>
-        <i class="far fa-caret-square-left" (click)="To('/admin')"></i>
-      </div>
-    </div>
-  </div>
 </div>
