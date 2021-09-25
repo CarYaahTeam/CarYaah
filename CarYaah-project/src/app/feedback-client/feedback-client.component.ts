@@ -18,11 +18,11 @@ export class FeedbackClientComponent implements OnInit {
     this.msg.sendMsg(data).subscribe((data) => {
       console.log(data);
     });
-    let currentUrl = this.router.url;
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([currentUrl]);
-      console.log(currentUrl);
-    });
+    // let currentUrl = this.router.url;
+    // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+    //   this.router.navigate([currentUrl]);
+    //   console.log(currentUrl);
+    // });
     this.dialogRef.close();
   }
 }
